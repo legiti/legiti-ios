@@ -52,7 +52,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #  profile URL.
   #
 
-  spec.author             = { "Pearson Henri" => "email@address.com" }
+  spec.author             = { "Pearson Henri" => "pearson@useinspetor.com" }
   # Or just: spec.author    = "Pearson Henri"
   # spec.authors            = { "Pearson Henri" => "email@address.com" }
   # spec.social_media_url   = "https://twitter.com/Pearson Henri"
@@ -64,7 +64,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #
 
   # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  spec.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -79,7 +79,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/pearsonhenri/InspetorSwiftFramework.git", :commit => "5706d5029b9cc51e6653a2f6a367e98afe85d8ca" }
+  spec.source       = { :git => "https://github.com/pearsonhenri/InspetorSwiftFramework.git", :commit => "5bea42b0b49a2d78cd6f5c970fa8cdd8ee44552f" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,7 +90,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "./InspetorSwiftFramework/InspetorService.swift"
+  spec.source_files  = "InspetorSwiftFramework/*.swift"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -132,6 +132,6 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  # spec.dependency "SnowplowTracker", "~> 1.0"
 
 end
