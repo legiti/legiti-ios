@@ -79,7 +79,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/pearsonhenri/InspetorSwiftFramework.git", :commit => "5bea42b0b49a2d78cd6f5c970fa8cdd8ee44552f" }
+  spec.source       = { :git => "https://github.com/pearsonhenri/InspetorSwiftFramework.git", :commit => "e2274e0e673e97769e20978a030e95d9d2d8bec9" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
