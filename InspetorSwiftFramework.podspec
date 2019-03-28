@@ -64,7 +64,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #
 
   # spec.platform     = :ios
-  spec.platform     = :ios, "9.0"
+  spec.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -79,7 +79,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/pearsonhenri/InspetorSwiftFramework.git", :commit => "e2274e0e673e97769e20978a030e95d9d2d8bec9" }
+  spec.source       = { :git => "https://github.com/pearsonhenri/InspetorSwiftFramework.git", :commit => "9b3ee829e404ef3b7c45679014cca8160e5a9ace" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -132,6 +132,6 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "SnowplowTracker", "~> 1.0"
+  spec.dependency "SnowplowTracker", "~> 1.0"
 
 end

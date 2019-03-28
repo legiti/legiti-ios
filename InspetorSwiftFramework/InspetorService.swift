@@ -1,70 +1,43 @@
 //
-//  inspetorService.swift
-//  inspetor-ios-sdk
+//  InspetorService.swift
+//  InspetorSwiftFramework
 //
-//  Created by Pearson Henri on 3/21/19.
+//  Created by Pearson Henri on 3/25/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 
 import Foundation
 import SnowplowTracker
 
-public class inspetorService: NSObject {
-    var trackerName: String
-    var appId: String
-    var base64Encoded: Bool
-    var collectorUri : String
-    var httpMethodType : SPRequestOptions
-    var protocolType : SPProtocol
+protocol InspetorService {
+    static var sharedInstance: Self { get }
     
-    var tracker : SPTracker?
+    var trackerName: String? {get set}
+    var appId: String? {get set}
+    var base64Encoded: Bool {get set}
+    var collectorUri : String {get set}
+    var httpMethodType : SPRequestOptions {get set}
+    var protocolType : SPProtocol {get set}
     
-    public init(trackerName: String,
-                appId: String,
-                base64Encoded: Bool? = nil,
-                collectorUri : String? = nil,
-                httpMethodType : SPRequestOptions? = nil,
-                protocolType : SPProtocol? = nil)
-    {
-        // set values
-        self.trackerName = trackerName
-        self.appId = appId
-        self.base64Encoded = base64Encoded ?? true
-        self.collectorUri = collectorUri ?? "analytics-staging.useinspetor.com"
-        //        self.collectorUri = collectorUri ?? "analytics.useinspetor.com"
-        self.httpMethodType = httpMethodType ?? SPRequestOptions.get
-        self.protocolType = protocolType ?? SPProtocol.https
-        
-        super.init()
-        
-        // initialize tracker
-        self.tracker = initializeTracker()
-    }
+    var tracker : SPTracker? {get set}
     
-    private func initializeTracker() -> SPTracker {
-        let emitter = SPEmitter.build({ (builder : SPEmitterBuilder?) -> Void in
-            builder!.setUrlEndpoint(self.collectorUri)
-            builder!.setHttpMethod(self.httpMethodType)
-        })
-        
-        let newTracker = SPTracker.build({ (builder: SPTrackerBuilder?) -> Void in
-            builder!.setEmitter(emitter)
-            builder!.setAppId(self.appId)
-            builder!.setTrackerNamespace(self.trackerName)
-            builder!.setBase64Encoded(self.base64Encoded)
-            
-        })
-        
-        return newTracker!
-    }
+    // set active user account
+    func setActiveUser(_ userId: Int)
+
+    func unsetActiveUser()
     
-    public func trackPageView() {
-        let event = SPScreenView.build({ (builder : SPScreenViewBuilder?) -> Void in
-            builder!.setName("DemoScreenName")
-            builder!.setId("DemoScreenId")
-        })
-        self.tracker!.trackScreenViewEvent(event)
-        
-        print("******* tracked a screen view event mofucka! ********")
-    }
+    // track account creation
+    func trackAccountCreation(_ userId: Int)
+
+    // track account update
+    func trackAccountUpdate(_ userId: Int)
+
+    // track create order
+    func trackCreateOrder(_ txnId: Int)
+
+    // track pay order
+    func trackPayOrder(_ txnId: Int)
+    
+    // track cancel order
+    func trackCancelOrder(_ txnId: Int)
 }

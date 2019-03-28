@@ -7,19 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4448D3370312066CEE2D3537 /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C460EE48E07BAD11F473F054 /* Pods_InspetorSwiftFramework.framework */; };
 		78783CA7224424E70052BB50 /* InspetorSwiftFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78783CAE224425060052BB50 /* InspetorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CAD224425060052BB50 /* InspetorService.swift */; };
+		78783CAE224425060052BB50 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CAD224425060052BB50 /* InspetorResource.swift */; };
+		78783CB4224939150052BB50 /* InspetorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CB3224939150052BB50 /* InspetorService.swift */; };
+		78EDEC29224D10A9006BB64F /* InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */; };
+		8A85333C7405BB2E00177EF1 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0779A3CF60043E2A76C5E73E /* Pods_InspetorSwiftFrameworkTests.framework */; };
+		B661A98BCE06BE02D5024139 /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05E655A55DDD52705D394E0 /* Pods_InspetorSwiftFramework.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		78EDEC2A224D10A9006BB64F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78783C99224424E70052BB50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78783CA1224424E70052BB50;
+			remoteInfo = InspetorSwiftFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0C4F96DBE3ABB13E8F9A500D /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
+		0779A3CF60043E2A76C5E73E /* Pods_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D97D84102909004ACFDC593 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
+		58C45543F96031105805803D /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspetorSwiftFramework.h; sourceTree = "<group>"; };
 		78783CA6224424E70052BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78783CAD224425060052BB50 /* InspetorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorService.swift; sourceTree = "<group>"; };
-		B2B1A366DBB7A7387F74BE60 /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
-		C460EE48E07BAD11F473F054 /* Pods_InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78783CAD224425060052BB50 /* InspetorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorResource.swift; sourceTree = "<group>"; };
+		78783CB3224939150052BB50 /* InspetorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorService.swift; sourceTree = "<group>"; };
+		78EDEC24224D10A9006BB64F /* InspetorSwiftFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspetorSwiftFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A3EE58117DA80D640FE9ACF /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE17167940B87489AD3399BB /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
+		E05E655A55DDD52705D394E0 /* Pods_InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,28 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4448D3370312066CEE2D3537 /* Pods_InspetorSwiftFramework.framework in Frameworks */,
+				B661A98BCE06BE02D5024139 /* Pods_InspetorSwiftFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EDEC21224D10A9006BB64F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EDEC29224D10A9006BB64F /* InspetorSwiftFramework.framework in Frameworks */,
+				8A85333C7405BB2E00177EF1 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F8DCAC624C9136F320615BD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C460EE48E07BAD11F473F054 /* Pods_InspetorSwiftFramework.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		78783C98224424E70052BB50 = {
 			isa = PBXGroup;
 			children = (
 				78783CA4224424E70052BB50 /* InspetorSwiftFramework */,
 				78783CA3224424E70052BB50 /* Products */,
 				BE9C92196CF645F0511BA00C /* Pods */,
-				6F8DCAC624C9136F320615BD /* Frameworks */,
+				F84F4324F49471684E35126D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */,
+				78EDEC24224D10A9006BB64F /* InspetorSwiftFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,7 +85,8 @@
 			children = (
 				78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */,
 				78783CA6224424E70052BB50 /* Info.plist */,
-				78783CAD224425060052BB50 /* InspetorService.swift */,
+				78783CAD224425060052BB50 /* InspetorResource.swift */,
+				78783CB3224939150052BB50 /* InspetorService.swift */,
 			);
 			path = InspetorSwiftFramework;
 			sourceTree = "<group>";
@@ -73,11 +94,21 @@
 		BE9C92196CF645F0511BA00C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B2B1A366DBB7A7387F74BE60 /* Pods-InspetorSwiftFramework.debug.xcconfig */,
-				0C4F96DBE3ABB13E8F9A500D /* Pods-InspetorSwiftFramework.release.xcconfig */,
+				58C45543F96031105805803D /* Pods-InspetorSwiftFramework.debug.xcconfig */,
+				BE17167940B87489AD3399BB /* Pods-InspetorSwiftFramework.release.xcconfig */,
+				7A3EE58117DA80D640FE9ACF /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */,
+				2D97D84102909004ACFDC593 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F84F4324F49471684E35126D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E05E655A55DDD52705D394E0 /* Pods_InspetorSwiftFramework.framework */,
+				0779A3CF60043E2A76C5E73E /* Pods_InspetorSwiftFrameworkTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,7 +129,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78783CAA224424E70052BB50 /* Build configuration list for PBXNativeTarget "InspetorSwiftFramework" */;
 			buildPhases = (
-				44CA572DEBA351FE6191294A /* [CP] Check Pods Manifest.lock */,
+				66C29635C7561C542CAE4C4B /* [CP] Check Pods Manifest.lock */,
 				78783C9D224424E70052BB50 /* Headers */,
 				78783C9E224424E70052BB50 /* Sources */,
 				78783C9F224424E70052BB50 /* Frameworks */,
@@ -113,18 +144,41 @@
 			productReference = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		78EDEC23224D10A9006BB64F /* InspetorSwiftFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EDEC2C224D10A9006BB64F /* Build configuration list for PBXNativeTarget "InspetorSwiftFrameworkTests" */;
+			buildPhases = (
+				862C38AD75238354AB3EC07B /* [CP] Check Pods Manifest.lock */,
+				78EDEC20224D10A9006BB64F /* Sources */,
+				78EDEC21224D10A9006BB64F /* Frameworks */,
+				78EDEC22224D10A9006BB64F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78EDEC2B224D10A9006BB64F /* PBXTargetDependency */,
+			);
+			name = InspetorSwiftFrameworkTests;
+			productName = InspetorSwiftFrameworkTests;
+			productReference = 78EDEC24224D10A9006BB64F /* InspetorSwiftFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		78783C99224424E70052BB50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Inspetor;
 				TargetAttributes = {
 					78783CA1224424E70052BB50 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+					};
+					78EDEC23224D10A9006BB64F = {
+						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
@@ -141,6 +195,7 @@
 			projectRoot = "";
 			targets = (
 				78783CA1224424E70052BB50 /* InspetorSwiftFramework */,
+				78EDEC23224D10A9006BB64F /* InspetorSwiftFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -153,10 +208,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78EDEC22224D10A9006BB64F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44CA572DEBA351FE6191294A /* [CP] Check Pods Manifest.lock */ = {
+		66C29635C7561C542CAE4C4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -178,6 +240,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		862C38AD75238354AB3EC07B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InspetorSwiftFrameworkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -185,11 +269,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78783CAE224425060052BB50 /* InspetorService.swift in Sources */,
+				78783CAE224425060052BB50 /* InspetorResource.swift in Sources */,
+				78783CB4224939150052BB50 /* InspetorService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EDEC20224D10A9006BB64F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78EDEC2B224D10A9006BB64F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78783CA1224424E70052BB50 /* InspetorSwiftFramework */;
+			targetProxy = 78EDEC2A224D10A9006BB64F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		78783CA8224424E70052BB50 /* Debug */ = {
@@ -316,7 +416,7 @@
 		};
 		78783CAB224424E70052BB50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2B1A366DBB7A7387F74BE60 /* Pods-InspetorSwiftFramework.debug.xcconfig */;
+			baseConfigurationReference = 58C45543F96031105805803D /* Pods-InspetorSwiftFramework.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -343,7 +443,7 @@
 		};
 		78783CAC224424E70052BB50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C4F96DBE3ABB13E8F9A500D /* Pods-InspetorSwiftFramework.release.xcconfig */;
+			baseConfigurationReference = BE17167940B87489AD3399BB /* Pods-InspetorSwiftFramework.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -367,6 +467,44 @@
 			};
 			name = Release;
 		};
+		78EDEC2D224D10A9006BB64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A3EE58117DA80D640FE9ACF /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InspetorSwiftFrameworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78EDEC2E224D10A9006BB64F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D97D84102909004ACFDC593 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = InspetorSwiftFrameworkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -384,6 +522,15 @@
 			buildConfigurations = (
 				78783CAB224424E70052BB50 /* Debug */,
 				78783CAC224424E70052BB50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78EDEC2C224D10A9006BB64F /* Build configuration list for PBXNativeTarget "InspetorSwiftFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EDEC2D224D10A9006BB64F /* Debug */,
+				78EDEC2E224D10A9006BB64F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
