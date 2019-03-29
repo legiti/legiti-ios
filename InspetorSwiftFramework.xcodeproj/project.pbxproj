@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0289AAC441C41FF3A9261B5E /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */; };
 		78783CA7224424E70052BB50 /* InspetorSwiftFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78783CAE224425060052BB50 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CAD224425060052BB50 /* InspetorResource.swift */; };
 		78783CB4224939150052BB50 /* InspetorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CB3224939150052BB50 /* InspetorService.swift */; };
-		78EDEC29224D10A9006BB64F /* InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */; };
-		8A85333C7405BB2E00177EF1 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0779A3CF60043E2A76C5E73E /* Pods_InspetorSwiftFrameworkTests.framework */; };
-		B661A98BCE06BE02D5024139 /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E05E655A55DDD52705D394E0 /* Pods_InspetorSwiftFramework.framework */; };
+		78FC55C5224D481200F42B40 /* InspetorSwiftFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */; };
+		78FC55C7224D481200F42B40 /* InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */; };
+		790C46C1924528E449A6F74A /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */; };
+		CCE4688ACCF1EABF974C5D87 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A14D8320077FF105EEA613 /* Pods_InspetorSwiftFrameworkTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		78EDEC2A224D10A9006BB64F /* PBXContainerItemProxy */ = {
+		78FC55C8224D481200F42B40 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78783C99224424E70052BB50 /* Project object */;
 			proxyType = 1;
@@ -26,18 +28,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0779A3CF60043E2A76C5E73E /* Pods_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D97D84102909004ACFDC593 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
-		58C45543F96031105805803D /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		148F4022779F27F6D6A42A49 /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		1ED21BD312BDC7B108F667BC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		46D6010CDB85D64C6CFC698A /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
+		65C30F7D837996A0BE2B478A /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		729C73064DC3B49FB8832B98 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
 		78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspetorSwiftFramework.h; sourceTree = "<group>"; };
 		78783CA6224424E70052BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78783CAD224425060052BB50 /* InspetorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorResource.swift; sourceTree = "<group>"; };
 		78783CB3224939150052BB50 /* InspetorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorService.swift; sourceTree = "<group>"; };
-		78EDEC24224D10A9006BB64F /* InspetorSwiftFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspetorSwiftFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A3EE58117DA80D640FE9ACF /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BE17167940B87489AD3399BB /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
-		E05E655A55DDD52705D394E0 /* Pods_InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FC55C2224D481200F42B40 /* InspetorSwiftFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspetorSwiftFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorSwiftFrameworkTests.swift; sourceTree = "<group>"; };
+		78FC55C6224D481200F42B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97A14D8320077FF105EEA613 /* Pods_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA74F6BD1A6C821B4919A4B2 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,16 +52,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B661A98BCE06BE02D5024139 /* Pods_InspetorSwiftFramework.framework in Frameworks */,
+				0289AAC441C41FF3A9261B5E /* Pods_InspetorSwiftFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78EDEC21224D10A9006BB64F /* Frameworks */ = {
+		78FC55BF224D481200F42B40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78EDEC29224D10A9006BB64F /* InspetorSwiftFramework.framework in Frameworks */,
-				8A85333C7405BB2E00177EF1 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */,
+				78FC55C7224D481200F42B40 /* InspetorSwiftFramework.framework in Frameworks */,
+				CCE4688ACCF1EABF974C5D87 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */,
+				790C46C1924528E449A6F74A /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				78783CA4224424E70052BB50 /* InspetorSwiftFramework */,
+				78FC55C3224D481200F42B40 /* InspetorSwiftFrameworkTests */,
 				78783CA3224424E70052BB50 /* Products */,
 				BE9C92196CF645F0511BA00C /* Pods */,
-				F84F4324F49471684E35126D /* Frameworks */,
+				E2F3444195BE1A2DBBC7E612 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */,
-				78EDEC24224D10A9006BB64F /* InspetorSwiftFrameworkTests.xctest */,
+				78FC55C2224D481200F42B40 /* InspetorSwiftFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,22 +100,34 @@
 			path = InspetorSwiftFramework;
 			sourceTree = "<group>";
 		};
+		78FC55C3224D481200F42B40 /* InspetorSwiftFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */,
+				78FC55C6224D481200F42B40 /* Info.plist */,
+			);
+			path = InspetorSwiftFrameworkTests;
+			sourceTree = "<group>";
+		};
 		BE9C92196CF645F0511BA00C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				58C45543F96031105805803D /* Pods-InspetorSwiftFramework.debug.xcconfig */,
-				BE17167940B87489AD3399BB /* Pods-InspetorSwiftFramework.release.xcconfig */,
-				7A3EE58117DA80D640FE9ACF /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */,
-				2D97D84102909004ACFDC593 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */,
+				148F4022779F27F6D6A42A49 /* Pods-InspetorSwiftFramework.debug.xcconfig */,
+				46D6010CDB85D64C6CFC698A /* Pods-InspetorSwiftFramework.release.xcconfig */,
+				65C30F7D837996A0BE2B478A /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */,
+				729C73064DC3B49FB8832B98 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */,
+				1ED21BD312BDC7B108F667BC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */,
+				CA74F6BD1A6C821B4919A4B2 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F84F4324F49471684E35126D /* Frameworks */ = {
+		E2F3444195BE1A2DBBC7E612 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E05E655A55DDD52705D394E0 /* Pods_InspetorSwiftFramework.framework */,
-				0779A3CF60043E2A76C5E73E /* Pods_InspetorSwiftFrameworkTests.framework */,
+				8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */,
+				97A14D8320077FF105EEA613 /* Pods_InspetorSwiftFrameworkTests.framework */,
+				00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78783CAA224424E70052BB50 /* Build configuration list for PBXNativeTarget "InspetorSwiftFramework" */;
 			buildPhases = (
-				66C29635C7561C542CAE4C4B /* [CP] Check Pods Manifest.lock */,
+				CC38D823E09082580A2D9FF7 /* [CP] Check Pods Manifest.lock */,
 				78783C9D224424E70052BB50 /* Headers */,
 				78783C9E224424E70052BB50 /* Sources */,
 				78783C9F224424E70052BB50 /* Frameworks */,
@@ -144,23 +165,24 @@
 			productReference = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		78EDEC23224D10A9006BB64F /* InspetorSwiftFrameworkTests */ = {
+		78FC55C1224D481200F42B40 /* InspetorSwiftFrameworkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78EDEC2C224D10A9006BB64F /* Build configuration list for PBXNativeTarget "InspetorSwiftFrameworkTests" */;
+			buildConfigurationList = 78FC55CC224D481200F42B40 /* Build configuration list for PBXNativeTarget "InspetorSwiftFrameworkTests" */;
 			buildPhases = (
-				862C38AD75238354AB3EC07B /* [CP] Check Pods Manifest.lock */,
-				78EDEC20224D10A9006BB64F /* Sources */,
-				78EDEC21224D10A9006BB64F /* Frameworks */,
-				78EDEC22224D10A9006BB64F /* Resources */,
+				F9751546AB4816AB013C2A29 /* [CP] Check Pods Manifest.lock */,
+				78FC55BE224D481200F42B40 /* Sources */,
+				78FC55BF224D481200F42B40 /* Frameworks */,
+				78FC55C0224D481200F42B40 /* Resources */,
+				B09474AA28F593094B38408C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				78EDEC2B224D10A9006BB64F /* PBXTargetDependency */,
+				78FC55C9224D481200F42B40 /* PBXTargetDependency */,
 			);
 			name = InspetorSwiftFrameworkTests;
 			productName = InspetorSwiftFrameworkTests;
-			productReference = 78EDEC24224D10A9006BB64F /* InspetorSwiftFrameworkTests.xctest */;
+			productReference = 78FC55C2224D481200F42B40 /* InspetorSwiftFrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +199,7 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 					};
-					78EDEC23224D10A9006BB64F = {
+					78FC55C1224D481200F42B40 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
@@ -195,7 +217,7 @@
 			projectRoot = "";
 			targets = (
 				78783CA1224424E70052BB50 /* InspetorSwiftFramework */,
-				78EDEC23224D10A9006BB64F /* InspetorSwiftFrameworkTests */,
+				78FC55C1224D481200F42B40 /* InspetorSwiftFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,7 +230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78EDEC22224D10A9006BB64F /* Resources */ = {
+		78FC55C0224D481200F42B40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,7 +240,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		66C29635C7561C542CAE4C4B /* [CP] Check Pods Manifest.lock */ = {
+		B09474AA28F593094B38408C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SnowplowTracker/SnowplowTracker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnowplowTracker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC38D823E09082580A2D9FF7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,7 +288,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		862C38AD75238354AB3EC07B /* [CP] Check Pods Manifest.lock */ = {
+		F9751546AB4816AB013C2A29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,7 +303,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InspetorSwiftFrameworkTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -274,20 +322,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78EDEC20224D10A9006BB64F /* Sources */ = {
+		78FC55BE224D481200F42B40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78FC55C5224D481200F42B40 /* InspetorSwiftFrameworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		78EDEC2B224D10A9006BB64F /* PBXTargetDependency */ = {
+		78FC55C9224D481200F42B40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 78783CA1224424E70052BB50 /* InspetorSwiftFramework */;
-			targetProxy = 78EDEC2A224D10A9006BB64F /* PBXContainerItemProxy */;
+			targetProxy = 78FC55C8224D481200F42B40 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -416,7 +465,7 @@
 		};
 		78783CAB224424E70052BB50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58C45543F96031105805803D /* Pods-InspetorSwiftFramework.debug.xcconfig */;
+			baseConfigurationReference = 148F4022779F27F6D6A42A49 /* Pods-InspetorSwiftFramework.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -443,7 +492,7 @@
 		};
 		78783CAC224424E70052BB50 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE17167940B87489AD3399BB /* Pods-InspetorSwiftFramework.release.xcconfig */;
+			baseConfigurationReference = 46D6010CDB85D64C6CFC698A /* Pods-InspetorSwiftFramework.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -467,9 +516,9 @@
 			};
 			name = Release;
 		};
-		78EDEC2D224D10A9006BB64F /* Debug */ = {
+		78FC55CA224D481200F42B40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A3EE58117DA80D640FE9ACF /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */;
+			baseConfigurationReference = 1ED21BD312BDC7B108F667BC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = InspetorSwiftFrameworkTests/Info.plist;
@@ -481,14 +530,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		78EDEC2E224D10A9006BB64F /* Release */ = {
+		78FC55CB224D481200F42B40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D97D84102909004ACFDC593 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */;
+			baseConfigurationReference = CA74F6BD1A6C821B4919A4B2 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = InspetorSwiftFrameworkTests/Info.plist;
@@ -500,7 +549,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -526,11 +575,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78EDEC2C224D10A9006BB64F /* Build configuration list for PBXNativeTarget "InspetorSwiftFrameworkTests" */ = {
+		78FC55CC224D481200F42B40 /* Build configuration list for PBXNativeTarget "InspetorSwiftFrameworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				78EDEC2D224D10A9006BB64F /* Debug */,
-				78EDEC2E224D10A9006BB64F /* Release */,
+				78FC55CA224D481200F42B40 /* Debug */,
+				78FC55CB224D481200F42B40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

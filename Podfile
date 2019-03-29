@@ -9,7 +9,8 @@ target 'InspetorSwiftFramework' do
   pod 'SnowplowTracker', '~> 1.0'
 
   target 'InspetorSwiftFrameworkTests' do
-      inherit! :search_paths
+      inherit! :complete
   end
 
 end
+

@@ -14,23 +14,23 @@ public enum InspetorAccountUpdateType: String {
 }
 
 public class InspetorResource: NSObject {
-    let DEFAULT_BASE64_OPTION: Bool = true
-//    let DEFAULT_COLLECTOR_URI: String = "analytics.useinspetor.com"
-    let DEFAULT_COLLECTOR_URI: String = "analytics-staging.useinspetor.com"
-    let DEFAULT_HTTP_METHOD_TYPE: SPRequestOptions = SPRequestOptions.get
-    let DEFAULT_PROTOCOL_TYPE: SPProtocol = SPProtocol.https
-    let DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR: Character = "."
+    internal let DEFAULT_BASE64_OPTION: Bool = true
+//    internal let DEFAULT_COLLECTOR_URI: String = "analytics.useinspetor.com"
+    internal let DEFAULT_COLLECTOR_URI: String = "analytics-staging.useinspetor.com"
+    internal let DEFAULT_HTTP_METHOD_TYPE: SPRequestOptions = SPRequestOptions.get
+    internal let DEFAULT_PROTOCOL_TYPE: SPProtocol = SPProtocol.https
+    internal let DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR: Character = "."
     
-    var base64Encoded: Bool
-    var collectorUri : String
-    var httpMethodType : SPRequestOptions
-    var protocolType : SPProtocol
-    var subject: SPSubject
+    private var base64Encoded: Bool
+    private var collectorUri: String
+    private var httpMethodType: SPRequestOptions
+    private var protocolType: SPProtocol
+    private var subject: SPSubject
     
-    var trackerName: String?
-    var appId: String?
-    var clientName: String?
-    var tracker: SPTracker?
+    private var trackerName: String?
+    private var appId: String?
+    private var clientName: String?
+    private var tracker: SPTracker?
     
     public override init() {
         self.base64Encoded = self.DEFAULT_BASE64_OPTION
@@ -49,7 +49,7 @@ public class InspetorResource: NSObject {
                 httpMethodType : SPRequestOptions? = nil,
                 protocolType : SPProtocol? = nil)
     {
-        self.validateTrackerName(trackerName)
+        precondition(self.validateTrackerName(trackerName))
         
         self.trackerName = trackerName
         self.appId = appId
@@ -70,21 +70,57 @@ public class InspetorResource: NSObject {
 
         self.tracker = initializeTracker()
         
-        self.verifySetup()
+        precondition(self.verifySetup())
+    }
+    
+    // Accessors
+    public func getBase64Encoded() -> Bool {
+        return self.base64Encoded
+    }
+    
+    public func getCollectorUri() -> String {
+        return self.collectorUri
+    }
+    
+    public func getHttpMethodType() -> SPRequestOptions {
+        return self.httpMethodType
+    }
+    
+    public func getProtocolType() -> SPProtocol {
+        return self.protocolType
+    }
+    
+    public func getSubject() -> SPSubject {
+        return self.subject
+    }
+    
+    public func getTrackerName() -> String? {
+        return self.trackerName
     }
 
+    public func getAppId() -> String? {
+        return self.appId
+    }
     
     public func setActiveUser(_ userId: Int) {
+        precondition(self.verifySetup())
+
         self.subject.setUserId(String(userId))
         self.tracker!.setSubject(subject)
     }
     
     public func unsetActiveUser() {
+        if (!self.verifySetup()) {
+            return
+        }
+
         self.subject.setUserId("")
         self.tracker!.setSubject(subject)
     }
     
     public func trackLogin(_ userId: Int) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "login",
@@ -97,6 +133,8 @@ public class InspetorResource: NSObject {
     }
     
     public func trackLogout() {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "logout",
@@ -109,6 +147,8 @@ public class InspetorResource: NSObject {
     }
 
     public func trackAccountCreation(_ userId: Int) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "create_user",
@@ -120,6 +160,8 @@ public class InspetorResource: NSObject {
     }
 
     public func trackAccountUpdate(_ updateType: InspetorAccountUpdateType) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "update_user",
@@ -131,6 +173,8 @@ public class InspetorResource: NSObject {
     }
     
     public func trackCreateOrder(_ transactionId: String) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "create_order",
@@ -142,6 +186,8 @@ public class InspetorResource: NSObject {
     }
     
     public func trackPayOrder(_ transactionId: String) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "pay_order",
@@ -153,6 +199,8 @@ public class InspetorResource: NSObject {
     }
     
     public func trackCancelOrder(_ transactionId: String) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "cancel_order",
@@ -164,6 +212,8 @@ public class InspetorResource: NSObject {
     }
     
     public func trackTicketTransfer(_ ticket_id: String) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "ticket_transfer",
@@ -175,6 +225,8 @@ public class InspetorResource: NSObject {
     }
     
     public func trackRecoverPasswordRequest(_ email: String) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "recover_password_request",
@@ -186,6 +238,8 @@ public class InspetorResource: NSObject {
     }
     
     public func trackChangePassword(_ email: String) {
+        precondition(self.verifySetup())
+
         let event = self.structuredEventBuilderHelper(
             self.clientName!,
             "change_password",
@@ -212,17 +266,18 @@ public class InspetorResource: NSObject {
         
         return newTracker!
     }
-    
-    public func verifySetup() -> Bool {
-        precondition(self.trackerName != nil && self.appId != nil && self.tracker != nil)
-        return true
-    }
 
-    private func validateTrackerName(_ trackerName: String) {
+    internal func verifySetup() -> Bool {
+        return (self.trackerName != nil && self.appId != nil && self.tracker != nil)
+    }
+    
+    internal func validateTrackerName(_ trackerName: String) -> Bool {
         let trackerNameArray = trackerName.split(separator: DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR)
-        precondition(trackerNameArray.count == 2)
-        precondition(trackerNameArray[0].count > 1)
         
+        return(trackerNameArray.count == 2 &&
+            trackerNameArray[0].count > 1 &&
+            trackerNameArray[1].count > 1
+        )
     }
     
     private func structuredEventBuilderHelper(_ category: String,

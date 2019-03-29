@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02D91DF1C88577BA126B676A09E85D11 /* Pods-InspetorSwiftFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA65E8ECBE07955AF982DFFC3B4D41F /* Pods-InspetorSwiftFramework-dummy.m */; };
+		02D91DF1C88577BA126B676A09E85D11 /* Pods-InspetorSwiftFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F521CA037713169EDC43531E9A712D /* Pods-InspetorSwiftFramework-dummy.m */; };
 		0A6019619ED1F99973FF8565342691B9 /* SPRequestResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = BB9FA54D9EFFB18904AFFFC3F761F076 /* SPRequestResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C35EA82ECB4A24D772C66EB076F7867 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62ED467A6FFDFA3184A78C56E3187DC8 /* FMDB-dummy.m */; };
-		11DD9DBBAA46CDD7098733FAC4410B4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F62E53FF50F261456835C584B32CDE /* Foundation.framework */; };
 		135C35026AAC7BEB112430014947A657 /* SPSelfDescribingJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C646A923599EEFA93E3247348E912FE /* SPSelfDescribingJson.m */; };
 		137D38102AC47290D09F2E09CCBAC9CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABF5F7BFE8527E78D721E4E839E9DF6 /* SystemConfiguration.framework */; };
 		15C5A4DC14FD2FAFC59DD0B9F27C1CFD /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63C64134991473848290AEF6D3B3F9 /* ReachabilitySwift-dummy.m */; };
@@ -25,6 +24,7 @@
 		48F2F7E9BDF9DCB822094A7951C2E7F1 /* Snowplow.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE7B36FC53CFA0097C88B9A3DE804C5 /* Snowplow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48F77AA945CD20BB705AB132F55CE0F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F62E53FF50F261456835C584B32CDE /* Foundation.framework */; };
 		4C2E30B56688FB9D46995A05F45B5BCF /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 33A9929DEFE5D086A215AEFFB7C1D465 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E51FF6247548AC295A5D993DDB60C22 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7262EE34C462629454FDFA9B1ADFBC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-dummy.m */; };
 		518C23FB0BBDD0AD2C2352F9FC6CE61E /* SPWeakTimerTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 58536A8CFB23B2C0EFD3380332DC4D6B /* SPWeakTimerTarget.m */; };
 		6505F63C17F1DF2E3605C886B60AE46A /* SPEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C47F397CFAB1046D5BD1B975AD99A4B9 /* SPEventStore.m */; };
 		67332B5ADF50D9A0F0A6B79AEEC3E87C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F62E53FF50F261456835C584B32CDE /* Foundation.framework */; };
@@ -50,9 +50,10 @@
 		C005F3F624EA678A046CEEEED650D731 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD9E15B43BEB0BDFA3794A3B836E640 /* CoreTelephony.framework */; };
 		C5A21DF7D06A58C62A8443EAD524EADD /* SPSubject.h in Headers */ = {isa = PBXBuildFile; fileRef = 611DF982700DC487A2CB5AD706F7DFF6 /* SPSubject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64B8AD72A4A2D06F0A5C6B5AFE6887A /* SPRequestCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = AC18E9AE8741690F205C792E76E4FDD4 /* SPRequestCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA128B9118849176644DFA6BADE27C8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F62E53FF50F261456835C584B32CDE /* Foundation.framework */; };
 		CA18FD82D058E591BE614A0F7C157ECB /* SPSelfDescribingJson.h in Headers */ = {isa = PBXBuildFile; fileRef = B2A334F1BDAD75D4843B0F7DF69D9BD2 /* SPSelfDescribingJson.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CADC7B899865708FD95580E8ACDC6963 /* Pods-InspetorSwiftFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D04F34F10BCC6DF9214F7BCDBAB21273 /* Pods-InspetorSwiftFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D25BBC61C402E8C97823A25BCA3307FE /* Pods-InspetorSwiftFrameworkTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 890FA447E6D8EB49B555849BB59F241B /* Pods-InspetorSwiftFrameworkTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CADC7B899865708FD95580E8ACDC6963 /* Pods-InspetorSwiftFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D1C92D9CB2DC19FD4F4D9A24DDC6D4D /* Pods-InspetorSwiftFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5EEC1F5E233E3224E8324F4DD5A5CC7 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6156846EAAF0A557AED70FCCF65EF34D /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D795677987168EE9DC2E9B3A9E0AE59A /* SPUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = BB27C4AC51ABDBB961D888A5865B5173 /* SPUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E12C64892B52D69067096E7CABA3EA18 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD95A8E547DC0DE5C18375B0060DC432 /* FMDB.framework */; };
 		E36A9837F1D7FC886592F2032892C60D /* SPRequestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A423CA9660AE3EA884BD0F1158E8143B /* SPRequestResponse.m */; };
@@ -62,7 +63,6 @@
 		F20B46808E7B20CCDC347C8594647E07 /* FMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09311889E7A27DE4185DEB6D261FE4D6 /* FMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2A82E2716C898FD541B7FF32F7C17AF /* SPWeakTimerTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 37305CC467277A797B7F096E5719C870 /* SPWeakTimerTarget.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F4CD6BB09316E8F46768E801C58ABDD3 /* SPEmitter.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F3A1B71447A87B36C3829D38588663 /* SPEmitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5894AB0F178305088CBE33251575D69 /* Pods-InspetorSwiftFrameworkTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DE351C182F1126CCEAF58E6E8A776C /* Pods-InspetorSwiftFrameworkTests-dummy.m */; };
 		F79DCE7C615A151D75E1D1AC375A8D64 /* SnowplowTracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E128D28803A105D3F0C04E5C467BB14B /* SnowplowTracker-dummy.m */; };
 		F9975AE92E1854B52A977513248D8428 /* SPPayload.h in Headers */ = {isa = PBXBuildFile; fileRef = B697EA7EC5762D5EB3C9293C14942B11 /* SPPayload.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9DAEC9FC6CE46C11059C79B41EB27F4 /* SPEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 229CB2ACD11A3A5E0B593D10EF266C73 /* SPEmitter.m */; };
@@ -71,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05A3882AE34A265BB3502D297D4ECB5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E65F3033B7CD06FE12CB59482F94DCE;
+			remoteInfo = ReachabilitySwift;
+		};
 		0A5263F0CAA7A3526BCC92C930C49B85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -78,14 +85,21 @@
 			remoteGlobalIDString = 9C130CD3AA849E8ADCC55D0BC8E1020E;
 			remoteInfo = FMDB;
 		};
-		22AF73401E41C7655E26227DA37FBC47 /* PBXContainerItemProxy */ = {
+		4778DFBA21CA8167F19E80AC33C84C99 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0993C21DACAF0E1BC937B06A9F6D4CAE;
-			remoteInfo = "Pods-InspetorSwiftFramework";
+			remoteGlobalIDString = 9C130CD3AA849E8ADCC55D0BC8E1020E;
+			remoteInfo = FMDB;
 		};
 		584AB6AA1DDE92DDDD525B7064A433D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CD8D3B9C0A63CE0C257AFF1F34BCEE1;
+			remoteInfo = SnowplowTracker;
+		};
+		7979E97DD2F2FC88C69A79BF6905EC6F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -120,66 +134,70 @@
 		09311889E7A27DE4185DEB6D261FE4D6 /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
 		0BFA17956B5B8BC6CD0CF7DF6106BEE7 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
 		0C646A923599EEFA93E3247348E912FE /* SPSelfDescribingJson.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPSelfDescribingJson.m; path = Snowplow/SPSelfDescribingJson.m; sourceTree = "<group>"; };
+		14AE27DB7AD475A5EC9E853AEDDB7DB4 /* Pods-InspetorSwiftFramework-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFramework-acknowledgements.plist"; sourceTree = "<group>"; };
+		14F521CA037713169EDC43531E9A712D /* Pods-InspetorSwiftFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InspetorSwiftFramework-dummy.m"; sourceTree = "<group>"; };
 		160B1481F5095E7B0371D702DEE84C30 /* SPEventStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPEventStore.h; path = Snowplow/SPEventStore.h; sourceTree = "<group>"; };
 		171B5B7D00931A8403BBCCB40DFB1D46 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		199898C6C98739DF2455FB1EF048B63E /* SPEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPEvent.m; path = Snowplow/SPEvent.m; sourceTree = "<group>"; };
 		19B22A6BCC8700008D38D7464C502059 /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FMDB.modulemap; sourceTree = "<group>"; };
 		1B5783404D2D56E3717411CF4C72036A /* ReachabilitySwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReachabilitySwift-Info.plist"; sourceTree = "<group>"; };
-		1F2957D7FE0E04C1E0E35790E8FA546D /* Pods_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InspetorSwiftFrameworkTests.framework; path = "Pods-InspetorSwiftFrameworkTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F7262EE34C462629454FDFA9B1ADFBC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-dummy.m"; sourceTree = "<group>"; };
+		2278C2308009C5870FD66962AA282F20 /* Pods-InspetorSwiftFramework-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InspetorSwiftFramework-acknowledgements.markdown"; sourceTree = "<group>"; };
 		229CB2ACD11A3A5E0B593D10EF266C73 /* SPEmitter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPEmitter.m; path = Snowplow/SPEmitter.m; sourceTree = "<group>"; };
-		2721EB4E3EC42CCD63575E0E44D33529 /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		27CD22AC5690C59F952364D7938E94B0 /* SPUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPUtilities.m; path = Snowplow/SPUtilities.m; sourceTree = "<group>"; };
 		2AE7B36FC53CFA0097C88B9A3DE804C5 /* Snowplow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Snowplow.h; path = Snowplow/Snowplow.h; sourceTree = "<group>"; };
+		30ED96A511E41F5541FF406955701F9D /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31B5B9D1152D5DA8BDC51282F1D2A1A6 /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
 		31F5C97745B2EBE044BB6B7F9B057BC5 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
 		3301C4D47A24F60F01EFED195A6D786B /* SPTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTracker.h; path = Snowplow/SPTracker.h; sourceTree = "<group>"; };
 		33A9929DEFE5D086A215AEFFB7C1D465 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
-		342EEA94D03B8EBE2130BB47F4239A39 /* Pods-InspetorSwiftFrameworkTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-InspetorSwiftFrameworkTests.modulemap"; sourceTree = "<group>"; };
 		37305CC467277A797B7F096E5719C870 /* SPWeakTimerTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPWeakTimerTarget.h; path = Snowplow/SPWeakTimerTarget.h; sourceTree = "<group>"; };
 		38D53C75BC1EF873562B808CB3AC0045 /* SnowplowTracker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnowplowTracker-Info.plist"; sourceTree = "<group>"; };
 		3ABF5F7BFE8527E78D721E4E839E9DF6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		3B1B78C6060BCA4E217BAAA26F65383B /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
 		3B63C64134991473848290AEF6D3B3F9 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
-		3D91DD25EDE21E281873848F3FE0FD6C /* Pods-InspetorSwiftFrameworkTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFrameworkTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3EA7B29F72B6EBDFB3CDB93D69062ED2 /* SnowplowTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnowplowTracker.framework; path = SnowplowTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1C92D9CB2DC19FD4F4D9A24DDC6D4D /* Pods-InspetorSwiftFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InspetorSwiftFramework-umbrella.h"; sourceTree = "<group>"; };
+		3E3D543609E296CCD9ABAFD266927577 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		40B324C49DBE23A7E4F9B4494C6F6FE1 /* SPEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPEvent.h; path = Snowplow/SPEvent.h; sourceTree = "<group>"; };
+		46A7EB795D0FBF38315A63F115A2B984 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FMDB.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		493DA278085270BE35295467582FC571 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		4A978903BEF0461D3A3930E745B4AA42 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
 		4BD9E15B43BEB0BDFA3794A3B836E640 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		4D0976C8D8D2A51C75D5883C98572F51 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D1319309D764C0D6B1E8361AC417906 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E850BBEBC26E1D0AF7664413DB961B4 /* OpenIDFA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OpenIDFA.h; path = Snowplow/OpenIDFA.h; sourceTree = "<group>"; };
+		4EC0884EB648CBAA84357F794BB84691 /* Pods-InspetorSwiftFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-InspetorSwiftFramework.modulemap"; sourceTree = "<group>"; };
+		4ED941D1D0B4964D307FEE65809A8F8A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		51F1936A2E2207740AD10DFC637DC7DD /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 		5309515D2525B3836324909425A6081B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		54F118B9F40F2407F168825582F36DEA /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
-		551DEE30C4357C54622B0D3440B75563 /* Pods-InspetorSwiftFrameworkTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFrameworkTests-Info.plist"; sourceTree = "<group>"; };
 		5569DC691171DFE9CF8A26148F566FA8 /* OpenIDFA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OpenIDFA.m; path = Snowplow/OpenIDFA.m; sourceTree = "<group>"; };
 		58536A8CFB23B2C0EFD3380332DC4D6B /* SPWeakTimerTarget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPWeakTimerTarget.m; path = Snowplow/SPWeakTimerTarget.m; sourceTree = "<group>"; };
 		611DF982700DC487A2CB5AD706F7DFF6 /* SPSubject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPSubject.h; path = Snowplow/SPSubject.h; sourceTree = "<group>"; };
+		6156846EAAF0A557AED70FCCF65EF34D /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-umbrella.h"; sourceTree = "<group>"; };
 		6223128DBC579DBF73F68B567B6F1BA4 /* SnowplowTracker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnowplowTracker.xcconfig; sourceTree = "<group>"; };
 		62ED467A6FFDFA3184A78C56E3187DC8 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
 		634BF7719B3388B1D6FD110E0465E2D7 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
 		685250A5C5CD769C6D9AF4CECC0BE897 /* SPPayload.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPPayload.m; path = Snowplow/SPPayload.m; sourceTree = "<group>"; };
 		68F0FB548667B624C5AA21792E9D0F9E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		787F952951CB32226537E8E68C50F17C /* Pods-InspetorSwiftFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFramework-Info.plist"; sourceTree = "<group>"; };
-		8209CDBBB1FC93C057F00E7630F2D4E5 /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
-		890FA447E6D8EB49B555849BB59F241B /* Pods-InspetorSwiftFrameworkTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InspetorSwiftFrameworkTests-umbrella.h"; sourceTree = "<group>"; };
+		6AE24C16CA426A12B300E625DB52761B /* Pods-InspetorSwiftFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFramework-Info.plist"; sourceTree = "<group>"; };
+		79B15D5A956F200C6E24082F5912DC17 /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		89AFB94B32910B910CBD64F8A741CF0E /* SnowplowTracker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnowplowTracker-umbrella.h"; sourceTree = "<group>"; };
 		8D4CCC4A082141DE7C91A31CB49BE2D2 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
-		9145C010461FD87AFB0621CBA58E40F2 /* Pods-InspetorSwiftFramework-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InspetorSwiftFramework-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93F62E53FF50F261456835C584B32CDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		98F320829E2393071F7B990779EDF7C7 /* SnowplowTracker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnowplowTracker-prefix.pch"; sourceTree = "<group>"; };
-		9A9982E7C63856F934BBC121D7B769DA /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FD23F985CCEA721FEC07E155038D99A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-Info.plist"; sourceTree = "<group>"; };
+		A09CC3245080D6D149D42AECF23F5649 /* SnowplowTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnowplowTracker.framework; path = SnowplowTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13384ACE4476EDA28DCB6A1AE73D855 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		A39863EBDC4B60DA5D5D3F5A42BEA792 /* Pods_InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InspetorSwiftFramework.framework; path = "Pods-InspetorSwiftFramework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A423CA9660AE3EA884BD0F1158E8143B /* SPRequestResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPRequestResponse.m; path = Snowplow/SPRequestResponse.m; sourceTree = "<group>"; };
 		A6CB169DFEC78678070455A23E4F2D08 /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
-		A986D5D941F191C097A6FE39ECD1E0A3 /* Pods-InspetorSwiftFramework-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFramework-acknowledgements.plist"; sourceTree = "<group>"; };
 		AA3FCA741B6AD74C56CBEED14ADA05AA /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		AB650EDF3FA1A26C2C27D777A29C75B0 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AC18E9AE8741690F205C792E76E4FDD4 /* SPRequestCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPRequestCallback.h; path = Snowplow/SPRequestCallback.h; sourceTree = "<group>"; };
-		AFA65E8ECBE07955AF982DFFC3B4D41F /* Pods-InspetorSwiftFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InspetorSwiftFramework-dummy.m"; sourceTree = "<group>"; };
 		B2A334F1BDAD75D4843B0F7DF69D9BD2 /* SPSelfDescribingJson.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPSelfDescribingJson.h; path = Snowplow/SPSelfDescribingJson.h; sourceTree = "<group>"; };
-		B4DE351C182F1126CCEAF58E6E8A776C /* Pods-InspetorSwiftFrameworkTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InspetorSwiftFrameworkTests-dummy.m"; sourceTree = "<group>"; };
 		B697EA7EC5762D5EB3C9293C14942B11 /* SPPayload.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPPayload.h; path = Snowplow/SPPayload.h; sourceTree = "<group>"; };
+		B866F022D06B6330180300068309CFB3 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.modulemap"; sourceTree = "<group>"; };
 		B9F3A1B71447A87B36C3829D38588663 /* SPEmitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPEmitter.h; path = Snowplow/SPEmitter.h; sourceTree = "<group>"; };
 		BB27C4AC51ABDBB961D888A5865B5173 /* SPUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUtilities.h; path = Snowplow/SPUtilities.h; sourceTree = "<group>"; };
 		BB9FA54D9EFFB18904AFFFC3F761F076 /* SPRequestResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPRequestResponse.h; path = Snowplow/SPRequestResponse.h; sourceTree = "<group>"; };
@@ -187,17 +205,14 @@
 		C1E8DE3089E19B316DE05B8607FD8943 /* Snowplow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Snowplow.m; path = Snowplow/Snowplow.m; sourceTree = "<group>"; };
 		C47F397CFAB1046D5BD1B975AD99A4B9 /* SPEventStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPEventStore.m; path = Snowplow/SPEventStore.m; sourceTree = "<group>"; };
 		CD0FC1BC39041ABAD8E82A682849658A /* SPTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTracker.m; path = Snowplow/SPTracker.m; sourceTree = "<group>"; };
-		CD802FD350FD432CC75FA45ADAFAB390 /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D04F34F10BCC6DF9214F7BCDBAB21273 /* Pods-InspetorSwiftFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InspetorSwiftFramework-umbrella.h"; sourceTree = "<group>"; };
 		DD95A8E547DC0DE5C18375B0060DC432 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E128D28803A105D3F0C04E5C467BB14B /* SnowplowTracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnowplowTracker-dummy.m"; sourceTree = "<group>"; };
 		E41F3CAE63F422D451807939790B8BC1 /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
 		E43B4A840714A700702F4C70F23E36B4 /* SPSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPSession.m; path = Snowplow/SPSession.m; sourceTree = "<group>"; };
+		E93F8BD69C5158B8CBEB2B511BA6F68A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks.sh"; sourceTree = "<group>"; };
 		EAAF16C86AF86D6417426E7B65CB09FD /* Snowplow-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Snowplow-Bridging-Header.h"; path = "Snowplow/Snowplow-Bridging-Header.h"; sourceTree = "<group>"; };
-		EC9E0D7BF15E57A7BC6714080E83BCAC /* Pods-InspetorSwiftFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-InspetorSwiftFramework.modulemap"; sourceTree = "<group>"; };
-		EE24E24D2FDEFA0226A811AD2FEADEFD /* Pods-InspetorSwiftFrameworkTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InspetorSwiftFrameworkTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EF8FD30E108FFD0859F4FB06D762D304 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FMDB.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2C61E4F714B17786A95990A374A6D74 /* Pods_InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InspetorSwiftFramework.framework; path = "Pods-InspetorSwiftFramework.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F535855B42EA2A0CAD5ADCEC29914555 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C42BBF9CC8969BCD1CE28042AC72B3 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA86FE1768D278AD97A9B7A1F43C5ED2 /* SPSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPSession.h; path = Snowplow/SPSession.h; sourceTree = "<group>"; };
 		FE3BC35FCE850A14911C25A539A419EC /* SnowplowTracker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnowplowTracker.modulemap; sourceTree = "<group>"; };
 		FE95F5CA8651CF4BC7B41E2EFD88A3CA /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
@@ -206,14 +221,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		64805B79B9B204CAC8D9ECAC96ABB0BD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11DD9DBBAA46CDD7098733FAC4410B4B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		745F5039EAC32E29D1B2D224D0BAF08E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +230,14 @@
 				48F77AA945CD20BB705AB132F55CE0F4 /* Foundation.framework in Frameworks */,
 				6C3BD8325C046ECD8F297EBBC9E34EFB /* Reachability.framework in Frameworks */,
 				FD340F32451CADF8B0FE06C1AACCD61F /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE1D098703C1373F5F8AD3355B87D3C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA128B9118849176644DFA6BADE27C8F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,31 +269,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1344806DC53A281FE4CEF2AFA6C0E316 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				142223225B78546EB8BC5A1528A1D319 /* Pods-InspetorSwiftFramework */,
-				F9302549D806F00ED5D0F02B08AB4033 /* Pods-InspetorSwiftFrameworkTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		142223225B78546EB8BC5A1528A1D319 /* Pods-InspetorSwiftFramework */ = {
-			isa = PBXGroup;
-			children = (
-				EC9E0D7BF15E57A7BC6714080E83BCAC /* Pods-InspetorSwiftFramework.modulemap */,
-				9145C010461FD87AFB0621CBA58E40F2 /* Pods-InspetorSwiftFramework-acknowledgements.markdown */,
-				A986D5D941F191C097A6FE39ECD1E0A3 /* Pods-InspetorSwiftFramework-acknowledgements.plist */,
-				AFA65E8ECBE07955AF982DFFC3B4D41F /* Pods-InspetorSwiftFramework-dummy.m */,
-				787F952951CB32226537E8E68C50F17C /* Pods-InspetorSwiftFramework-Info.plist */,
-				D04F34F10BCC6DF9214F7BCDBAB21273 /* Pods-InspetorSwiftFramework-umbrella.h */,
-				2721EB4E3EC42CCD63575E0E44D33529 /* Pods-InspetorSwiftFramework.debug.xcconfig */,
-				8209CDBBB1FC93C057F00E7630F2D4E5 /* Pods-InspetorSwiftFramework.release.xcconfig */,
-			);
-			name = "Pods-InspetorSwiftFramework";
-			path = "Target Support Files/Pods-InspetorSwiftFramework";
-			sourceTree = "<group>";
-		};
 		27C1CAC16C188947A17DAA1D957C4CEC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,18 +297,6 @@
 			path = "../Target Support Files/ReachabilitySwift";
 			sourceTree = "<group>";
 		};
-		63F0B138DE844A8DECB2D8CCECC61EC7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EF8FD30E108FFD0859F4FB06D762D304 /* FMDB.framework */,
-				F2C61E4F714B17786A95990A374A6D74 /* Pods_InspetorSwiftFramework.framework */,
-				1F2957D7FE0E04C1E0E35790E8FA546D /* Pods_InspetorSwiftFrameworkTests.framework */,
-				4D1319309D764C0D6B1E8361AC417906 /* Reachability.framework */,
-				3EA7B29F72B6EBDFB3CDB93D69062ED2 /* SnowplowTracker.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		68E829ED45AA14AEAC770D38C248EA9B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +316,31 @@
 				68E829ED45AA14AEAC770D38C248EA9B /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C72223D02211E5F5AD3B941F2C30A66 /* Pods-InspetorSwiftFramework */ = {
+			isa = PBXGroup;
+			children = (
+				4EC0884EB648CBAA84357F794BB84691 /* Pods-InspetorSwiftFramework.modulemap */,
+				2278C2308009C5870FD66962AA282F20 /* Pods-InspetorSwiftFramework-acknowledgements.markdown */,
+				14AE27DB7AD475A5EC9E853AEDDB7DB4 /* Pods-InspetorSwiftFramework-acknowledgements.plist */,
+				14F521CA037713169EDC43531E9A712D /* Pods-InspetorSwiftFramework-dummy.m */,
+				6AE24C16CA426A12B300E625DB52761B /* Pods-InspetorSwiftFramework-Info.plist */,
+				3D1C92D9CB2DC19FD4F4D9A24DDC6D4D /* Pods-InspetorSwiftFramework-umbrella.h */,
+				79B15D5A956F200C6E24082F5912DC17 /* Pods-InspetorSwiftFramework.debug.xcconfig */,
+				31B5B9D1152D5DA8BDC51282F1D2A1A6 /* Pods-InspetorSwiftFramework.release.xcconfig */,
+			);
+			name = "Pods-InspetorSwiftFramework";
+			path = "Target Support Files/Pods-InspetorSwiftFramework";
+			sourceTree = "<group>";
+		};
+		9595CD84A2A279320CA327B5AD4F4ED7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C72223D02211E5F5AD3B941F2C30A66 /* Pods-InspetorSwiftFramework */,
+				EE711A111B8FA020A5412CBFADA67C7A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		A454D0CDE697722C68CE976FD848E2C7 /* FMDB */ = {
@@ -388,14 +391,26 @@
 			path = SnowplowTracker;
 			sourceTree = "<group>";
 		};
+		C80F44D7A8431162B79AEA1A4AAE7682 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46A7EB795D0FBF38315A63F115A2B984 /* FMDB.framework */,
+				A39863EBDC4B60DA5D5D3F5A42BEA792 /* Pods_InspetorSwiftFramework.framework */,
+				30ED96A511E41F5541FF406955701F9D /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */,
+				F535855B42EA2A0CAD5ADCEC29914555 /* Reachability.framework */,
+				A09CC3245080D6D149D42AECF23F5649 /* SnowplowTracker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				73EC3D3D0DB91DFA1C016FF607D70F13 /* Frameworks */,
 				E243ECCBA1B1ED619713F69A74397266 /* Pods */,
-				63F0B138DE844A8DECB2D8CCECC61EC7 /* Products */,
-				1344806DC53A281FE4CEF2AFA6C0E316 /* Targets Support Files */,
+				C80F44D7A8431162B79AEA1A4AAE7682 /* Products */,
+				9595CD84A2A279320CA327B5AD4F4ED7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -437,6 +452,23 @@
 			name = standard;
 			sourceTree = "<group>";
 		};
+		EE711A111B8FA020A5412CBFADA67C7A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				B866F022D06B6330180300068309CFB3 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.modulemap */,
+				4ED941D1D0B4964D307FEE65809A8F8A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-acknowledgements.markdown */,
+				AB650EDF3FA1A26C2C27D777A29C75B0 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-acknowledgements.plist */,
+				1F7262EE34C462629454FDFA9B1ADFBC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-dummy.m */,
+				E93F8BD69C5158B8CBEB2B511BA6F68A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks.sh */,
+				9FD23F985CCEA721FEC07E155038D99A /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-Info.plist */,
+				6156846EAAF0A557AED70FCCF65EF34D /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-umbrella.h */,
+				3E3D543609E296CCD9ABAFD266927577 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */,
+				F7C42BBF9CC8969BCD1CE28042AC72B3 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig */,
+			);
+			name = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests";
+			path = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests";
+			sourceTree = "<group>";
+		};
 		F01F1E227E5094EC8FA5ED04061F2389 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,22 +481,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FMDB";
-			sourceTree = "<group>";
-		};
-		F9302549D806F00ED5D0F02B08AB4033 /* Pods-InspetorSwiftFrameworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				342EEA94D03B8EBE2130BB47F4239A39 /* Pods-InspetorSwiftFrameworkTests.modulemap */,
-				EE24E24D2FDEFA0226A811AD2FEADEFD /* Pods-InspetorSwiftFrameworkTests-acknowledgements.markdown */,
-				3D91DD25EDE21E281873848F3FE0FD6C /* Pods-InspetorSwiftFrameworkTests-acknowledgements.plist */,
-				B4DE351C182F1126CCEAF58E6E8A776C /* Pods-InspetorSwiftFrameworkTests-dummy.m */,
-				551DEE30C4357C54622B0D3440B75563 /* Pods-InspetorSwiftFrameworkTests-Info.plist */,
-				890FA447E6D8EB49B555849BB59F241B /* Pods-InspetorSwiftFrameworkTests-umbrella.h */,
-				CD802FD350FD432CC75FA45ADAFAB390 /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */,
-				9A9982E7C63856F934BBC121D7B769DA /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */,
-			);
-			name = "Pods-InspetorSwiftFrameworkTests";
-			path = "Target Support Files/Pods-InspetorSwiftFrameworkTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,19 +509,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E109927F9ED109FBB6E92C8FEA2CB1A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D25BBC61C402E8C97823A25BCA3307FE /* Pods-InspetorSwiftFrameworkTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		11721BB4A6249C907BB2F9242858C188 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CADC7B899865708FD95580E8ACDC6963 /* Pods-InspetorSwiftFramework-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17DC99937FD08012EA523138E427E4C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5EEC1F5E233E3224E8324F4DD5A5CC7 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +568,7 @@
 			);
 			name = "Pods-InspetorSwiftFramework";
 			productName = "Pods-InspetorSwiftFramework";
-			productReference = F2C61E4F714B17786A95990A374A6D74 /* Pods_InspetorSwiftFramework.framework */;
+			productReference = A39863EBDC4B60DA5D5D3F5A42BEA792 /* Pods_InspetorSwiftFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4E65F3033B7CD06FE12CB59482F94DCE /* ReachabilitySwift */ = {
@@ -570,7 +586,28 @@
 			);
 			name = ReachabilitySwift;
 			productName = ReachabilitySwift;
-			productReference = 4D1319309D764C0D6B1E8361AC417906 /* Reachability.framework */;
+			productReference = F535855B42EA2A0CAD5ADCEC29914555 /* Reachability.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		54569516FB2175ABF777E5CA27616534 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FF7E1FC394A8BC50C4CA7E3BA0EAF02 /* Build configuration list for PBXNativeTarget "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests" */;
+			buildPhases = (
+				17DC99937FD08012EA523138E427E4C9 /* Headers */,
+				4C34AA1093F7D6DC6E1007DA3D25ED56 /* Sources */,
+				BE1D098703C1373F5F8AD3355B87D3C2 /* Frameworks */,
+				DFE5238A3404180165CCE44C6D038A60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F694FB16D9DE06449899EDC858ADCA4 /* PBXTargetDependency */,
+				C75A3C41AB3E8002C5891DF1D06D3340 /* PBXTargetDependency */,
+				5E126135F1E81D6698A52C80D45A53F1 /* PBXTargetDependency */,
+			);
+			name = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests";
+			productName = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests";
+			productReference = 30ED96A511E41F5541FF406955701F9D /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6CD8D3B9C0A63CE0C257AFF1F34BCEE1 /* SnowplowTracker */ = {
@@ -590,7 +627,7 @@
 			);
 			name = SnowplowTracker;
 			productName = SnowplowTracker;
-			productReference = 3EA7B29F72B6EBDFB3CDB93D69062ED2 /* SnowplowTracker.framework */;
+			productReference = A09CC3245080D6D149D42AECF23F5649 /* SnowplowTracker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9C130CD3AA849E8ADCC55D0BC8E1020E /* FMDB */ = {
@@ -608,26 +645,7 @@
 			);
 			name = FMDB;
 			productName = FMDB;
-			productReference = EF8FD30E108FFD0859F4FB06D762D304 /* FMDB.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D66685968964FA974736AC8C18D5A532 /* Pods-InspetorSwiftFrameworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 960A0945966AFB790F3B159B0C639C00 /* Build configuration list for PBXNativeTarget "Pods-InspetorSwiftFrameworkTests" */;
-			buildPhases = (
-				0E109927F9ED109FBB6E92C8FEA2CB1A /* Headers */,
-				A51797EE2B9E7EBD30CBA6876E8E6E3F /* Sources */,
-				64805B79B9B204CAC8D9ECAC96ABB0BD /* Frameworks */,
-				A4ADBB1ECCFCF6B6C1098DD85D03308B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0FB04E16C564876F780A3D0D4DCD2A93 /* PBXTargetDependency */,
-			);
-			name = "Pods-InspetorSwiftFrameworkTests";
-			productName = "Pods-InspetorSwiftFrameworkTests";
-			productReference = 1F2957D7FE0E04C1E0E35790E8FA546D /* Pods_InspetorSwiftFrameworkTests.framework */;
+			productReference = 46A7EB795D0FBF38315A63F115A2B984 /* FMDB.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -647,13 +665,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 63F0B138DE844A8DECB2D8CCECC61EC7 /* Products */;
+			productRefGroup = C80F44D7A8431162B79AEA1A4AAE7682 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9C130CD3AA849E8ADCC55D0BC8E1020E /* FMDB */,
 				0993C21DACAF0E1BC937B06A9F6D4CAE /* Pods-InspetorSwiftFramework */,
-				D66685968964FA974736AC8C18D5A532 /* Pods-InspetorSwiftFrameworkTests */,
+				54569516FB2175ABF777E5CA27616534 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests */,
 				4E65F3033B7CD06FE12CB59482F94DCE /* ReachabilitySwift */,
 				6CD8D3B9C0A63CE0C257AFF1F34BCEE1 /* SnowplowTracker */,
 			);
@@ -675,14 +693,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4ADBB1ECCFCF6B6C1098DD85D03308B /* Resources */ = {
+		ACD64E66827A5618BBBEBF1D2CA8250C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACD64E66827A5618BBBEBF1D2CA8250C /* Resources */ = {
+		DFE5238A3404180165CCE44C6D038A60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -704,6 +722,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				02D91DF1C88577BA126B676A09E85D11 /* Pods-InspetorSwiftFramework-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C34AA1093F7D6DC6E1007DA3D25ED56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E51FF6247548AC295A5D993DDB60C22 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,14 +764,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A51797EE2B9E7EBD30CBA6876E8E6E3F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F5894AB0F178305088CBE33251575D69 /* Pods-InspetorSwiftFrameworkTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F59072949D67823723145257112F12B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -762,17 +780,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0FB04E16C564876F780A3D0D4DCD2A93 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-InspetorSwiftFramework";
-			target = 0993C21DACAF0E1BC937B06A9F6D4CAE /* Pods-InspetorSwiftFramework */;
-			targetProxy = 22AF73401E41C7655E26227DA37FBC47 /* PBXContainerItemProxy */;
-		};
 		3FB7DADEC8733C269583D68DE856EE3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FMDB;
 			target = 9C130CD3AA849E8ADCC55D0BC8E1020E /* FMDB */;
 			targetProxy = 0A5263F0CAA7A3526BCC92C930C49B85 /* PBXContainerItemProxy */;
+		};
+		5E126135F1E81D6698A52C80D45A53F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnowplowTracker;
+			target = 6CD8D3B9C0A63CE0C257AFF1F34BCEE1 /* SnowplowTracker */;
+			targetProxy = 7979E97DD2F2FC88C69A79BF6905EC6F /* PBXContainerItemProxy */;
 		};
 		78AF5B05DEAA0CA06400ACAC89236D03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -786,11 +804,23 @@
 			target = 6CD8D3B9C0A63CE0C257AFF1F34BCEE1 /* SnowplowTracker */;
 			targetProxy = 584AB6AA1DDE92DDDD525B7064A433D9 /* PBXContainerItemProxy */;
 		};
+		8F694FB16D9DE06449899EDC858ADCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FMDB;
+			target = 9C130CD3AA849E8ADCC55D0BC8E1020E /* FMDB */;
+			targetProxy = 4778DFBA21CA8167F19E80AC33C84C99 /* PBXContainerItemProxy */;
+		};
 		AFB07C847800EE141783EF4F6E5B0752 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ReachabilitySwift;
 			target = 4E65F3033B7CD06FE12CB59482F94DCE /* ReachabilitySwift */;
 			targetProxy = 7AF859C8D4EFD3E955D2E3FDF6762451 /* PBXContainerItemProxy */;
+		};
+		C75A3C41AB3E8002C5891DF1D06D3340 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReachabilitySwift;
+			target = 4E65F3033B7CD06FE12CB59482F94DCE /* ReachabilitySwift */;
+			targetProxy = 05A3882AE34A265BB3502D297D4ECB5F /* PBXContainerItemProxy */;
 		};
 		F6D8DD87C2A62A6FDC151100B375607B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -801,83 +831,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		418C9FE5E50711ACFE007508FFABB0F6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A9982E7C63856F934BBC121D7B769DA /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5A9B21DBDFCDFBDD4097F9C3FA6EFF20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD802FD350FD432CC75FA45ADAFAB390 /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		84EE1E2425012A31F12C0724A2D9CF43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A978903BEF0461D3A3930E745B4AA42 /* ReachabilitySwift.xcconfig */;
@@ -1082,7 +1035,7 @@
 		};
 		AA8237B7A7113FC425E757BADDD437EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8209CDBBB1FC93C057F00E7630F2D4E5 /* Pods-InspetorSwiftFramework.release.xcconfig */;
+			baseConfigurationReference = 31B5B9D1152D5DA8BDC51282F1D2A1A6 /* Pods-InspetorSwiftFramework.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1254,9 +1207,47 @@
 			};
 			name = Debug;
 		};
+		C81295E40A7B02629BCD4A94C2B69BD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E3D543609E296CCD9ABAFD266927577 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		CF3DB630AB5F684C295F2585DADE63B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2721EB4E3EC42CCD63575E0E44D33529 /* Pods-InspetorSwiftFramework.debug.xcconfig */;
+			baseConfigurationReference = 79B15D5A956F200C6E24082F5912DC17 /* Pods-InspetorSwiftFramework.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1292,9 +1283,57 @@
 			};
 			name = Debug;
 		};
+		EFA5A715A947A95C13C1199392E1712E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7C42BBF9CC8969BCD1CE28042AC72B3 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1FF7E1FC394A8BC50C4CA7E3BA0EAF02 /* Build configuration list for PBXNativeTarget "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C81295E40A7B02629BCD4A94C2B69BD7 /* Debug */,
+				EFA5A715A947A95C13C1199392E1712E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4089F78045C2DC6A573A5F22AC75D657 /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1318,15 +1357,6 @@
 			buildConfigurations = (
 				8C1943A26DF304868A46DB93B953D7D5 /* Debug */,
 				93E278DFA9F8DE02AA6C81824D1B0CC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		960A0945966AFB790F3B159B0C639C00 /* Build configuration list for PBXNativeTarget "Pods-InspetorSwiftFrameworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5A9B21DBDFCDFBDD4097F9C3FA6EFF20 /* Debug */,
-				418C9FE5E50711ACFE007508FFABB0F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

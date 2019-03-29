@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D66685968964FA974736AC8C18D5A532"
-               BuildableName = "Pods_InspetorSwiftFrameworkTests.framework"
-               BlueprintName = "Pods-InspetorSwiftFrameworkTests"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "78783CA1224424E70052BB50"
+               BuildableName = "InspetorSwiftFramework.framework"
+               BlueprintName = "InspetorSwiftFramework"
+               ReferencedContainer = "container:InspetorSwiftFramework.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "78FC55C1224D481200F42B40"
+               BuildableName = "InspetorSwiftFrameworkTests.xctest"
+               BlueprintName = "InspetorSwiftFrameworkTests"
+               ReferencedContainer = "container:InspetorSwiftFramework.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "78783CA1224424E70052BB50"
+            BuildableName = "InspetorSwiftFramework.framework"
+            BlueprintName = "InspetorSwiftFramework"
+            ReferencedContainer = "container:InspetorSwiftFramework.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D66685968964FA974736AC8C18D5A532"
-            BuildableName = "Pods_InspetorSwiftFrameworkTests.framework"
-            BlueprintName = "Pods-InspetorSwiftFrameworkTests"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "78783CA1224424E70052BB50"
+            BuildableName = "InspetorSwiftFramework.framework"
+            BlueprintName = "InspetorSwiftFramework"
+            ReferencedContainer = "container:InspetorSwiftFramework.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "78783CA1224424E70052BB50"
+            BuildableName = "InspetorSwiftFramework.framework"
+            BlueprintName = "InspetorSwiftFramework"
+            ReferencedContainer = "container:InspetorSwiftFramework.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
