@@ -79,7 +79,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/inspetor/inspetor-ios.git", :tag => "0.1.0" }
+  spec.source       = { :git => "https://github.com/inspetor/inspetor-ios.git", :tag => "0.1.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
