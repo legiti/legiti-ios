@@ -39,7 +39,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -133,5 +133,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "SnowplowTracker", "~> 1.0"
+
+  spec.swift_version = "4.2"
 
 end
