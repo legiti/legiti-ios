@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
 Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
                    DESC
 
-  spec.homepage     = "https://github.com/inspetor/inspetor-ios"
+  spec.homepage     = "https://github.com/inspetor"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,7 +39,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "EULA", :file => "LICENSE.txt" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -79,7 +79,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/inspetor/inspetor-ios.git", :commit => "ff040f063900bcf5f05a92effcf07e5f28835429" }
+  spec.source       = { :git => "https://github.com/inspetor/inspetor-ios.git", :tag => "0.1.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
