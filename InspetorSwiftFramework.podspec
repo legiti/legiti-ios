@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "InspetorSwiftFramework"
-  spec.version      = "0.0.1"
-  spec.summary      = "Swift framework for incorporating Inspetor antifraud monitoring into iOS apps."
+  spec.version      = "0.1.0"
+  spec.summary      = "Inspetor antifraud monitoring for iOS."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,10 +25,10 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. Go Inspetor!
+Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
                    DESC
 
-  spec.homepage     = "https://github.com/pearsonhenri/InspetorSwiftFramework"
+  spec.homepage     = "https://github.com/inspetor/inspetor-ios"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -79,7 +79,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps. G
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/pearsonhenri/InspetorSwiftFramework.git", :commit => "ec5cb376c57af92c440c33f46111c5a1f4a73bfc" }
+  spec.source       = { :git => "https://github.com/inspetor/inspetor-ios.git", :commit => "ff040f063900bcf5f05a92effcf07e5f28835429" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
