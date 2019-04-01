@@ -13,30 +13,23 @@ public enum InspetorAccountUpdateType: String {
     case user_info, password, billing_info
 }
 
-public class InspetorResource: NSObject {
-    internal let DEFAULT_BASE64_OPTION: Bool = true
-//    internal let DEFAULT_COLLECTOR_URI: String = "analytics.useinspetor.com"
-    internal let DEFAULT_COLLECTOR_URI: String = "analytics-staging.useinspetor.com"
-    internal let DEFAULT_HTTP_METHOD_TYPE: SPRequestOptions = SPRequestOptions.get
-    internal let DEFAULT_PROTOCOL_TYPE: SPProtocol = SPProtocol.https
-    internal let DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR: Character = "."
+public class InspetorResource: NSObject, InspetorService {    
+    internal var base64Encoded: Bool
+    internal var collectorUri: String
+    internal var httpMethodType: SPRequestOptions
+    internal var protocolType: SPProtocol
+    internal var subject: SPSubject
     
-    private var base64Encoded: Bool
-    private var collectorUri: String
-    private var httpMethodType: SPRequestOptions
-    private var protocolType: SPProtocol
-    private var subject: SPSubject
-    
-    private var trackerName: String?
-    private var appId: String?
-    private var clientName: String?
-    private var tracker: SPTracker?
+    internal var trackerName: String?
+    internal var appId: String?
+    internal var clientName: String?
+    internal var tracker: SPTracker?
     
     public override init() {
-        self.base64Encoded = self.DEFAULT_BASE64_OPTION
-        self.collectorUri = self.DEFAULT_COLLECTOR_URI
-        self.httpMethodType = self.DEFAULT_HTTP_METHOD_TYPE
-        self.protocolType = self.DEFAULT_PROTOCOL_TYPE
+        self.base64Encoded = InspetorConfig.DEFAULT_BASE64_OPTION
+        self.collectorUri = InspetorConfig.DEFAULT_COLLECTOR_URI
+        self.httpMethodType = InspetorConfig.DEFAULT_HTTP_METHOD_TYPE
+        self.protocolType = InspetorConfig.DEFAULT_PROTOCOL_TYPE
         self.subject = SPSubject()!
         
         super.init()
@@ -53,7 +46,7 @@ public class InspetorResource: NSObject {
         
         self.trackerName = trackerName
         self.appId = appId
-        self.clientName = String(trackerName.split(separator: self.DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR)[0])
+        self.clientName = String(trackerName.split(separator: InspetorConfig.DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR)[0])
 
         if (base64Encoded != nil) {
             self.base64Encoded = base64Encoded!
@@ -102,7 +95,7 @@ public class InspetorResource: NSObject {
         return self.appId
     }
     
-    public func setActiveUser(_ userId: Int) {
+    public func setActiveUser(_ userId: String) {
         precondition(self.verifySetup())
 
         self.subject.setUserId(String(userId))
@@ -118,136 +111,76 @@ public class InspetorResource: NSObject {
         self.tracker!.setSubject(subject)
     }
     
-    public func trackLogin(_ userId: Int) {
+    public func trackLogin(_ userId: String) {
         precondition(self.verifySetup())
-
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "login",
-            "user_id",
-            String(userId)
-        )
         
         self.setActiveUser(userId)
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["userId": String(userId)]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_LOGIN_SCHEMA_VERSION, data: data)
     }
     
-    public func trackLogout() {
+    public func trackLogout(_ userId: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "logout",
-            "user_id",
-            "see_user_id_field"
-        )
-        
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["userId": userId]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_LOGOUT_SCHEMA_VERSION, data: data)
         self.unsetActiveUser()
     }
 
-    public func trackAccountCreation(_ userId: Int) {
+    public func trackAccountCreation(_ userId: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "create_user",
-            "user_id",
-            String(userId)
-        )
-
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["userId": userId]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_ACCOUNT_CREATION_SCHEMA_VERSION, data: data)
     }
 
-    public func trackAccountUpdate(_ updateType: InspetorAccountUpdateType) {
+    public func trackAccountUpdate(_ userId: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "update_user",
-            "update_type",
-            updateType.rawValue
-        )
-
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["userId": String(userId)]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_ACCOUNT_UPDATE_SCHEMA_VERSION, data: data)
     }
     
     public func trackCreateOrder(_ transactionId: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "create_order",
-            "transaction_id",
-            transactionId
-        )
-        
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["transactionId": transactionId]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_CREATE_ORDER_SCHEMA_VERSION, data: data)
     }
     
     public func trackPayOrder(_ transactionId: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "pay_order",
-            "transaction_id",
-            transactionId
-        )
-        
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["transactionId": transactionId]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_PAY_ORDER_SCHEMA_VERSION, data: data)
     }
     
     public func trackCancelOrder(_ transactionId: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "cancel_order",
-            "transaction_id",
-            transactionId
-        )
-        
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["transactionId": transactionId]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_CANCEL_ORDER_SCHEMA_VERSION, data: data)
     }
     
-    public func trackTicketTransfer(_ ticket_id: String) {
+    public func trackTicketTransfer(ticketId: String, userId: String, recipient: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "ticket_transfer",
-            "ticket_id",
-            ticket_id
-        )
-        
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["ticketId": ticketId, "user": userId, "recipient": recipient]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_TICKET_TRANSFER_SCHEMA_VERSION, data: data)
     }
     
     public func trackRecoverPasswordRequest(_ email: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "recover_password_request",
-            "email",
-            email
-        )
-        
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["email": email]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_RECOVER_PASSWORD_SCHEMA_VERSION, data: data)
     }
     
     public func trackChangePassword(_ email: String) {
         precondition(self.verifySetup())
 
-        let event = self.structuredEventBuilderHelper(
-            self.clientName!,
-            "change_password",
-            "email",
-            email
-        )
-        
-        self.tracker!.trackStructuredEvent(event)
+        let data: NSDictionary = ["email": email]
+        self.trackUnstructuredEvent(schema: InspetorConfig.FRONTEND_CHANGE_PASSWORD_SCHEMA_VERSION, data: data)
     }
     
     private func initializeTracker() -> SPTracker {
@@ -261,7 +194,6 @@ public class InspetorResource: NSObject {
             builder!.setAppId(self.appId!)
             builder!.setTrackerNamespace(self.trackerName!)
             builder!.setBase64Encoded(self.base64Encoded)
-            
         })
         
         return newTracker!
@@ -272,12 +204,21 @@ public class InspetorResource: NSObject {
     }
     
     internal func validateTrackerName(_ trackerName: String) -> Bool {
-        let trackerNameArray = trackerName.split(separator: DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR)
+        let trackerNameArray = trackerName.split(separator: InspetorConfig.DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR)
         
         return(trackerNameArray.count == 2 &&
             trackerNameArray[0].count > 1 &&
             trackerNameArray[1].count > 1
         )
+    }
+    
+    private func trackUnstructuredEvent(schema: String, data: NSDictionary) {
+        let sdj = SPSelfDescribingJson(schema: schema, andData: data)
+        let event = SPUnstructured.build({ (builder : SPUnstructuredBuilder?) -> Void in
+            builder!.setEventData(sdj!)
+        })
+
+        self.tracker!.trackUnstructuredEvent(event)
     }
     
     private func structuredEventBuilderHelper(_ category: String,

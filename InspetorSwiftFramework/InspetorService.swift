@@ -10,8 +10,6 @@ import Foundation
 import SnowplowTracker
 
 protocol InspetorService {
-    static var sharedInstance: Self { get }
-    
     var trackerName: String? {get set}
     var appId: String? {get set}
     var base64Encoded: Bool {get set}
@@ -21,23 +19,35 @@ protocol InspetorService {
     
     var tracker : SPTracker? {get set}
     
+    func setup(trackerName: String,
+        appId: String,
+        base64Encoded: Bool?,
+        collectorUri : String?,
+        httpMethodType : SPRequestOptions?,
+        protocolType : SPProtocol?)
+    
     // set active user account
-    func setActiveUser(_ userId: Int)
+    func setActiveUser(_ userId: String)
 
     func unsetActiveUser()
     
-    // track account creation
-    func trackAccountCreation(_ userId: Int)
-
-    // track account update
-    func trackAccountUpdate(_ userId: Int)
-
-    // track create order
-    func trackCreateOrder(_ txnId: Int)
-
-    // track pay order
-    func trackPayOrder(_ txnId: Int)
+    func trackLogin(_ userId: String)
     
-    // track cancel order
-    func trackCancelOrder(_ txnId: Int)
+    func trackLogout(_ userId: String)
+
+    func trackAccountCreation(_ userId: String)
+
+    func trackAccountUpdate(_ userId: String)
+
+    func trackCreateOrder(_ txnId: String)
+
+    func trackPayOrder(_ txnId: String)
+    
+    func trackCancelOrder(_ txnId: String)
+    
+    func trackTicketTransfer(ticketId: String, userId: String, recipient: String)
+    
+    func trackRecoverPasswordRequest(_ email: String)
+    
+    func trackChangePassword(_ email: String)
 }
