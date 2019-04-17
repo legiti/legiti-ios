@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "InspetorSwiftFramework"
-  spec.version      = "0.2.1"
+  spec.version      = "0.3.0"
   spec.summary      = "Inspetor antifraud monitoring for iOS."
 
   # This description is used to generate tags and improve search results.
@@ -102,7 +102,6 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # spec.platform     = :ios
   spec.platform     = :ios
   spec.ios.deployment_target = "8.0"
 
