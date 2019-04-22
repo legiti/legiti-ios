@@ -1,7 +1,7 @@
 rm -rf build && mkdir build
 
 # build framework for simulators
-xcodebuild clean build -workspace InspetorSwiftFramework.xcworkspace -scheme InspetorSwiftFramework -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
+xcodebuild ONLY_ACTIVE_ARCH=NO BITCODE_GENERATION_MODE=bitcode clean build -workspace InspetorSwiftFramework.xcworkspace -scheme InspetorSwiftFramework -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
 
 # create folder to store compiled framework for simulator
 mkdir build/simulator
@@ -10,7 +10,7 @@ mkdir build/simulator
 cp -r derived_data/Build/Products/Release-iphonesimulator/InspetorSwiftFramework.framework build/simulator
 
 # build framework for devices
-xcodebuild clean build -workspace InspetorSwiftFramework.xcworkspace -scheme InspetorSwiftFramework -configuration Release -sdk iphoneos -derivedDataPath derived_data
+xcodebuild OTHER_CFLAGS="-fembed-bitcode" ONLY_ACTIVE_ARCH=NO clean build -workspace InspetorSwiftFramework.xcworkspace -scheme InspetorSwiftFramework -configuration Release -sdk iphoneos -derivedDataPath derived_data
 
 # create folder to store compiled framework for simulator
 mkdir build/devices
@@ -32,7 +32,9 @@ lipo -create build/simulator/InspetorSwiftFramework.framework/InspetorSwiftFrame
 # copy simulator Swift public interface to universal framework
 cp build/simulator/InspetorSwiftFramework.framework/Modules/InspetorSwiftFramework.swiftmodule/* build/universal/InspetorSwiftFramework.framework/Modules/InspetorSwiftFramework.swiftmodule
 
-# move binary to distribution repo (must be cloned alongside this repository)
+# copy binary to distribution repo (must be cloned alongside this repository)
 rm -rf ../inspetor-swift-framework-dist/backup/*
-mv ../inspetor-swift-framework-dist/InspetorSwiftFramework.framework ../inspetor-swift-framework-dist/backup
-mv build/universal/InspetorSwiftFramework.framework ../inspetor-swift-framework-dist
+if [ -f ../inspetor-swift-framework-dist/InspetorSwiftFramework.framework ]; then
+    mv ../inspetor-swift-framework-dist/InspetorSwiftFramework.framework ../inspetor-swift-framework-dist/backup
+fi
+cp -r build/universal/InspetorSwiftFramework.framework ../inspetor-swift-framework-dist
