@@ -11,6 +11,15 @@ target 'InspetorSwiftFramework' do
   target 'InspetorSwiftFrameworkTests' do
       inherit! :complete
   end
+end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      cflags = config.build_settings['OTHER_CFLAGS'] || ['$(inherited)']
+      cflags << '-fembed-bitcode'
+      config.build_settings['OTHER_CFLAGS'] = cflags
+    end
+  end
 end
 

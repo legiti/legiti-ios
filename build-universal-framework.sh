@@ -10,7 +10,7 @@ mkdir build/simulator
 cp -r derived_data/Build/Products/Release-iphonesimulator/InspetorSwiftFramework.framework build/simulator
 
 # build framework for devices
-xcodebuild OTHER_CFLAGS="-fembed-bitcode" ONLY_ACTIVE_ARCH=NO clean build -workspace InspetorSwiftFramework.xcworkspace -scheme InspetorSwiftFramework -configuration Release -sdk iphoneos -derivedDataPath derived_data
+xcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS="-fembed-bitcode" ONLY_ACTIVE_ARCH=NO clean build -workspace InspetorSwiftFramework.xcworkspace -scheme InspetorSwiftFramework -configuration Release -sdk iphoneos -derivedDataPath derived_data
 
 # create folder to store compiled framework for simulator
 mkdir build/devices
