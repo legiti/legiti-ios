@@ -39,13 +39,13 @@ class InspetorSwiftFrameworkTests: XCTestCase {
                                protocolType: nil)
         
         // Provided values are altered
-        XCTAssertNotEqual(inspetorTestOptionalParams.getCollectorUri(), inspetorTestOptionalParams.DEFAULT_COLLECTOR_URI)
+        XCTAssertNotEqual(inspetorTestOptionalParams.getCollectorUri(), InspetorConfig.DEFAULT_COLLECTOR_URI)
         XCTAssertEqual(inspetorTestOptionalParams.getCollectorUri(), nonDefaultUri)
         
         // Nil values remain default
-        XCTAssertEqual(inspetorTestOptionalParams.getBase64Encoded(), inspetorTestOptionalParams.DEFAULT_BASE64_OPTION)
-        XCTAssertEqual(inspetorTestOptionalParams.getHttpMethodType(), inspetorTestOptionalParams.DEFAULT_HTTP_METHOD_TYPE)
-        XCTAssertEqual(inspetorTestOptionalParams.getProtocolType(), inspetorTestOptionalParams.DEFAULT_PROTOCOL_TYPE)
+        XCTAssertEqual(inspetorTestOptionalParams.getBase64Encoded(), InspetorConfig.DEFAULT_BASE64_OPTION)
+        XCTAssertEqual(inspetorTestOptionalParams.getHttpMethodType(), InspetorConfig.DEFAULT_HTTP_METHOD_TYPE)
+        XCTAssertEqual(inspetorTestOptionalParams.getProtocolType(), InspetorConfig.DEFAULT_PROTOCOL_TYPE)
     }
     
     func testTrackerNameFormatValidation() {
@@ -63,5 +63,13 @@ class InspetorSwiftFrameworkTests: XCTestCase {
         
         let validTrackerName = "valid.tracker_name"
         XCTAssertTrue(inspetor.validateTrackerName(validTrackerName))
+    }
+    
+    // NOTE: You should NEVER alter this test unless the collection endpoint has actually changed.
+    //
+    // If you need to build this framework for testing, you can manually configure a non-default
+    // url when you are integrating this app into the client.
+    func testCollectorEndpointProperlyConfigured() {
+        XCTAssertTrue(InspetorConfig.DEFAULT_COLLECTOR_URI == "analytics.useinspetor.com")
     }
 }
