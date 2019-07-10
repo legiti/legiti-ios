@@ -22,6 +22,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class SPPayload;
+@class SPSelfDescribingJson;
+@class SPScreenState;
+
 #if SNOWPLOW_TARGET_IOS
 #import <UserNotifications/UserNotifications.h>
 #endif
@@ -250,5 +254,45 @@
  @return A camel-case string.
  */
 + (NSString *) camelcaseParsedKey:(NSString *)key;
+
+/*!
+ Return nil if value is nil or empty string, otherwise return string.
+ @param aString Some string
+ @return A string or nil
+ */
++ (NSString *) validateString:(NSString *)aString;
+
+/*!
+ Returns a screen context SDJ given a screen state object.
+ @param screenState Some screen state
+ @return A context SDJ.
+ */
++ (SPSelfDescribingJson *) getScreenContextWithScreenState:(SPScreenState *)screenState;
+
+/*!
+ Returns the app version.
+ @return App version string.
+ */
++ (NSString *) getAppVersion;
+ 
+ /*!
+ Returns the app build.
+ @return App build string.
+ */
++ (NSString *) getAppBuild;
+
+/*!
+ Returns the application build and version as a payload to be used in the application context.
+ @return A context SDJ.
+ */
++ (SPSelfDescribingJson *) getApplicationContext;
+
+/*!
+ Returns the application build and version as a payload to be used in the application context.
+ @param version The application version
+ @param build The application build
+ @return A context SDJ.
+ */
++ (SPSelfDescribingJson *) getApplicationContextWithVersion:(NSString *)version andBuild:(NSString *)build;
 
 @end
