@@ -3,11 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0289AAC441C41FF3A9261B5E /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */; };
+		0B02DCD122D2227900286614 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02DCD022D2227900286614 /* Account.swift */; };
+		0B02DCD522D2262300286614 /* AbstractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02DCD422D2262300286614 /* AbstractModel.swift */; };
+		0B15CCFE22D620F700003E91 /* InspetorSerialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CCFD22D620F700003E91 /* InspetorSerialize.swift */; };
+		0B15CD0022D6220C00003E91 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CCFF22D6220C00003E91 /* Auth.swift */; };
+		0B15CD0222D6249100003E91 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0122D6249100003E91 /* CreditCard.swift */; };
+		0B15CD0422D6267600003E91 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0322D6267600003E91 /* Event.swift */; };
+		0B15CD0622D6330200003E91 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0522D6330200003E91 /* Item.swift */; };
+		0B15CD0822D63CF900003E91 /* PassRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0722D63CF900003E91 /* PassRecovery.swift */; };
+		0B15CD0A22D6568A00003E91 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0922D6568A00003E91 /* Payment.swift */; };
+		0B15CD0C22D6581600003E91 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0B22D6581600003E91 /* Sale.swift */; };
+		0B15CD0E22D661EA00003E91 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0D22D661EA00003E91 /* Transfer.swift */; };
+		0BF5228F22D616A200C5CE7C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5228E22D616A200C5CE7C /* Address.swift */; };
 		780AC8612252526F00383069 /* InspetorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* InspetorConfig.swift */; };
 		78783CA7224424E70052BB50 /* InspetorSwiftFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78783CAE224425060052BB50 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CAD224425060052BB50 /* InspetorResource.swift */; };
@@ -15,7 +27,6 @@
 		78FC55C5224D481200F42B40 /* InspetorSwiftFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */; };
 		78FC55C7224D481200F42B40 /* InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */; };
 		790C46C1924528E449A6F74A /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */; };
-		CCE4688ACCF1EABF974C5D87 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A14D8320077FF105EEA613 /* Pods_InspetorSwiftFrameworkTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +41,18 @@
 
 /* Begin PBXFileReference section */
 		00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B02DCD022D2227900286614 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		0B02DCD422D2262300286614 /* AbstractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractModel.swift; sourceTree = "<group>"; };
+		0B15CCFD22D620F700003E91 /* InspetorSerialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorSerialize.swift; sourceTree = "<group>"; };
+		0B15CCFF22D6220C00003E91 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		0B15CD0122D6249100003E91 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		0B15CD0322D6267600003E91 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0B15CD0522D6330200003E91 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0B15CD0722D63CF900003E91 /* PassRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassRecovery.swift; sourceTree = "<group>"; };
+		0B15CD0922D6568A00003E91 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		0B15CD0B22D6581600003E91 /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		0B15CD0D22D661EA00003E91 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		0BF5228E22D616A200C5CE7C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		148F4022779F27F6D6A42A49 /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		1ED21BD312BDC7B108F667BC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46D6010CDB85D64C6CFC698A /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,7 +68,6 @@
 		78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorSwiftFrameworkTests.swift; sourceTree = "<group>"; };
 		78FC55C6224D481200F42B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		97A14D8320077FF105EEA613 /* Pods_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA74F6BD1A6C821B4919A4B2 /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +85,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FC55C7224D481200F42B40 /* InspetorSwiftFramework.framework in Frameworks */,
-				CCE4688ACCF1EABF974C5D87 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */,
 				790C46C1924528E449A6F74A /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +92,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B02DCCF22D2226000286614 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B02DCD022D2227900286614 /* Account.swift */,
+				0BF5228E22D616A200C5CE7C /* Address.swift */,
+				0B15CCFF22D6220C00003E91 /* Auth.swift */,
+				0B02DCD422D2262300286614 /* AbstractModel.swift */,
+				0B15CCFD22D620F700003E91 /* InspetorSerialize.swift */,
+				0B15CD0122D6249100003E91 /* CreditCard.swift */,
+				0B15CD0322D6267600003E91 /* Event.swift */,
+				0B15CD0522D6330200003E91 /* Item.swift */,
+				0B15CD0722D63CF900003E91 /* PassRecovery.swift */,
+				0B15CD0922D6568A00003E91 /* Payment.swift */,
+				0B15CD0B22D6581600003E91 /* Sale.swift */,
+				0B15CD0D22D661EA00003E91 /* Transfer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		78783C98224424E70052BB50 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +138,7 @@
 				78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */,
 				78783CA6224424E70052BB50 /* Info.plist */,
 				78783CAD224425060052BB50 /* InspetorResource.swift */,
+				0B02DCCF22D2226000286614 /* Model */,
 				78783CB3224939150052BB50 /* InspetorService.swift */,
 			);
 			path = InspetorSwiftFramework;
@@ -129,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */,
-				97A14D8320077FF105EEA613 /* Pods_InspetorSwiftFrameworkTests.framework */,
 				00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */,
 			);
 			name = Frameworks;
@@ -249,20 +289,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SnowplowTracker/SnowplowTracker.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnowplowTracker.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -320,9 +351,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF5228F22D616A200C5CE7C /* Address.swift in Sources */,
+				0B15CD0E22D661EA00003E91 /* Transfer.swift in Sources */,
+				0B15CCFE22D620F700003E91 /* InspetorSerialize.swift in Sources */,
 				78783CAE224425060052BB50 /* InspetorResource.swift in Sources */,
+				0B15CD0222D6249100003E91 /* CreditCard.swift in Sources */,
+				0B15CD0C22D6581600003E91 /* Sale.swift in Sources */,
+				0B15CD0422D6267600003E91 /* Event.swift in Sources */,
+				0B02DCD122D2227900286614 /* Account.swift in Sources */,
+				0B15CD0622D6330200003E91 /* Item.swift in Sources */,
+				0B15CD0822D63CF900003E91 /* PassRecovery.swift in Sources */,
+				0B15CD0A22D6568A00003E91 /* Payment.swift in Sources */,
+				0B02DCD522D2262300286614 /* AbstractModel.swift in Sources */,
 				780AC8612252526F00383069 /* InspetorConfig.swift in Sources */,
 				78783CB4224939150052BB50 /* InspetorService.swift in Sources */,
+				0B15CD0022D6220C00003E91 /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

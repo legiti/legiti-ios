@@ -22,6 +22,9 @@
 
 #import "Snowplow.h"
 #import "SPUtilities.h"
+#import "SPPayload.h"
+#import "SPSelfDescribingJson.h"
+#import "SPScreenState.h"
 
 #if SNOWPLOW_TARGET_IOS
 
@@ -354,6 +357,47 @@
         }
         return camelcaseKey;
     }
+}
+
++ (NSString *) validateString:(NSString *)aString {
+    if (!aString | ([aString length] == 0)) {
+        return nil;
+    }
+    return aString;
+}
+
++ (SPSelfDescribingJson *) getScreenContextWithScreenState:(SPScreenState *)screenState {
+    SPPayload * contextPayload = [screenState getValidPayload];
+    if (contextPayload) {
+        return [[SPSelfDescribingJson alloc] initWithSchema:kSPScreenContextSchema andPayload:contextPayload];
+    } else {
+    	return nil;
+    }
+}
+
++ (SPSelfDescribingJson *) getApplicationContext {
+    NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+    NSString * build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
+    return [self getApplicationContextWithVersion:version andBuild:build];
+}
+
++ (SPSelfDescribingJson *) getApplicationContextWithVersion:(NSString *)version andBuild:(NSString *)build {
+    SPPayload * payload = [[SPPayload alloc] init];
+    [payload addValueToPayload:build forKey:kSPApplicationBuild];
+    [payload addValueToPayload:version forKey:kSPApplicationVersion];
+    if (payload != nil && [[payload getAsDictionary] count] > 0) {
+        return [[SPSelfDescribingJson alloc] initWithSchema:kSPApplicationContextSchema andPayload:payload];
+    } else {
+        return nil;
+    }
+}
+
++ (NSString *) getAppVersion {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+}
+
++ (NSString *) getAppBuild {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
 }
 
 @end

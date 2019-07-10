@@ -28,6 +28,7 @@
 #import "SPSelfDescribingJson.h"
 #import "SPRequestResponse.h"
 #import "SPWeakTimerTarget.h"
+#import "SPRequestCallback.h"
 
 @implementation SPEmitter {
     SPEventStore *     _db;
@@ -66,6 +67,7 @@ const NSInteger POST_STM_BYTES = 22;
         _db = [[SPEventStore alloc] init];
         _dataOperationQueue = [[NSOperationQueue alloc] init];
         _builderFinished = NO;
+        _customPostPath = nil;
     }
     return self;
 }
@@ -80,12 +82,23 @@ const NSInteger POST_STM_BYTES = 22;
 - (void) setupUrlEndpoint {
     NSString * urlPrefix = _protocol == SPHttp ? @"http://" : @"https://";
     NSString * urlSuffix = _httpMethod == SPRequestGet ? kSPEndpointGet : kSPEndpointPost;
+    if (_customPostPath && _httpMethod == SPRequestPost) {
+        urlSuffix = _customPostPath;
+    }
     _urlEndpoint = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", urlPrefix, _url, urlSuffix]];
     
     if (_urlEndpoint && _urlEndpoint.scheme && _urlEndpoint.host) {
         SnowplowDLog(@"SPLog: Emitter URL created successfully '%@'", _urlEndpoint);
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:_url forKey:kSPErrorTrackerUrl];
+        [userDefaults setObject:urlSuffix forKey:kSPErrorTrackerProtocol];
+        [userDefaults setObject:urlPrefix forKey:kSPErrorTrackerMethod];
     } else {
         SnowplowDLog(@"SPLog: Invalid emitter URL: '%@'", _urlEndpoint);
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:@"acme.com" forKey:kSPErrorTrackerUrl];
+        [userDefaults setObject:kSPEndpointPost forKey:kSPErrorTrackerProtocol];
+        [userDefaults setObject:@"http://" forKey:kSPErrorTrackerMethod];
     }
 }
 
@@ -137,6 +150,10 @@ const NSInteger POST_STM_BYTES = 22;
 
 - (void) setByteLimitPost:(NSInteger)byteLimitPost {
     _byteLimitPost = byteLimitPost;
+}
+
+- (void) setCustomPostPath:(NSString *)customPath {
+    _customPostPath = customPath;
 }
 
 // Builder Finished

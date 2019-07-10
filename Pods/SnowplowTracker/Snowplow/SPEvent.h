@@ -22,9 +22,27 @@
 
 #import <Foundation/Foundation.h>
 
+@class SPScreenState;
 @class SPPayload;
 @class SPSelfDescribingJson;
 @class SPNotificationContent;
+
+/*!
+ @brief An enum for screen types.
+ */
+typedef NS_ENUM(NSInteger, SPScreenType) {
+    // sourced from `View Controller Catalog for iOS`
+    SPScreenTypeDefault,
+    SPScreenTypeNavigation,
+    SPScreenTypeTabBar,
+    SPScreenTypePageView,
+    SPScreenTypeSplitView,
+    SPScreenTypePopoverPresentation,
+    SPScreenTypeModal,
+    SPScreenTypeCombined
+};
+
+NSString * stringWithSPScreenType(SPScreenType screenType);
 
 /*!
  @protocol SPEventBuilder
@@ -152,11 +170,53 @@
 - (void) setName:(NSString *)name;
 
 /*!
+ @brief Set the type of the screen.
+
+ @param type The type for the screen.
+ */
+- (void) setType:(NSString *)type;
+
+/*!
  @brief Set the ID of the screen.
 
- @param sId The UUID for the screen.
+ @param screenId The ID for the screen.
  */
-- (void) setId:(NSString *)sId;
+- (void) setScreenId:(NSString *)screenId;
+
+/*!
+ @brief Set the name of the previous screen.
+
+ @param name The name of the previous screen.
+ */
+- (void) setPreviousScreenName:(NSString *)name;
+
+/*!
+ @brief Set the type of the previous screen.
+
+ @param type The type of the previous screen.
+ */
+- (void) setPreviousScreenType:(NSString *)type;
+
+/*!
+ @brief Set the ID of the previous screen.
+
+ @param screenId The ID for the previous screen.
+ */
+- (void) setPreviousScreenId:(NSString *)screenId;
+
+/*!
+ @brief Set the type of the screen transition.
+
+ @param type The type of the screen transition.
+ */
+- (void) setTransitionType:(NSString *)type;
+
+- (BOOL) setWithPreviousState:(SPScreenState *)previousState;
+
+- (BOOL) setWithCurrentState:(SPScreenState *)currentState previousState:(SPScreenState *)previousState;
+
+- (BOOL) setWithCurrentState:(SPScreenState *)currentState;
+
 @end
 
 /*!
@@ -603,6 +663,35 @@
 @end
 
 /*!
+ @protocol SPErrorBuilder
+ @brief The protocol for building error events.
+ */
+@protocol SPErrorBuilder <SPEventBuilder>
+
+/*!
+ @brief Set the error message.
+ 
+ @param message The error message.
+ */
+- (void) setMessage:(NSString *)message;
+
+/*!
+ @brief Set the exception stack trace.
+ 
+ @param stackTrace The stack trace of the exception.
+ */
+- (void) setStackTrace:(NSString *)stackTrace;
+
+/*!
+ @brief Set the exception name.
+ 
+ @param name The exception name.
+ */
+- (void) setName:(NSString *)name;
+
+@end
+
+/*!
  @class SPEvent
  @brief The base object for all events.
 
@@ -617,6 +706,7 @@
 /*! The UUID that identifies the event. */
 @property (nonatomic, readwrite, retain) NSString * eventId;
 
+- (void) basePreconditions;
 - (NSMutableArray *) getContexts;
 - (NSNumber *) getTimestamp;
 - (NSString *) getEventId;
@@ -624,10 +714,8 @@
 @end
 
 /*!
- @class SPEvent
- @brief The base object for all events.
-
- This class has the basic functionality needed to represent all events.
+ @class SPPageView
+ @brief A pageview.
  */
 @interface SPPageView : SPEvent <SPPageViewBuilder>
 + (instancetype) build:(void(^)(id<SPPageViewBuilder>builder))buildBlock;
@@ -688,6 +776,12 @@
 @interface SPScreenView : SPEvent <SPScreenViewBuilder>
 + (instancetype) build:(void(^)(id<SPScreenViewBuilder>builder))buildBlock;
 - (SPSelfDescribingJson *) getPayload;
+- (SPScreenState *) getScreenState;
+- (BOOL) definesPreviousState;
+- (SPScreenState *) getPreviousState;
+- (BOOL) setWithPreviousState:(SPScreenState *)previousState;
+- (BOOL) setWithCurrentState:(SPScreenState *)currentState;
+- (BOOL) setWithCurrentState:(SPScreenState *)currentState previousState:(SPScreenState *)previousState;
 @end
 
 /*!
@@ -753,5 +847,14 @@
  */
 @interface SPBackground : SPEvent <SPBackgroundBuilder>
 + (instancetype) build:(void(^)(id<SPBackgroundBuilder>builder))buildBlock;
+- (SPSelfDescribingJson *) getPayload;
+@end
+
+/*!
+ @class SNOWError
+ @brief An error event.
+ */
+@interface SNOWError : SPEvent <SPErrorBuilder>
++ (instancetype) build:(void(^)(id<SPErrorBuilder>builder))buildBlock;
 - (SPSelfDescribingJson *) getPayload;
 @end
