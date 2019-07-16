@@ -8,22 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0289AAC441C41FF3A9261B5E /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */; };
-		0B02DCD122D2227900286614 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02DCD022D2227900286614 /* Account.swift */; };
-		0B02DCD522D2262300286614 /* AbstractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02DCD422D2262300286614 /* AbstractModel.swift */; };
-		0B15CCFE22D620F700003E91 /* InspetorSerialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CCFD22D620F700003E91 /* InspetorSerialize.swift */; };
-		0B15CD0022D6220C00003E91 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CCFF22D6220C00003E91 /* Auth.swift */; };
-		0B15CD0222D6249100003E91 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0122D6249100003E91 /* CreditCard.swift */; };
-		0B15CD0422D6267600003E91 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0322D6267600003E91 /* Event.swift */; };
-		0B15CD0622D6330200003E91 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0522D6330200003E91 /* Item.swift */; };
-		0B15CD0822D63CF900003E91 /* PassRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0722D63CF900003E91 /* PassRecovery.swift */; };
-		0B15CD0A22D6568A00003E91 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0922D6568A00003E91 /* Payment.swift */; };
-		0B15CD0C22D6581600003E91 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0B22D6581600003E91 /* Sale.swift */; };
-		0B15CD0E22D661EA00003E91 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD0D22D661EA00003E91 /* Transfer.swift */; };
-		0BF5228F22D616A200C5CE7C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF5228E22D616A200C5CE7C /* Address.swift */; };
-		780AC8612252526F00383069 /* InspetorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* InspetorConfig.swift */; };
+		0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD1222D6771300003E91 /* TrackerException.swift */; };
+		0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A17A322D8FB8C00933746 /* Inspetor.swift */; };
+		0B57D63322DCA59A00764818 /* InspetorClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63222DCA59A00764818 /* InspetorClientService.swift */; };
+		0B57D63522DCA74200764818 /* InspetorIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63422DCA74200764818 /* InspetorIntegrationTests.swift */; };
+		0B99509322D7708D00288282 /* InspetorResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509222D7708D00288282 /* InspetorResourceService.swift */; };
+		0B99509822D773DD00288282 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509722D773DD00288282 /* InspetorResource.swift */; };
+		0BACF80022D7965F00A2C2FF /* InspetorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */; };
+		0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5222D8D05100054EF2 /* Actions.swift */; };
+		0BB12D5522D8D40A00054EF2 /* InspetorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5422D8D40A00054EF2 /* InspetorClient.swift */; };
+		780AC8612252526F00383069 /* InspetorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* InspetorDependencies.swift */; };
 		78783CA7224424E70052BB50 /* InspetorSwiftFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78783CAE224425060052BB50 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CAD224425060052BB50 /* InspetorResource.swift */; };
-		78783CB4224939150052BB50 /* InspetorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CB3224939150052BB50 /* InspetorService.swift */; };
 		78FC55C5224D481200F42B40 /* InspetorSwiftFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */; };
 		78FC55C7224D481200F42B40 /* InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */; };
 		790C46C1924528E449A6F74A /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */; };
@@ -41,29 +36,24 @@
 
 /* Begin PBXFileReference section */
 		00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B02DCD022D2227900286614 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		0B02DCD422D2262300286614 /* AbstractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractModel.swift; sourceTree = "<group>"; };
-		0B15CCFD22D620F700003E91 /* InspetorSerialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorSerialize.swift; sourceTree = "<group>"; };
-		0B15CCFF22D6220C00003E91 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		0B15CD0122D6249100003E91 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
-		0B15CD0322D6267600003E91 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		0B15CD0522D6330200003E91 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		0B15CD0722D63CF900003E91 /* PassRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassRecovery.swift; sourceTree = "<group>"; };
-		0B15CD0922D6568A00003E91 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
-		0B15CD0B22D6581600003E91 /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
-		0B15CD0D22D661EA00003E91 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
-		0BF5228E22D616A200C5CE7C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		0B15CD1222D6771300003E91 /* TrackerException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerException.swift; sourceTree = "<group>"; };
+		0B1A17A322D8FB8C00933746 /* Inspetor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspetor.swift; sourceTree = "<group>"; };
+		0B57D63222DCA59A00764818 /* InspetorClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspetorClientService.swift; sourceTree = "<group>"; };
+		0B57D63422DCA74200764818 /* InspetorIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorIntegrationTests.swift; sourceTree = "<group>"; };
+		0B99509222D7708D00288282 /* InspetorResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspetorResourceService.swift; sourceTree = "<group>"; };
+		0B99509722D773DD00288282 /* InspetorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorResource.swift; sourceTree = "<group>"; };
+		0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorConfig.swift; sourceTree = "<group>"; };
+		0BB12D5222D8D05100054EF2 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		0BB12D5422D8D40A00054EF2 /* InspetorClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorClient.swift; sourceTree = "<group>"; };
 		148F4022779F27F6D6A42A49 /* Pods-InspetorSwiftFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.debug.xcconfig"; sourceTree = "<group>"; };
 		1ED21BD312BDC7B108F667BC /* Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46D6010CDB85D64C6CFC698A /* Pods-InspetorSwiftFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFramework.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFramework/Pods-InspetorSwiftFramework.release.xcconfig"; sourceTree = "<group>"; };
 		65C30F7D837996A0BE2B478A /* Pods-InspetorSwiftFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		729C73064DC3B49FB8832B98 /* Pods-InspetorSwiftFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorSwiftFrameworkTests.release.xcconfig"; path = "Target Support Files/Pods-InspetorSwiftFrameworkTests/Pods-InspetorSwiftFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
-		780AC8602252526F00383069 /* InspetorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorConfig.swift; sourceTree = "<group>"; };
+		780AC8602252526F00383069 /* InspetorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorDependencies.swift; sourceTree = "<group>"; };
 		78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InspetorSwiftFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InspetorSwiftFramework.h; sourceTree = "<group>"; };
 		78783CA6224424E70052BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78783CAD224425060052BB50 /* InspetorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorResource.swift; sourceTree = "<group>"; };
-		78783CB3224939150052BB50 /* InspetorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorService.swift; sourceTree = "<group>"; };
 		78FC55C2224D481200F42B40 /* InspetorSwiftFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspetorSwiftFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorSwiftFrameworkTests.swift; sourceTree = "<group>"; };
 		78FC55C6224D481200F42B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,23 +82,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B02DCCF22D2226000286614 /* Model */ = {
+		0B15CD0F22D675ED00003E91 /* Exception */ = {
 			isa = PBXGroup;
 			children = (
-				0B02DCD022D2227900286614 /* Account.swift */,
-				0BF5228E22D616A200C5CE7C /* Address.swift */,
-				0B15CCFF22D6220C00003E91 /* Auth.swift */,
-				0B02DCD422D2262300286614 /* AbstractModel.swift */,
-				0B15CCFD22D620F700003E91 /* InspetorSerialize.swift */,
-				0B15CD0122D6249100003E91 /* CreditCard.swift */,
-				0B15CD0322D6267600003E91 /* Event.swift */,
-				0B15CD0522D6330200003E91 /* Item.swift */,
-				0B15CD0722D63CF900003E91 /* PassRecovery.swift */,
-				0B15CD0922D6568A00003E91 /* Payment.swift */,
-				0B15CD0B22D6581600003E91 /* Sale.swift */,
-				0B15CD0D22D661EA00003E91 /* Transfer.swift */,
+				0B15CD1222D6771300003E91 /* TrackerException.swift */,
 			);
-			path = Model;
+			path = Exception;
+			sourceTree = "<group>";
+		};
+		0B99509422D771B800288282 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0B99509222D7708D00288282 /* InspetorResourceService.swift */,
+				0B57D63222DCA59A00764818 /* InspetorClientService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		78783C98224424E70052BB50 = {
@@ -134,12 +122,16 @@
 		78783CA4224424E70052BB50 /* InspetorSwiftFramework */ = {
 			isa = PBXGroup;
 			children = (
-				780AC8602252526F00383069 /* InspetorConfig.swift */,
+				0B15CD0F22D675ED00003E91 /* Exception */,
+				780AC8602252526F00383069 /* InspetorDependencies.swift */,
 				78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */,
 				78783CA6224424E70052BB50 /* Info.plist */,
-				78783CAD224425060052BB50 /* InspetorResource.swift */,
-				0B02DCCF22D2226000286614 /* Model */,
-				78783CB3224939150052BB50 /* InspetorService.swift */,
+				0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */,
+				0B99509722D773DD00288282 /* InspetorResource.swift */,
+				0BB12D5422D8D40A00054EF2 /* InspetorClient.swift */,
+				0B1A17A322D8FB8C00933746 /* Inspetor.swift */,
+				0BB12D5222D8D05100054EF2 /* Actions.swift */,
+				0B99509422D771B800288282 /* Service */,
 			);
 			path = InspetorSwiftFramework;
 			sourceTree = "<group>";
@@ -148,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */,
+				0B57D63422DCA74200764818 /* InspetorIntegrationTests.swift */,
 				78FC55C6224D481200F42B40 /* Info.plist */,
 			);
 			path = InspetorSwiftFrameworkTests;
@@ -240,10 +233,11 @@
 				TargetAttributes = {
 					78783CA1224424E70052BB50 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					78FC55C1224D481200F42B40 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -351,21 +345,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BF5228F22D616A200C5CE7C /* Address.swift in Sources */,
-				0B15CD0E22D661EA00003E91 /* Transfer.swift in Sources */,
-				0B15CCFE22D620F700003E91 /* InspetorSerialize.swift in Sources */,
-				78783CAE224425060052BB50 /* InspetorResource.swift in Sources */,
-				0B15CD0222D6249100003E91 /* CreditCard.swift in Sources */,
-				0B15CD0C22D6581600003E91 /* Sale.swift in Sources */,
-				0B15CD0422D6267600003E91 /* Event.swift in Sources */,
-				0B02DCD122D2227900286614 /* Account.swift in Sources */,
-				0B15CD0622D6330200003E91 /* Item.swift in Sources */,
-				0B15CD0822D63CF900003E91 /* PassRecovery.swift in Sources */,
-				0B15CD0A22D6568A00003E91 /* Payment.swift in Sources */,
-				0B02DCD522D2262300286614 /* AbstractModel.swift in Sources */,
-				780AC8612252526F00383069 /* InspetorConfig.swift in Sources */,
-				78783CB4224939150052BB50 /* InspetorService.swift in Sources */,
-				0B15CD0022D6220C00003E91 /* Auth.swift in Sources */,
+				0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */,
+				0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */,
+				0BACF80022D7965F00A2C2FF /* InspetorConfig.swift in Sources */,
+				0B99509822D773DD00288282 /* InspetorResource.swift in Sources */,
+				0BB12D5522D8D40A00054EF2 /* InspetorClient.swift in Sources */,
+				780AC8612252526F00383069 /* InspetorDependencies.swift in Sources */,
+				0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */,
+				0B99509322D7708D00288282 /* InspetorResourceService.swift in Sources */,
+				0B57D63322DCA59A00764818 /* InspetorClientService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B57D63522DCA74200764818 /* InspetorIntegrationTests.swift in Sources */,
 				78FC55C5224D481200F42B40 /* InspetorSwiftFrameworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -560,7 +549,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -579,7 +568,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -598,7 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

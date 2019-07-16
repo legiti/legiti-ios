@@ -10,66 +10,81 @@ import XCTest
 @testable import InspetorSwiftFramework
 
 class InspetorSwiftFrameworkTests: XCTestCase {
-    var inspetor: InspetorResource = InspetorResource()
-
-    let UNIT_TEST_DEFAULT_TRACKER_NAME = "inspetor.test-tracker"
-    let UNIT_TEST_DEFAULT_APP_ID = "0123456789"
-
-    override func setUp() {
-        self.inspetor.setup(trackerName: UNIT_TEST_DEFAULT_TRACKER_NAME, appId: UNIT_TEST_DEFAULT_APP_ID)
-    }
-
-    func testVerifySetup() {
-        let inspetorTestVerifySetup = InspetorResource()
-        XCTAssertFalse(inspetorTestVerifySetup.verifySetup())
-        
-        inspetorTestVerifySetup.setup(trackerName: UNIT_TEST_DEFAULT_TRACKER_NAME, appId: UNIT_TEST_DEFAULT_APP_ID)
-        XCTAssertTrue(inspetorTestVerifySetup.verifySetup())
+    
+    private func setUpTracker() {
+        let inspetorConfig: InspetorConfig = InspetorConfig(appId: "123", nameTracker: "inspetor.ios.test")
+        Inspetor.sharedInstance.inspetorConfig = inspetorConfig
     }
     
-    func testSupportsOptionalParams() {
-        let inspetorTestOptionalParams: InspetorResource = InspetorResource()
-        let nonDefaultUri = "random.uri.com"
-        
-        inspetorTestOptionalParams.setup(trackerName: UNIT_TEST_DEFAULT_TRACKER_NAME,
-                               appId: UNIT_TEST_DEFAULT_APP_ID,
-                               base64Encoded: nil,
-                               collectorUri: nonDefaultUri,
-                               httpMethodType: nil,
-                               protocolType: nil)
-        
-        // Provided values are altered
-        XCTAssertNotEqual(inspetorTestOptionalParams.getCollectorUri(), InspetorConfig.DEFAULT_COLLECTOR_URI)
-        XCTAssertEqual(inspetorTestOptionalParams.getCollectorUri(), nonDefaultUri)
-        
-        // Nil values remain default
-        XCTAssertEqual(inspetorTestOptionalParams.getBase64Encoded(), InspetorConfig.DEFAULT_BASE64_OPTION)
-        XCTAssertEqual(inspetorTestOptionalParams.getHttpMethodType(), InspetorConfig.DEFAULT_HTTP_METHOD_TYPE)
-        XCTAssertEqual(inspetorTestOptionalParams.getProtocolType(), InspetorConfig.DEFAULT_PROTOCOL_TYPE)
+    func testIfThrowsExceptionWhenCallAccountCreationWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackAccountCreation(accountId: "123"))
     }
     
-    func testTrackerNameFormatValidation() {
-        let invalidTrackerNameTooManyFields = "improper.tracker.name.format"
-        XCTAssertFalse(inspetor.validateTrackerName(invalidTrackerNameTooManyFields))
-        
-        let invalidTrackerNameTooFewFields = "improper_tracker_name_format"
-        XCTAssertFalse(inspetor.validateTrackerName(invalidTrackerNameTooFewFields))
-        
-        let invalidTrackerNameNoClientName = ".improper_tracker_name_format"
-        XCTAssertFalse(inspetor.validateTrackerName(invalidTrackerNameNoClientName))
-        
-        let invalidTrackerNameNoProductName = "improper_tracker_name_format."
-        XCTAssertFalse(inspetor.validateTrackerName(invalidTrackerNameNoProductName))
-        
-        let validTrackerName = "valid.tracker_name"
-        XCTAssertTrue(inspetor.validateTrackerName(validTrackerName))
+    func testIfThrowsExceptionWhenCallAccountUpdateWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackAccountUpdate(accountId: "123"))
     }
     
-    // NOTE: You should NEVER alter this test unless the collection endpoint has actually changed.
-    //
-    // If you need to build this framework for testing, you can manually configure a non-default
-    // url when you are integrating this app into the client.
-    func testCollectorEndpointProperlyConfigured() {
-        XCTAssertTrue(InspetorConfig.DEFAULT_COLLECTOR_URI == "analytics.useinspetor.com")
+    func testIfThrowsExceptionWhenCallAccountDeletionWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackAccountDeletion(accountId: "123"))
     }
+    
+    func testIfThrowsExceptionWhenCallLoginWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackLogin(accountId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallLogoutWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackLogout(accountId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallEventCreationWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackEventCreation(eventId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallEventUpdateWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackEventUpdate(eventId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallEventDeletionWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackEventDeletion(eventId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallSaleCreationWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackSaleCreation(saleId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallSaleUpdateWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackSaleUpdate(saleId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallPasswordResetWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackPasswordReset(passResetEmail: "reset@email.com"))
+    }
+    
+    func testIfThrowsExceptionWhenCallPasswordRecoveryWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackPasswordRecovery(passRecoveryEmail: "recovery@email.com"))
+    }
+    
+    func testIfThrowsExceptionWhenCallTransferCreationWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackItemTransferCreation(transferId: "123"))
+    }
+    
+    func testIfThrowsExceptionWhenCallTransferUpdateWithoutConfig() {
+        let inspetorResource = Inspetor.sharedInstance
+        XCTAssertThrowsError(try inspetorResource.trackItemTransferUpdate(transferId: "123"))
+    }
+    
+    
 }
