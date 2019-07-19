@@ -9,12 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.xcscheme</key>
+		<key>INTULocationManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-InspetorSwiftFramework.xcscheme</key>
+		<key>Pods-Inspetor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-InspetorUnitTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
