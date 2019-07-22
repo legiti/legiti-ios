@@ -22,6 +22,7 @@ internal class SnowplowManager {
     private func setupTracker(inspetorConfig: InspetorConfig) -> SPTracker? {
         
         var postPath = ""
+        var urlEndpoint = InspetorDependencies.defaultCollectorURL
         
         if (inspetorConfig.devEnv) {
             postPath = InspetorDependencies.stagingPostPath
@@ -29,9 +30,13 @@ internal class SnowplowManager {
             postPath = InspetorDependencies.prodPostPath
         }
         
+        if (inspetorConfig.inspetorEnv) {
+            urlEndpoint = "test.com/"
+        }
+        
         guard let emitter = SPEmitter.build({ (builder : SPEmitterBuilder?) -> Void in
             builder!.setCustomPostPath(postPath)
-            builder!.setUrlEndpoint(InspetorDependencies.defaultCollectorURL)
+            builder!.setUrlEndpoint(urlEndpoint)
             builder!.setHttpMethod(InspetorDependencies.defaultHttpMethodType)
             builder!.setProtocol(InspetorDependencies.defaultProtocolType)
             builder!.setCallback(self.inspetorEmitterCallback)

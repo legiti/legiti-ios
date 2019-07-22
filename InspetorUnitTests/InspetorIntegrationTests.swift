@@ -12,7 +12,7 @@ import XCTest
 class InspetorIntegrationTests: XCTestCase {
 
     private func setUpTracker() {
-        let inspetorConfig: InspetorConfig = InspetorConfig(appId: "123", trackerName: "inspetor.ios.test", devEnv: true)
+        let inspetorConfig: InspetorConfig = InspetorConfig(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
         Inspetor.sharedInstance.inspetorConfig = inspetorConfig
     }
     

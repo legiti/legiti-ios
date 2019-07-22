@@ -11,13 +11,15 @@ import Foundation
 public struct InspetorConfig {
     
     public var devEnv: Bool
+    public var inspetorEnv: Bool
     public var appId: String
     public var trackerName: String
     
-    public init(appId: String, trackerName: String, devEnv: Bool = false) {
+    public init(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) {
         self.appId = appId
         self.trackerName = trackerName
         self.devEnv = devEnv
+        self.inspetorEnv = inspetorEnv
     }
     
     internal func isValid() -> Bool {

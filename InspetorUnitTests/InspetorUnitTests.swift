@@ -68,12 +68,12 @@ class InspetorUnitTests: XCTestCase {
     
     func testIfThrowsExceptionWhenCallPasswordResetWithoutConfig() {
         let inspetorResource = Inspetor.sharedInstance
-        XCTAssertThrowsError(try inspetorResource.trackPasswordReset(passResetEmail: "reset@email.com"))
+        XCTAssertThrowsError(try inspetorResource.trackPasswordReset(accountEmail: "reset@email.com"))
     }
     
     func testIfThrowsExceptionWhenCallPasswordRecoveryWithoutConfig() {
         let inspetorResource = Inspetor.sharedInstance
-        XCTAssertThrowsError(try inspetorResource.trackPasswordRecovery(passRecoveryEmail: "recovery@email.com"))
+        XCTAssertThrowsError(try inspetorResource.trackPasswordRecovery(accountEmail: "recovery@email.com"))
     }
     
     func testIfThrowsExceptionWhenCallTransferCreationWithoutConfig() {
