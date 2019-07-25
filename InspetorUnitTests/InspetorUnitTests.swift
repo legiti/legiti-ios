@@ -12,8 +12,11 @@ import XCTest
 class InspetorUnitTests: XCTestCase {
 
     private func setUpTracker() {
-        let inspetorConfig: InspetorConfig = InspetorConfig(appId: "123", trackerName: "inspetor.ios.test")
-        Inspetor.sharedInstance().setup(inspetorConfig)
+        do {
+            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
+        } catch {
+            fatalError("Error when initializing the tracker")
+        }
     }
     
     func testIfThrowsExceptionWhenCallAccountCreationWithoutConfig() {
@@ -87,21 +90,15 @@ class InspetorUnitTests: XCTestCase {
     }
     
     func testIfThrowsExceptionWhenCallTransferUpdateConfigEmpyString() {
-        Inspetor.sharedInstance().setup(InspetorConfig(appId: "", trackerName: ""))
-        let inspetorResource = Inspetor.sharedInstance()
-        XCTAssertThrowsError(try inspetorResource.trackItemTransferUpdate(transferId: "123"))
+        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(appId: "", trackerName: ""))
     }
 
     func testIfThrowsExceptionWhentrackerNameWithoutDotIsNotValid() {
-        Inspetor.sharedInstance().setup(InspetorConfig(appId: "123", trackerName: "tracker"))
-        let inspetorResource = Inspetor.sharedInstance()
-        XCTAssertThrowsError(try inspetorResource.trackItemTransferUpdate(transferId: "123"))
+        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(appId: "123", trackerName: "tracker"))
     }
     
     func testIfThrowsExceptionWhentrackerNameWithouRightLengthIsNotValid() {
-        Inspetor.sharedInstance().setup(InspetorConfig(appId: "123", trackerName: "tracker.x"))
-        let inspetorResource = Inspetor.sharedInstance()
-        XCTAssertThrowsError(try inspetorResource.trackItemTransferUpdate(transferId: "123"))
+        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(appId: "123", trackerName: "tracker.x"))
     }
     
     

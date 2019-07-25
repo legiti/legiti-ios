@@ -12,8 +12,11 @@ import XCTest
 class InspetorIntegrationTests: XCTestCase {
 
     private func setUpTracker() {
-        let inspetorConfig: InspetorConfig = InspetorConfig(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
-        Inspetor.sharedInstance().setup(inspetorConfig)
+        do {
+            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
+        } catch {
+            fatalError("Error when initializing the tracker")
+        }
     }
     
     func testAccountCreation() {

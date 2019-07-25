@@ -19,8 +19,14 @@ public class InspetorClient: InspetorClientService {
         let _ = InspetorGeoLocation.sharedInstance
     }
     
-    public func setup(_ inspetorConfig: InspetorConfig) {
-        self.inspetorConfig = inspetorConfig
+    public func setup(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) throws {
+        self.inspetorConfig = InspetorConfig(appId: appId, trackerName: trackerName, devEnv: devEnv, inspetorEnv: inspetorEnv)
+        
+        if !(self.inspetorConfig!.isValid()) {
+            //deinitialize object and throw exception
+            self.inspetorConfig = nil
+             throw TrackerException.requiredConfig(code: 9002, message: "AppId or/and trackerName are not valid")
+        }
     }
     
     public func trackAccountCreation(accountId: String) throws {
@@ -280,10 +286,6 @@ public class InspetorClient: InspetorClientService {
     
     private func verifyResource() -> Bool {
         if !(self.isConfigured()) {
-            return false
-        }
-        
-        if !(inspetorConfig!.isValid()) {
             return false
         }
         
