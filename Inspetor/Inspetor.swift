@@ -10,13 +10,10 @@ import Foundation
 
 public class Inspetor {
     
-    public static let sharedInstance: InspetorClient = InspetorClient()
+    private static let instance: InspetorClient = InspetorClient()
     
-    static public func isConfigured() -> Bool {
-        if (sharedInstance.inspetorConfig == nil) {
-            return false
-        }
-        return true
+    public static func sharedInstance() -> InspetorClient {
+        return self.instance
     }
     
 }

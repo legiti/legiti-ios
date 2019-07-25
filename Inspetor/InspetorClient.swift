@@ -12,11 +12,15 @@ public class InspetorClient: InspetorClientService {
     
     //MARK: Properties
     private var inspetorResource: InspetorResource?
-    public var inspetorConfig: InspetorConfig?
+    private var inspetorConfig: InspetorConfig?
     
     //MARK: init
     internal init() {
         let _ = InspetorGeoLocation.sharedInstance
+    }
+    
+    public func setup(_ inspetorConfig: InspetorConfig) {
+        self.inspetorConfig = inspetorConfig
     }
     
     public func trackAccountCreation(accountId: String) throws {

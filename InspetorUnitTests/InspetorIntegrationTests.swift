@@ -13,15 +13,15 @@ class InspetorIntegrationTests: XCTestCase {
 
     private func setUpTracker() {
         let inspetorConfig: InspetorConfig = InspetorConfig(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
-        Inspetor.sharedInstance.inspetorConfig = inspetorConfig
+        Inspetor.sharedInstance().setup(inspetorConfig)
     }
     
     func testAccountCreation() {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackAccountCreation(accountId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackAccountCreation(accountId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -34,8 +34,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackAccountUpdate(accountId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackAccountUpdate(accountId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -48,8 +48,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackAccountDeletion(accountId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackAccountDeletion(accountId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -62,8 +62,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackLogin(accountId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackLogin(accountId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -76,8 +76,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackLogout(accountId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackLogout(accountId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -90,8 +90,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackPasswordRecovery(accountEmail: "pass@recovery.com")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackPasswordRecovery(accountEmail: "pass@recovery.com")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -104,8 +104,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackPasswordReset(accountEmail: "pass@recovery.com")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackPasswordReset(accountEmail: "pass@recovery.com")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -118,8 +118,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackEventCreation(eventId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackEventCreation(eventId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -132,8 +132,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackEventDeletion(eventId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackEventDeletion(eventId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -146,8 +146,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackSaleCreation(saleId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackSaleCreation(saleId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -160,8 +160,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackSaleUpdate(saleId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackSaleUpdate(saleId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -174,8 +174,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackItemTransferCreation(transferId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackItemTransferCreation(transferId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -188,8 +188,8 @@ class InspetorIntegrationTests: XCTestCase {
         let expectation = self.expectation(description: "Send Data")
         
         self.setUpTracker()
-        if Inspetor.isConfigured() {
-            try! Inspetor.sharedInstance.trackItemTransferUpdate(transferId: "123")
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackItemTransferUpdate(transferId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
