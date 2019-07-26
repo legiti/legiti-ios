@@ -2,7 +2,7 @@
 //  InspetorClient.swift
 //  Inspetor
 //
-//  Created by Inspetor on 12/07/19.
+//  Created by Lourenço Biselli on 12/07/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 
@@ -13,6 +13,8 @@ public class InspetorClient: InspetorClientService {
     //MARK: Properties
     private var inspetorResource: InspetorResource?
     private var inspetorConfig: InspetorConfig?
+    private let errorMessage9001 = "AppId and trackerName are required parameters"
+    private let errorMessage9002 = "AppId or/and trackerName are not valid"
     
     //MARK: init
     internal init() {
@@ -25,16 +27,14 @@ public class InspetorClient: InspetorClientService {
         if !(self.inspetorConfig!.isValid()) {
             //deinitialize object and throw exception
             self.inspetorConfig = nil
-             throw TrackerException.requiredConfig(code: 9002, message: "AppId or/and trackerName are not valid")
+             throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
         }
     }
     
     public func trackAccountCreation(accountId: String) throws {
         let data = self.createJson(id: accountId, prefix: "account")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackAccountAction(data: data, action: .create)
@@ -49,9 +49,7 @@ public class InspetorClient: InspetorClientService {
     public func trackAccountDeletion(accountId: String) throws {
         let data = self.createJson(id: accountId, prefix: "account")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackAccountAction(data: data, action: .delete)
@@ -65,9 +63,7 @@ public class InspetorClient: InspetorClientService {
     public func trackAccountUpdate(accountId: String) throws {
         let data = self.createJson(id: accountId, prefix: "account")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackAccountAction(data: data, action: .update)
@@ -81,9 +77,7 @@ public class InspetorClient: InspetorClientService {
     public func trackEventCreation(eventId: String) throws {
         let data = self.createJson(id: eventId, prefix: "event")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackEventAction(data: data, action: .create)
@@ -97,9 +91,7 @@ public class InspetorClient: InspetorClientService {
     public func trackEventDeletion(eventId: String) throws {
         let data = self.createJson(id: eventId, prefix: "event")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
 
         do {
             try self.inspetorResource!.trackEventAction(data: data, action: .delete)
@@ -113,9 +105,7 @@ public class InspetorClient: InspetorClientService {
     public func trackEventUpdate(eventId: String) throws {
         let data = self.createJson(id: eventId, prefix: "event")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
 
         do {
             try self.inspetorResource!.trackEventAction(data: data, action: .update)
@@ -129,9 +119,7 @@ public class InspetorClient: InspetorClientService {
     public func trackItemTransferCreation(transferId: String) throws {
         let data = self.createJson(id: transferId, prefix: "transfer")
 
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackItemTransferAction(data: data, action: .create)
@@ -145,9 +133,7 @@ public class InspetorClient: InspetorClientService {
     public func trackItemTransferUpdate(transferId: String) throws {
         let data = self.createJson(id: transferId, prefix: "transfer")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackItemTransferAction(data: data, action: .updateStatus)
@@ -161,9 +147,7 @@ public class InspetorClient: InspetorClientService {
     public func trackLogin(accountId: String) throws {
         let data = self.createJson(id: accountId, prefix: "auth", idSufix: "account_id")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackAccountAuthAction(data: data, action: .login)
@@ -177,9 +161,7 @@ public class InspetorClient: InspetorClientService {
     public func trackLogout(accountId: String) throws {
         let data = self.createJson(id: accountId, prefix: "auth", idSufix: "account_id")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackAccountAuthAction(data: data, action: .logout)
@@ -193,9 +175,7 @@ public class InspetorClient: InspetorClientService {
     public func trackPasswordRecovery(accountEmail: String) throws {
         let data = self.createJson(id: accountEmail, prefix: "pass_recovery", idSufix: "email")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackPasswordRecoveryAction(data: data, action: .recovery)
@@ -209,9 +189,7 @@ public class InspetorClient: InspetorClientService {
     public func trackPasswordReset(accountEmail: String) throws {
         let data = self.createJson(id: accountEmail, prefix: "pass_recovery", idSufix: "email")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackPasswordRecoveryAction(data: data, action: .reset)
@@ -225,9 +203,7 @@ public class InspetorClient: InspetorClientService {
     public func trackSaleCreation(saleId: String) throws {
         let data = self.createJson(id: saleId, prefix: "sale")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackSaleAction(data: data, action: .create)
@@ -241,9 +217,7 @@ public class InspetorClient: InspetorClientService {
     public func trackSaleUpdate(saleId: String) throws {
         let data = self.createJson(id: saleId, prefix: "sale")
         
-        if !(self.verifyResource()) {
-            throw TrackerException.requiredConfig(code: 9001, message: "AppId and trackerName are required parameters")
-        }
+        try self.verifyResource()
         
         do {
             try self.inspetorResource!.trackSaleAction(data: data, action: .update)
@@ -284,16 +258,14 @@ public class InspetorClient: InspetorClientService {
         return dict
     }
     
-    private func verifyResource() -> Bool {
+    private func verifyResource() throws {
         if !(self.isConfigured()) {
-            return false
+            throw TrackerException.requiredConfig(code: 9001, message: self.errorMessage9001)
         }
         
         if (self.inspetorResource == nil) {
             self.inspetorResource = InspetorResource(inspetorConfig: self.inspetorConfig!)
         }
-        
-        return true
     }
     
     public func isConfigured() -> Bool {

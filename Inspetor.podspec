@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Inspetor"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.0"
   spec.summary      = "Inspetor antifraud monitoring for iOS."
 
   # This description is used to generate tags and improve search results.
@@ -174,7 +174,7 @@ Swift framework for incorporating Inspetor antifraud monitoring into iOS apps.
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "SnowplowTracker", "~> 1.1.2"
-  spec.dependency "INTULocationManager"  
+  spec.dependency "INTULocationManager", "~> 4.3"  
 
   spec.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => "INTU_ENABLE_LOGGING=0" }
 

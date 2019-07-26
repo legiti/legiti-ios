@@ -2,7 +2,7 @@
 //  InspetorNewResource.swift
 //  Inspetor
 //
-//  Created by Inspetor on 11/07/19.
+//  Created by Lourenço Biselli on 11/07/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 
@@ -43,6 +43,8 @@ class InspetorResource: NSObject, InspetorResourceService {
         ) else {
             throw TrackerException.internalError(message: "An error occured")
         }
+        
+        self.trackActiveUser(userId: self.decodeBase64Data(data: data["account_id"]!))
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }

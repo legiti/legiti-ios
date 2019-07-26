@@ -2,7 +2,7 @@
 //  Inspetor.swift
 //  Inspetor
 //
-//  Created by Inspetor on 12/07/19.
+//  Created by Lourenço Biselli on 12/07/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 

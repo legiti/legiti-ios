@@ -2,7 +2,7 @@
 //  TrackerException.swift
 //  Inspetor
 //
-//  Created by Inspetor on 10/07/19.
+//  Created by Lourenço Biselli on 10/07/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 
