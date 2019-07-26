@@ -1,8 +1,8 @@
 //
-//  InspetorConfig.swift
+//  InspetorDependencies.swift
 //  Inspetor
 //
-//  Created by Pearson Henri on 4/1/19.
+//  Created by Lourenço Biselli on 26/07/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 

@@ -6,7 +6,7 @@ target 'Inspetor' do
   use_frameworks!
   # Pods for Inspetor
   pod 'SnowplowTracker', '~> 1.1.2'
-  pod 'INTULocationManager'  
+  pod 'INTULocationManageri', '~> 4.3'  
 
   target 'InspetorUnitTests' do 
     inherit! :search_paths

@@ -2,7 +2,7 @@
 //  InspetorIntegrationTests.swift
 //  InspetorUnitTests
 //
-//  Created by Inspetor on 17/07/19.
+//  Created by Lourenço Biselli on 17/07/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 
@@ -13,6 +13,7 @@ class InspetorIntegrationTests: XCTestCase {
 
     private func setUpTracker() {
         do {
+            //change the inspetorEnv to false if you wanna send to redshift and to forget to disable applicaition context
             try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
         } catch {
             fatalError("Error when initializing the tracker")
@@ -123,6 +124,20 @@ class InspetorIntegrationTests: XCTestCase {
         self.setUpTracker()
         if Inspetor.sharedInstance().isConfigured() {
             try! Inspetor.sharedInstance().trackEventCreation(eventId: "123")
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            expectation.fulfill()
+        })
+        waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func testEventUpdate() {
+        let expectation = self.expectation(description: "Send Data")
+        
+        self.setUpTracker()
+        if Inspetor.sharedInstance().isConfigured() {
+            try! Inspetor.sharedInstance().trackEventUpdate(eventId: "123")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {

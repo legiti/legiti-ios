@@ -2,20 +2,20 @@
 //  InspetorConfig.swift
 //  Inspetor
 //
-//  Created by Inspetor on 11/07/19.
+//  Created by Lourenço Biselli on 11/07/19.
 //  Copyright © 2019 Inspetor. All rights reserved.
 //
 
 import Foundation
 
-public struct InspetorConfig {
+internal struct InspetorConfig {
     
-    public var devEnv: Bool
-    public var inspetorEnv: Bool
-    public var appId: String
-    public var trackerName: String
+    internal var devEnv: Bool
+    internal var inspetorEnv: Bool
+    internal var appId: String
+    internal var trackerName: String
     
-    public init(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) {
+    internal init(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) {
         self.appId = appId
         self.trackerName = trackerName
         self.devEnv = devEnv
@@ -36,14 +36,14 @@ public struct InspetorConfig {
     }
     
     private func isValidtrackerName() -> Bool {
-        let splitedtrackerName = self.trackerName.split(separator: ".")
+        let splitedTrackerName = self.trackerName.split(separator: ".")
         
-        if splitedtrackerName.count < 2 {
+        if splitedTrackerName.count < 2 {
             return false
         }
         
-        for parttrackerName in splitedtrackerName {
-            if parttrackerName.count <= 1 {
+        for partTrackerName in splitedTrackerName {
+            if partTrackerName.count <= 1 {
                 return false
             }
         }
