@@ -28,6 +28,8 @@
 
 #import <Foundation/Foundation.h>
 
+void uncaughtExceptionHandler(NSException *exception);
+
 @class SPEmitter;
 @class SPPayload;
 @class SPSubject;
@@ -44,6 +46,8 @@
 @class SPPushNotification;
 @class SPForeground;
 @class SPBackground;
+@class SPScreenState;
+@class SNOWError;
 
 /*!
  @brief The builder for SPTracker.
@@ -123,14 +127,41 @@
 - (void) setApplicationContext:(BOOL)applicationContext;
 
 /*!
+ @brief Tracker builder method to set whether screen contexts will be added to all events.
+ 
+ @param screenContext Whether screen contexts are enabled.
+ */
+- (void) setScreenContext:(BOOL)screenContext;
+
+/*!
  @brief Tracker builder method to set whether foreground and background events are sent on app suspend and resume.
 
  @param lifecycleEvents Whether foreground and background events are enabled.
  */
 - (void) setLifecycleEvents:(BOOL)lifecycleEvents;
 
-@end
+/*!
+ @brief Tracker builder method to set whether exceptions should be autotracked.
+ 
+ @param exceptionEvents Whether to autotrack exceptions.
+ */
+- (void) setExceptionEvents:(BOOL)exceptionEvents;
 
+/*!
+ @brief Tracker builder method to set whether screenviews will be autotracked.
+
+ @param autotrackScreenViews Whether to autotrack screenviews.
+ */
+- (void) setAutotrackScreenViews:(BOOL)autotrackScreenViews;
+
+/*!
+ @brief Tracker builder method to set whether application install should be autotracked.
+ 
+ @param installEvent Whether to autotrack application installs.
+ */
+- (void) setInstallEvent:(BOOL)installEvent;
+
+@end
 
 /*!
  @class SPTracker
@@ -141,17 +172,21 @@
 @interface SPTracker : NSObject <SPTrackerBuilder>
 
 /*! @brief The emitter used to send events. */
-@property (readonly, nonatomic, retain) SPEmitter * emitter;
+@property (readonly, nonatomic, strong) SPEmitter * emitter;
 /*! @brief The subject used to represent the current user and persist user information. */
-@property (readonly, nonatomic, retain) SPSubject * subject;
+@property (readonly, nonatomic, strong) SPSubject * subject;
 /*! @brief The object used for sessionization, i.e. it characterizes user activity. */
 @property (nonatomic, retain) SPSession * session;
 /*! @brief A unique identifier for an application. */
-@property (readonly, nonatomic, retain) NSString *  appId;
+@property (readonly, nonatomic, strong) NSString * appId;
 /*! @brief The identifier for the current tracker. */
-@property (readonly, nonatomic, retain) NSString *  trackerNamespace;
+@property (readonly, nonatomic, strong) NSString * trackerNamespace;
 /*! @brief Whether to use Base64 encoding for events. */
-@property (readonly, nonatomic)         BOOL        base64Encoded;
+@property (readonly, nonatomic) BOOL base64Encoded;
+/*! @brief Previous screen view state. */
+@property (readonly, nonatomic, strong) SPScreenState * previousScreenState;
+/*! @brief Current screen view state. */
+@property (readonly, nonatomic, strong) SPScreenState * currentScreenState;
 
 /*!
  @brief Method that allows for builder pattern in creating the tracker.
@@ -160,6 +195,8 @@
 
 + (instancetype) new NS_UNAVAILABLE;
 - (instancetype) init NS_UNAVAILABLE;
+
+- (void) receiveScreenViewNotification:(NSNotification *)notification;
 
 /*!
  @brief Pauses all event tracking, storage and session checking.
@@ -303,5 +340,12 @@
  @param event A background event.
  */
 - (void) trackBackgroundEvent:(SPBackground *)event;
+
+/*!
+ @brief Tracks an error event.
+ 
+ @param event An error event.
+ */
+- (void) trackErrorEvent:(SNOWError *)event;
 
 @end

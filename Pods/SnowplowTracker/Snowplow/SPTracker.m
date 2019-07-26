@@ -29,6 +29,67 @@
 #import "SPUtilities.h"
 #import "SPSession.h"
 #import "SPEvent.h"
+#import "SPScreenState.h"
+#import "SPInstallTracker.h"
+
+/** A class extension that makes the screen view states mutable internally. */
+@interface SPTracker ()
+
+@property (readwrite, nonatomic, strong) SPScreenState * currentScreenState;
+@property (readwrite, nonatomic, strong) SPScreenState * previousScreenState;
+
+- (void) populatePreviousScreenState;
+
+/*!
+ @brief This method is called to send an auto-tracked screen view event.
+
+ @param notification The notification raised by a UIViewController
+ */
+- (void) receiveScreenViewNotification:(NSNotification *)notification;
+
+@end
+
+void uncaughtExceptionHandler(NSException *exception) {
+    NSArray* symbols = [exception callStackSymbols];
+    NSString * stackTrace = [NSString stringWithFormat:@"Stacktrace:\n%@", symbols];
+    NSString * message = [exception reason];
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Load values
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString * url = [userDefaults objectForKey:kSPErrorTrackerUrl];
+        NSString * protocolString = [userDefaults objectForKey:kSPErrorTrackerProtocol];
+        NSString * methodString = [userDefaults objectForKey:kSPErrorTrackerMethod];
+        SPProtocol protocol = SPHttps;
+        if (protocolString && [protocolString isEqual:@"http://"]) {
+            protocol = SPHttp;
+        }
+        SPRequestOptions method = SPRequestPost;
+        if (methodString && [methodString isEqual:@"/i"]) {
+            method = SPRequestGet;
+        }
+        // Send notification to tracker
+        SPEmitter * emitter = [SPEmitter build:^(id<SPEmitterBuilder> builder) {
+            [builder setUrlEndpoint:url];
+            [builder setProtocol:protocol];
+            [builder setHttpMethod:method];
+        }];
+        SPTracker * tracker = [SPTracker build:^(id<SPTrackerBuilder> builder) {
+            [builder setEmitter:emitter];
+        }];
+        
+        if (message == nil || [message length] == 0) {
+            return;
+        }
+        SNOWError * error = [SNOWError build:^(id<SPErrorBuilder> builder) {
+            [builder setMessage:message];
+            if (stackTrace != nil && [stackTrace length] > 0) {
+                [builder setStackTrace:stackTrace];
+            }
+        }];
+        [tracker trackErrorEvent:error];
+        [NSThread sleepForTimeInterval:2.0f];
+    });
+}
 
 @implementation SPTracker {
     NSMutableDictionary *  _trackerData;
@@ -36,12 +97,16 @@
     BOOL                   _dataCollection;
     SPSession *            _session;
     BOOL                   _sessionContext;
+    BOOL                   _screenContext;
     BOOL                   _applicationContext;
+    BOOL                   _autotrackScreenViews;
     BOOL                   _lifecycleEvents;
     NSInteger              _foregroundTimeout;
     NSInteger              _backgroundTimeout;
     NSInteger              _checkInterval;
     BOOL                   _builderFinished;
+    BOOL                   _exceptionEvents;
+    BOOL                   _installEvent;
 }
 
 // SnowplowTracker Builder
@@ -52,6 +117,7 @@
         buildBlock(tracker);
     }
     [tracker setup];
+    [tracker checkInstall];
     return tracker;
 }
 
@@ -64,12 +130,17 @@
         _dataCollection = YES;
         _sessionContext = NO;
         _applicationContext = NO;
+        _screenContext = NO;
         _lifecycleEvents = NO;
+        _autotrackScreenViews = NO;
         _foregroundTimeout = 600;
         _backgroundTimeout = 300;
         _checkInterval = 15;
         _builderFinished = NO;
-
+        self.previousScreenState = nil;
+        self.currentScreenState = nil;
+        _exceptionEvents = NO;
+        _installEvent = NO;
 #if SNOWPLOW_TARGET_IOS
         _platformContextSchema = kSPMobileContextSchema;
 #else
@@ -90,7 +161,41 @@
                                                      andTracker:self];
     }
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveScreenViewNotification:)
+                                                 name:@"SPScreenViewDidAppear"
+                                               object:nil];
+    
+    if (_exceptionEvents) {
+        NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    }
+
     _builderFinished = YES;
+}
+
+- (void) checkInstall {
+    SPInstallTracker * installTracker = [[SPInstallTracker alloc] init];
+    NSNumber * previousTimestamp = [installTracker getPreviousInstallTimestamp];
+    if (_installEvent) {
+        if (installTracker.isNewInstall) {
+            SPSelfDescribingJson * installEvent = [[SPSelfDescribingJson alloc] initWithSchema:kSPApplicationInstallSchema andData:@{}];
+            SPUnstructured * event = [SPUnstructured build:^(id<SPUnstructuredBuilder> builder) {
+                [builder setEventData:installEvent];
+            }];
+            [self trackUnstructuredEvent:event];
+            if (previousTimestamp) {
+                [installTracker clearPreviousInstallTimestamp];
+            }
+        } else if (previousTimestamp) {
+            SPSelfDescribingJson * installEvent = [[SPSelfDescribingJson alloc] initWithSchema:kSPApplicationInstallSchema andData:@{}];
+            SPUnstructured * event = [SPUnstructured build:^(id<SPUnstructuredBuilder> builder) {
+                [builder setEventData:installEvent];
+                [builder setTimestamp:previousTimestamp];
+            }];
+            [self trackUnstructuredEvent:event];
+            [installTracker clearPreviousInstallTimestamp];
+        }
+    }
 }
 
 - (void) setTrackerData {
@@ -140,8 +245,16 @@
     }
 }
 
+- (void) setScreenContext:(BOOL)screenContext {
+    _screenContext = screenContext;
+}
+
 - (void) setApplicationContext:(BOOL)applicationContext {
     _applicationContext = applicationContext;
+}
+
+- (void) setAutotrackScreenViews:(BOOL)autotrackScreenViews {
+    _autotrackScreenViews = autotrackScreenViews;
 }
 
 - (void) setForegroundTimeout:(NSInteger)foregroundTimeout {
@@ -167,6 +280,14 @@
 
 - (void) setLifecycleEvents:(BOOL)lifecycleEvents {
     _lifecycleEvents = lifecycleEvents;
+}
+
+- (void) setExceptionEvents:(BOOL)exceptionEvents {
+    _exceptionEvents = exceptionEvents;
+}
+
+- (void) setInstallEvent:(BOOL)installEvent {
+    _installEvent = installEvent;
 }
 
 // Extra Functions
@@ -205,13 +326,35 @@
     return _lifecycleEvents;
 }
 
-- (SPPayload*) getApplicationInfo {
-    SPPayload * applicationInfo = [[SPPayload alloc] init];
-    NSString * version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
-    NSString * build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
-    [applicationInfo addValueToPayload:build forKey:kSPApplicationBuild];
-    [applicationInfo addValueToPayload:version forKey:kSPApplicationVersion];
-    return applicationInfo;
+
+- (void) receiveScreenViewNotification:(NSNotification *)notification {
+    NSString * name = [[notification userInfo] objectForKey:@"name"];
+    NSString * type = stringWithSPScreenType([[[notification userInfo] objectForKey:@"type"] integerValue]);
+    NSString * topViewControllerClassName = [[notification userInfo] objectForKey:@"topViewControllerClassName"];
+    NSString * viewControllerClassName = [[notification userInfo] objectForKey:@"viewControllerClassName"];
+    SPScreenState * newScreenState = [[SPScreenState alloc] initWithName:name type:type topViewControllerClassName:topViewControllerClassName viewControllerClassName:viewControllerClassName];
+    [self populatePreviousScreenState];
+    self.currentScreenState = newScreenState;
+    if (_autotrackScreenViews) {
+        SPScreenView *event = [SPScreenView build:^(id<SPScreenViewBuilder> builder) {
+            if (self.previousScreenState) {
+                [builder setWithPreviousState:self.previousScreenState];
+            }
+            if (self.currentScreenState) {
+                [builder setWithCurrentState:self.currentScreenState];
+            }
+            [builder setName:name];
+        }];
+        [self trackScreenViewEvent:event];
+    }
+}
+
+- (void) populatePreviousScreenState {
+    // Covers case if tracker initializes and doesn't set state
+    // (not sure if this is true, but worth covering against)
+    if (self.currentScreenState) {
+        self.previousScreenState = self.currentScreenState;
+    }
 }
 
 // Event Tracking Functions
@@ -245,6 +388,7 @@
 }
 
 - (void) trackScreenViewEvent:(SPScreenView *)event {
+    //newScreenViewState:(SPScreenViewState *)newState;
     SPUnstructured * unstruct = [SPUnstructured build:^(id<SPUnstructuredBuilder> builder) {
         [builder setEventData:[event getPayload]];
         [builder setTimestamp:[event getTimestamp]];
@@ -338,6 +482,16 @@
     [self trackUnstructuredEvent:unstruct];
 }
 
+- (void) trackErrorEvent:(SNOWError *)event {
+    SPUnstructured * unstruct = [SPUnstructured build:^(id<SPUnstructuredBuilder> builder) {
+        [builder setEventData:[event getPayload]];
+        [builder setTimestamp:[event getTimestamp]];
+        [builder setContexts:[event getContexts]];
+        [builder setEventId:[event getEventId]];
+    }];
+    [self trackUnstructuredEvent:unstruct];
+}
+
 // Event Decoration
 
 - (void) addEventWithPayload:(SPPayload *)pb andContext:(NSMutableArray *)contextArray andEventId:(NSString *)eventId {
@@ -382,9 +536,9 @@
     }
 
     if (_applicationContext) {
-        NSDictionary * applicationDict = [[self getApplicationInfo] getAsDictionary];
-        if (applicationDict != nil) {
-            [contextArray addObject:[[SPSelfDescribingJson alloc] initWithSchema:kSPApplicationContextSchema andData:applicationDict]];
+        SPSelfDescribingJson * contextJson = [SPUtilities getApplicationContext];
+        if (contextJson != nil) {
+            [contextArray addObject:contextJson];
         }
     }
 
@@ -393,6 +547,14 @@
         NSDictionary * sessionDict = [_session getSessionDictWithEventId:eventId];
         if (sessionDict != nil) {
             [contextArray addObject:[[SPSelfDescribingJson alloc] initWithSchema:kSPSessionContextSchema andData:sessionDict]];
+        }
+    }
+    
+    // Add screen context
+    if (_screenContext && _currentScreenState) {
+        SPSelfDescribingJson * contextJson = [SPUtilities getScreenContextWithScreenState:_currentScreenState];
+        if (contextJson != nil) {
+            [contextArray addObject:contextJson];
         }
     }
 
