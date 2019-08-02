@@ -59,12 +59,6 @@ class InspetorResource: NSObject, InspetorResourceService {
            throw TrackerException.internalError(message: "An error occured")
         }
         
-        if (action == .login) {
-            self.trackActiveUser(userId: self.decodeBase64Data(data: data["auth_account_id"]!))
-        } else {
-            self.trackActiveUser()
-        }
-        
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     

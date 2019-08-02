@@ -19,7 +19,7 @@ struct InspetorDependencies {
     static let defaultProtocolType: SPProtocol = SPProtocol.https
     
     // Schema versions
-    static let inspetorAuthSchema: String = "iglu:com.inspetor/inspetor_auth_frontend/jsonschema/1-0-0"
+    static let inspetorAuthSchema: String = "iglu:com.inspetor/inspetor_auth_frontend/jsonschema/1-0-1"
     static let inspetorPassRecoverySchema: String = "iglu:com.inspetor/inspetor_pass_recovery_frontend/jsonschema/1-0-0"
     static let inspetorSaleSchema: String = "iglu:com.inspetor/inspetor_sale_frontend/jsonschema/1-0-0"
     static let inspetorItemTransferSchema: String = "iglu:com.inspetor/inspetor_transfer_frontend/jsonschema/1-0-0"

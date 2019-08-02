@@ -144,8 +144,8 @@ public class InspetorClient: InspetorClientService {
         }
     }
     
-    public func trackLogin(accountId: String) throws {
-        let data = self.createJson(id: accountId, prefix: "auth", idSufix: "account_id")
+    public func trackLogin(accountEmail: String) throws {
+        let data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
         
         try self.verifyResource()
         
@@ -158,8 +158,8 @@ public class InspetorClient: InspetorClientService {
         }
     }
     
-    public func trackLogout(accountId: String) throws {
-        let data = self.createJson(id: accountId, prefix: "auth", idSufix: "account_id")
+    public func trackLogout(accountEmail: String) throws {
+        let data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
         
         try self.verifyResource()
         

@@ -68,14 +68,14 @@ protocol InspetorClientService {
      - parameter accountId: (query)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackLogin(accountId: String) throws
+    func trackLogin(accountEmail: String) throws
 
     /**
      Send account logout data to Inspetor
      - parameter accountId: (query)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackLogout(accountId: String) throws
+    func trackLogout(accountEmail: String) throws
 
     /**
      Send password recovery data to Inspetor

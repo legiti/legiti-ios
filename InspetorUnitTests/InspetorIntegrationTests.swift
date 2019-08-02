@@ -13,8 +13,9 @@ class InspetorIntegrationTests: XCTestCase {
 
     private func setUpTracker() {
         do {
-            //change the inspetorEnv to false if you wanna send to redshift and to forget to disable applicaition context
-            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
+            //For this tests you need to change the applicationContext (SnowplowManager->setupTracker->newTracker->builder!.setApplicationContext()) to false
+            //Otherwise the tests wont work since this is not an app
+            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: false)
         } catch {
             fatalError("Error when initializing the tracker")
         }
@@ -67,7 +68,7 @@ class InspetorIntegrationTests: XCTestCase {
         
         self.setUpTracker()
         if Inspetor.sharedInstance().isConfigured() {
-            try! Inspetor.sharedInstance().trackLogin(accountId: "123")
+            try! Inspetor.sharedInstance().trackLogin(accountEmail: "login@email.com")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -81,7 +82,7 @@ class InspetorIntegrationTests: XCTestCase {
         
         self.setUpTracker()
         if Inspetor.sharedInstance().isConfigured() {
-            try! Inspetor.sharedInstance().trackLogout(accountId: "123")
+            try! Inspetor.sharedInstance().trackLogout(accountEmail: "logout@email.com")
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
