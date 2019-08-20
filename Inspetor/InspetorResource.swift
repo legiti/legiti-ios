@@ -48,7 +48,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         self.trackEvent(screenViewEvent: screenViewEvent)
     }
     
-    internal func trackAccountAction(data: Dictionary<String, String>, action: Actions.accountActions) throws {
+    internal func trackAccountAction(data: Dictionary<String, String?>, action: Actions.accountActions) throws {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorAccountSchema,
@@ -58,12 +58,12 @@ class InspetorResource: NSObject, InspetorResourceService {
             throw TrackerException.internalError(message: "An error occured")
         }
         
-        self.trackActiveUser(userId: self.decodeBase64Data(data: data["account_id"]!))
+        self.trackActiveUser(userId: self.decodeBase64Data(data: data["account_id"]!!))
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackAccountAuthAction(data: Dictionary<String, String>, action: Actions.authActions) throws {
+    internal func trackAccountAuthAction(data: Dictionary<String, String?>, action: Actions.authActions) throws {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorAuthSchema,
@@ -76,7 +76,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackEventAction(data: Dictionary<String, String>, action: Actions.eventAction) throws {
+    internal func trackEventAction(data: Dictionary<String, String?>, action: Actions.eventAction) throws {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorEventSchema,
@@ -89,7 +89,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackItemTransferAction(data: Dictionary<String, String>, action: Actions.transferActions) throws {
+    internal func trackItemTransferAction(data: Dictionary<String, String?>, action: Actions.transferActions) throws {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorItemTransferSchema,
@@ -102,7 +102,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackPasswordRecoveryAction(data: Dictionary<String, String>, action: Actions.passRecoveryActions) throws {
+    internal func trackPasswordRecoveryAction(data: Dictionary<String, String?>, action: Actions.passRecoveryActions) throws {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorPassRecoverySchema,
@@ -115,7 +115,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackSaleAction(data: Dictionary<String, String>, action: Actions.saleActions) throws {
+    internal func trackSaleAction(data: Dictionary<String, String?>, action: Actions.saleActions) throws {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorSaleSchema,

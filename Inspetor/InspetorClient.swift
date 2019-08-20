@@ -152,8 +152,10 @@ public class InspetorClient: InspetorClientService {
         }
     }
     
-    public func trackLogin(accountEmail: String) throws {
-        let data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
+    public func trackLogin(accountEmail: String, accountId: String?) throws {
+        var data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
+        
+        data["auth_account_id"] = accountId != nil ? self.encodeData(stringToEncode: accountId!) : nil
         
         try self.verifyResource()
         
@@ -166,8 +168,10 @@ public class InspetorClient: InspetorClientService {
         }
     }
     
-    public func trackLogout(accountEmail: String) throws {
-        let data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
+    public func trackLogout(accountEmail: String, accountId: String?) throws {
+        var data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
+        
+        data["auth_account_id"] = accountId != nil ? self.encodeData(stringToEncode: accountId!) : nil
         
         try self.verifyResource()
         
@@ -254,8 +258,8 @@ public class InspetorClient: InspetorClientService {
         return ""
     }
     
-    private func createJson(id: String, prefix: String, idSufix: String = "id", timestampSufix: String = "timestamp") -> Dictionary<String, String> {
-        var dict = [String: String]()
+    private func createJson(id: String, prefix: String, idSufix: String = "id", timestampSufix: String = "timestamp") -> Dictionary<String, String?> {
+        var dict = [String: String?]()
         
         let idProperty = "\(prefix)_\(idSufix)"
         let timestampProperty = "\(prefix)_\(timestampSufix)"

@@ -36,12 +36,12 @@ class InspetorUnitTests: XCTestCase {
     
     func testIfThrowsExceptionWhenCallLoginWithoutConfig() {
         let inspetorResource = Inspetor.sharedInstance()
-        XCTAssertThrowsError(try inspetorResource.trackLogin(accountEmail: "login@email.com"))
+        XCTAssertThrowsError(try inspetorResource.trackLogin(accountEmail: "login@email.com", accountId: nil))
     }
     
     func testIfThrowsExceptionWhenCallLogoutWithoutConfig() {
         let inspetorResource = Inspetor.sharedInstance()
-        XCTAssertThrowsError(try inspetorResource.trackLogout(accountEmail: "logout@email.com"))
+        XCTAssertThrowsError(try inspetorResource.trackLogout(accountEmail: "logout@email.com", accountId: nil))
     }
     
     func testIfThrowsExceptionWhenCallEventCreationWithoutConfig() {

@@ -26,6 +26,7 @@ internal class InspetorDeviceData {
             data["device_fingerprint"] = deviceFingerprint
             data["is_simulator"] = self.getIsSimulator()
             data["is_rooted"] = self.getIsJailbroken()
+            data["is_vpn"] = self.getIsVPNConnected()
             self.deviceData = data
             return data
         }
@@ -52,6 +53,19 @@ internal class InspetorDeviceData {
     
     private func getIsJailbroken() -> Bool {
         return JailbreakChecker.jailbreakCheck()
+    }
+    
+    private func getIsVPNConnected() -> Bool {
+        let cfDict = CFNetworkCopySystemProxySettings()
+        let nsDict = cfDict!.takeRetainedValue() as NSDictionary
+        let keys = nsDict["__SCOPED__"] as! NSDictionary
+        
+        for key: String in keys.allKeys as! [String] {
+            if (key == "tap" || key == "tun" || key == "ppp" || key == "ipsec" || key == "ipsec0") {
+                return true
+            }
+        }
+        return false
     }
 }
 

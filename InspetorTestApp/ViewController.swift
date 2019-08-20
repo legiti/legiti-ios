@@ -56,11 +56,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         switch action {
         case "TrackLogin":
             if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackLogin(accountEmail: "login@email.com")
+                try! self.inspetor.trackLogin(accountEmail: "login@email.com", accountId: "123")
             }
         case "TrackLogout":
             if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackLogout(accountEmail: "logout@email.com")
+                try! self.inspetor.trackLogout(accountEmail: "logout@email.com", accountId: nil)
             }
         case "TrackAccountCreation":
             if (self.inspetor.isConfigured()) {

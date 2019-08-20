@@ -7,6 +7,7 @@ import Foundation
 
 protocol InspetorClientService {
 
+    func trackScreenView(screenName: String) throws
     /**
      Send account creation data to Inspetor
      - parameter accountId: (query)
@@ -68,14 +69,14 @@ protocol InspetorClientService {
      - parameter accountId: (query)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackLogin(accountEmail: String) throws
+    func trackLogin(accountEmail: String, accountId: String?) throws
 
     /**
      Send account logout data to Inspetor
      - parameter accountId: (query)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackLogout(accountEmail: String) throws
+    func trackLogout(accountEmail: String, accountId: String?) throws
 
     /**
      Send password recovery data to Inspetor

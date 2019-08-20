@@ -6,40 +6,42 @@
 import Foundation
 
 protocol InspetorResourceService {
+    
+    func trackScreenView(screenName: String) throws
     /**
      Send account data to Inspetor
      - parameter data: (query)       - parameter action: (query)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackAccountAction(data: Dictionary<String, String>, action: Actions.accountActions) throws
+    func trackAccountAction(data: Dictionary<String, String?>, action: Actions.accountActions) throws
 
     /**
      Send auth data to Inspetor
      - parameter data: (query)       - parameter action: (query)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackAccountAuthAction(data: Dictionary<String, String>, action: Actions.authActions) throws
+    func trackAccountAuthAction(data: Dictionary<String, String?>, action: Actions.authActions) throws
 
     /**
      Send event data to Inspetor
      - parameter data: (query)       - parameter action: (query)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackEventAction(data: Dictionary<String, String>, action: Actions.eventAction) throws
+    func trackEventAction(data: Dictionary<String, String?>, action: Actions.eventAction) throws
 
     /**
      Send item transfer data to Inspetor
      - parameter data: (query)       - parameter action: (query)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackItemTransferAction(data: Dictionary<String, String>, action: Actions.transferActions) throws
+    func trackItemTransferAction(data: Dictionary<String, String?>, action: Actions.transferActions) throws
 
     /**
      Send pass recovery data to Inspetor
      - parameter data: (query)       - parameter action: (query)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackPasswordRecoveryAction(data: Dictionary<String, String>, action: Actions.passRecoveryActions) throws
+    func trackPasswordRecoveryAction(data: Dictionary<String, String?>, action: Actions.passRecoveryActions) throws
 
 
     /**
@@ -47,6 +49,6 @@ protocol InspetorResourceService {
      - parameter data: (query)       - parameter action: (query)  
      - parameter completion: completion handler to receive the data and the error objects
      */
-    func trackSaleAction(data: Dictionary<String, String>, action: Actions.saleActions) throws
+    func trackSaleAction(data: Dictionary<String, String?>, action: Actions.saleActions) throws
 
 }
