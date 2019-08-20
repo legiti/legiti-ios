@@ -18,7 +18,9 @@ class InspetorGeoLocation {
     
     //MARK: Init
     init() {
-        self.getGeoLocation()
+        if currentLocation == nil {
+            self.getGeoLocation()
+        }
     }
     
     //MARK: INUITLocationManager
@@ -73,6 +75,7 @@ class InspetorGeoLocation {
         subject.setGeoAltitudeAccuracy(Float(currentLocation!.verticalAccuracy))
         subject.setGeoBearing(Float(currentLocation!.course))
         subject.setGeoSpeed(Float(currentLocation!.speed))
+        subject.setTimezone(TimeZone.current.identifier)
         
         return subject
     }

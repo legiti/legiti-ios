@@ -34,6 +34,20 @@ class InspetorResource: NSObject, InspetorResourceService {
     }
     
     //MARK: TrackActions
+    internal func trackScreenView(screenName: String) throws {
+        
+        guard let screenViewEvent = SPScreenView.build({ (builder: SPScreenViewBuilder?) -> Void in
+            builder!.setName(screenName)
+            if let fingerprintContext = self.getFingerprintContext() {
+                builder!.setContexts(NSMutableArray(array: [fingerprintContext]))
+            }
+        }) else {
+            throw TrackerException.internalError(message: "An error occured")
+        }
+        
+        self.trackEvent(screenViewEvent: screenViewEvent)
+    }
+    
     internal func trackAccountAction(data: Dictionary<String, String>, action: Actions.accountActions) throws {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
@@ -126,14 +140,19 @@ class InspetorResource: NSObject, InspetorResourceService {
         
         let sdj = SPSelfDescribingJson(schema: schema, andData: data)
         
-        let context = SPSelfDescribingJson(
-            schema: InspetorDependencies.inspetorContextSchema,
+        let actionContext = SPSelfDescribingJson(
+            schema: InspetorDependencies.inspetorActionContextSchema,
             andData: contextData
         )
         
         guard let unstructedEvent = SPUnstructured.build({ (builder: SPUnstructuredBuilder?) -> Void in
             builder!.setEventData(sdj)
-            builder!.setContexts(NSMutableArray(array: NSMutableArray(array: [context!])))
+            
+            var contextArray = [actionContext!]
+            if let deviceFingerprint = self.getFingerprintContext() {
+                contextArray.append(deviceFingerprint)
+            }
+            builder!.setContexts(NSMutableArray(array: NSMutableArray(array: contextArray)))
         }) else {
             return nil
         }
@@ -141,6 +160,8 @@ class InspetorResource: NSObject, InspetorResourceService {
         return unstructedEvent
     }
     
+    
+    //MARK: TrackEvent
     private func trackEvent(unstructedEvent: SPUnstructured) {
         if self.inspetorGeoLocation.currentLocation != nil {
             self.tracker!.setSubject(InspetorGeoLocation.sharedInstance.getLocationSubject())
@@ -149,5 +170,30 @@ class InspetorResource: NSObject, InspetorResourceService {
             self.tracker!.trackUnstructuredEvent(unstructedEvent)
         }
     }
+    
+    private func trackEvent(screenViewEvent: SPScreenView) {
+        if self.inspetorGeoLocation.currentLocation != nil {
+            self.tracker!.setSubject(InspetorGeoLocation.sharedInstance.getLocationSubject())
+            self.tracker!.trackScreenViewEvent(screenViewEvent)
+        } else {
+            self.tracker!.trackScreenViewEvent(screenViewEvent)
+        }
+    }
+    
+    
+    //MARK: FingerprintContext
+    private func getFingerprintContext() -> SPSelfDescribingJson? {
+        
+        if let devideContext = InspetorDeviceData().getDeviceData() {
+            let fingerprintContext = SPSelfDescribingJson(
+                schema: InspetorDependencies.inspetorFingerprintContextSchema,
+                andData: (devideContext as NSDictionary)
+            )
+            return fingerprintContext!
+        }
+        return nil
+    }
+    
+
     
 }

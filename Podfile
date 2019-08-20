@@ -7,9 +7,18 @@ target 'Inspetor' do
   # Pods for Inspetor
   pod 'SnowplowTracker', '~> 1.1.2'
   pod 'INTULocationManager', '~> 4.3'  
+  pod 'SwiftKeychainWrapper', '~> 3.4.0'
+
+  target 'InspetorTestApp' do
+    pod 'SnowplowTracker', '~> 1.1.2'
+    pod 'INTULocationManager', '~> 4.3'
+    pod 'SwiftKeychainWrapper', '~> 3.4.0'
+  end
 
   target 'InspetorUnitTests' do 
-    inherit! :search_paths
+    pod 'SnowplowTracker', '~> 1.1.2'
+    pod 'INTULocationManager', '~> 4.3'
+    pod 'SwiftKeychainWrapper', '~> 3.4.0'
   end
 
 end

@@ -16,18 +16,27 @@ public class InspetorClient: InspetorClientService {
     private let errorMessage9001 = "AppId and trackerName are required parameters"
     private let errorMessage9002 = "AppId or/and trackerName are not valid"
     
-    //MARK: init
-    internal init() {
-        let _ = InspetorGeoLocation.sharedInstance
-    }
-    
+    //MARK: setup
     public func setup(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) throws {
         self.inspetorConfig = InspetorConfig(appId: appId, trackerName: trackerName, devEnv: devEnv, inspetorEnv: inspetorEnv)
         
         if !(self.inspetorConfig!.isValid()) {
             //deinitialize object and throw exception
             self.inspetorConfig = nil
-             throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
+            throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
+        }
+    }
+    
+    //MARK: trackers
+    public func trackScreenView(screenName: String) throws {
+        try self.verifyResource()
+        
+        do {
+            try self.inspetorResource!.trackScreenView(screenName: screenName)
+        } catch TrackerException.internalError(let message) {
+            print("InspetorLog: \(message)")
+        } catch {
+            print("InspetorLog: An error occured")
         }
     }
     
@@ -43,7 +52,6 @@ public class InspetorClient: InspetorClientService {
         } catch {
             print("InspetorLog: An error occured")
         }
-        
     }
     
     public func trackAccountDeletion(accountId: String) throws {

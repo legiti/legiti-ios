@@ -40,11 +40,14 @@ internal class SnowplowManager {
             builder!.setHttpMethod(InspetorDependencies.defaultHttpMethodType)
             builder!.setProtocol(InspetorDependencies.defaultProtocolType)
             builder!.setCallback(self.inspetorEmitterCallback)
+            builder!.setEmitThreadPoolSize(1)
+            builder!.setByteLimitPost(200)
         }) else {
             return nil
         }
         
         let subject = SPSubject(platformContext: true, andGeoContext: true)
+        subject!.setTimezone(TimeZone.current.identifier)
         
         guard let newTracker = SPTracker.build({ (builder: SPTrackerBuilder?) -> Void in
             builder!.setEmitter(emitter)

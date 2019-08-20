@@ -13,6 +13,7 @@ public class Inspetor {
     private static let instance: InspetorClient = InspetorClient()
     
     public static func sharedInstance() -> InspetorClient {
+        let _ = InspetorGeoLocation.sharedInstance
         return self.instance
     }
     
