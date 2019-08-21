@@ -15,7 +15,7 @@ class InspetorIntegrationTests: XCTestCase {
         do {
             //For this tests you need to change the applicationContext (SnowplowManager->setupTracker->newTracker->builder!.setApplicationContext()) to false
             //Otherwise the tests wont work since this is not an app
-            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
+            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: false)
         } catch {
             fatalError("Error when initializing the tracker")
         }
@@ -82,7 +82,7 @@ class InspetorIntegrationTests: XCTestCase {
         
         self.setUpTracker()
         if Inspetor.sharedInstance().isConfigured() {
-            try! Inspetor.sharedInstance().trackLogout(accountEmail: "logout@email.com", accountId: "123")
+            try! Inspetor.sharedInstance().trackLogout(accountEmail: "logout@email.com", accountId: nil)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {

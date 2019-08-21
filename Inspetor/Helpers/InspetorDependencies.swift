@@ -12,7 +12,7 @@ import SnowplowTracker
 struct InspetorDependencies {
     
     static let defaultBase64Option: Bool = true
-    static let defaultCollectorURL: String = "ppt.useinspetor.com/"
+    static let defaultCollectorURL: String = "ppt.inspcdn.net/"
     //static let defaultCollectorURL: String = "ho18jk6jvh.execute-api.sa-east-1.amazonaws.com/staging/"
     //static let defaultCollectorURL: String = "localhost:3000/"
     static let stagingPostPath: String = "post-staging"
@@ -29,6 +29,6 @@ struct InspetorDependencies {
     static let inspetorAccountSchema: String = "iglu:com.inspetor/inspetor_account_frontend/jsonschema/1-0-0"
     static let inspetorEventSchema: String = "iglu:com.inspetor/inspetor_event_frontend/jsonschema/1-0-0"
     static let inspetorActionContextSchema: String = "iglu:com.inspetor/inspetor_context/jsonschema/1-0-0"
-    static let inspetorFingerprintContextSchema: String = "iglu:com.inspetor/inspetor_fingerprint_frontend/jsonschema/1-0-2"
+    static let inspetorFingerprintContextSchema: String = "iglu:com.inspetor/inspetor_fingerprint_frontend/jsonschema/1-0-3"
 
 }

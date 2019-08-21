@@ -12,35 +12,29 @@ import SwiftKeychainWrapper
 
 internal class InspetorDeviceData {
     
-    private var deviceData: Dictionary<String, Any>?
+    private var deviceData = [String: Any?]()
     
-    internal func getDeviceData() -> Dictionary<String, Any>? {
+    internal func getDeviceData() -> Dictionary<String, Any?> {
         // We are doing this so we dont have to check everything everytime
-        if deviceData != nil {
+        if !(deviceData.isEmpty) {
             return deviceData
         }
 
-        var data = [String: Any]()
+        var data = [String: Any?]()
         
-        if  let deviceFingerprint = self.getDeviceFingerprint() {
-            data["device_fingerprint"] = deviceFingerprint
-            data["is_simulator"] = self.getIsSimulator()
-            data["is_rooted"] = self.getIsJailbroken()
-            data["is_vpn"] = self.getIsVPNConnected()
-            self.deviceData = data
-            return data
-        }
-        return nil
+        // We need to do the '?? nil as Any?' since, otherwise, we won't even send
+        // device_fingerprint if it's equal no nil
+        data["device_fingerprint"] = self.getDeviceFingerprint() ?? nil as Any?
+        data["is_simulator"] = self.getIsSimulator()
+        data["is_rooted"] = self.getIsJailbroken()
+        data["is_vpn"] = self.getIsVPNConnected()
+        self.deviceData = data
+        
+        return data
     }
     
     private func getDeviceFingerprint() -> String? {
-        do {
-            let deviceID = try InspetorFingerprint.getDeviceFingerprint()
-            return deviceID
-        } catch (let message) {
-            print(message)
-            return nil
-        }
+        return InspetorFingerprint.getDeviceFingerprint()
     }
     
     private func getIsSimulator() -> Bool {
@@ -76,7 +70,7 @@ internal class InspetorFingerprint {
     private static var deviceFingerprint: String?
     private static let inspetorKey: String = "inspetorFingerprint"
     
-    internal static func getDeviceFingerprint() throws -> String {
+    internal static func getDeviceFingerprint() -> String? {
         if self.deviceFingerprint == nil {
             if let deviceID = self.retrieveDeviceFingerprint() {
                 self.deviceFingerprint = deviceID
@@ -87,9 +81,8 @@ internal class InspetorFingerprint {
             if self.saveDeviceFingerprint(deviceID: deviceID) {
                 self.deviceFingerprint = deviceID
                 return self.deviceFingerprint!
-            } else {
-                throw TrackerException.internalError(message: "InspetorLog: An error occured")
             }
+            return nil
         }
         return self.deviceFingerprint!
     }

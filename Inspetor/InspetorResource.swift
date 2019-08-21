@@ -183,17 +183,13 @@ class InspetorResource: NSObject, InspetorResourceService {
     
     //MARK: FingerprintContext
     private func getFingerprintContext() -> SPSelfDescribingJson? {
-        
-        if let devideContext = InspetorDeviceData().getDeviceData() {
-            let fingerprintContext = SPSelfDescribingJson(
-                schema: InspetorDependencies.inspetorFingerprintContextSchema,
-                andData: (devideContext as NSDictionary)
-            )
-            return fingerprintContext!
-        }
-        return nil
-    }
-    
+        let deviceContext = InspetorDeviceData().getDeviceData()
 
+        let fingerprintContext = SPSelfDescribingJson(
+            schema: InspetorDependencies.inspetorFingerprintContextSchema,
+            andData: (deviceContext as NSDictionary)
+        )
+        return fingerprintContext!
+    }
     
 }
