@@ -46,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         if (Inspetor.sharedInstance().isConfigured()) {
-            try! self.inspetor.trackScreenView(screenName: "TESTE")
+            try! self.inspetor.trackPageView(pageTitle: "TESTE")
         }
     
     }
@@ -131,7 +131,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func trackScreenView(_ sender: UIButton) {
         if (self.inspetor.isConfigured()) {
-            try! self.inspetor.trackScreenView(screenName: "Teste")
+            try! self.inspetor.trackPageView(pageTitle: "Teste")
         }
     }
     

@@ -28,11 +28,11 @@ public class InspetorClient: InspetorClientService {
     }
     
     //MARK: trackers
-    public func trackScreenView(screenName: String) throws {
+    public func trackPageView(pageTitle: String) throws {
         try self.verifyResource()
         
         do {
-            try self.inspetorResource!.trackScreenView(screenName: screenName)
+            try self.inspetorResource!.trackPageView(pageTitle: pageTitle)
         } catch TrackerException.internalError(let message) {
             print("InspetorLog: \(message)")
         } catch {

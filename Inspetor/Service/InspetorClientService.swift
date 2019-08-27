@@ -7,7 +7,7 @@ import Foundation
 
 protocol InspetorClientService {
 
-    func trackScreenView(screenName: String) throws
+    func trackPageView(pageTitle: String) throws
     /**
      Send account creation data to Inspetor
      - parameter accountId: (query)

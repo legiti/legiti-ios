@@ -34,10 +34,10 @@ class InspetorResource: NSObject, InspetorResourceService {
     }
     
     //MARK: TrackActions
-    internal func trackScreenView(screenName: String) throws {
+    internal func trackPageView(pageTitle: String) throws {
         
         guard let screenViewEvent = SPScreenView.build({ (builder: SPScreenViewBuilder?) -> Void in
-            builder!.setName(screenName)
+            builder!.setName(pageTitle)
             if let fingerprintContext = self.getFingerprintContext() {
                 builder!.setContexts(NSMutableArray(array: [fingerprintContext]))
             }
