@@ -36,6 +36,9 @@ class InspetorResource: NSObject, InspetorResourceService {
     //MARK: TrackActions
     internal func trackPageView(pageTitle: String) throws {
         
+        // Although we are using pageView as the name for this function we are using the snowplow
+        // screenView function. We are doing this since we want to maintain function name consistency
+        // in all of our frontend libraries
         guard let screenViewEvent = SPScreenView.build({ (builder: SPScreenViewBuilder?) -> Void in
             builder!.setName(pageTitle)
             if let fingerprintContext = self.getFingerprintContext() {
