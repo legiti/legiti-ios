@@ -12,7 +12,7 @@ import SnowplowTracker
 struct InspetorConfig {
     static let DEFAULT_BASE64_OPTION: Bool = true
     static let DEFAULT_COLLECTOR_URI: String = "heimdall-prod.inspcdn.net"
-    static let DEFAULT_HTTP_METHOD_TYPE: SPRequestOptions = SPRequestOptions.get
+    static let DEFAULT_HTTP_METHOD_TYPE: SPRequestOptions = SPRequestOptions.post
     static let DEFAULT_PROTOCOL_TYPE: SPProtocol = SPProtocol.https
     static let DEFAULT_INSPETOR_TRACKER_NAME_SEPARATOR: Character = "."
     
