@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0289AAC441C41FF3A9261B5E /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */; };
+		0289AAC441C41FF3A9261B5E /* Pods_InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA77F28357EED5465161C21 /* Pods_InspetorSwiftFramework.framework */; platformFilter = ios; };
 		780AC8612252526F00383069 /* InspetorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* InspetorConfig.swift */; };
 		78783CA7224424E70052BB50 /* InspetorSwiftFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* InspetorSwiftFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78783CAE224425060052BB50 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783CAD224425060052BB50 /* InspetorResource.swift */; };
@@ -15,7 +15,6 @@
 		78FC55C5224D481200F42B40 /* InspetorSwiftFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC55C4224D481200F42B40 /* InspetorSwiftFrameworkTests.swift */; };
 		78FC55C7224D481200F42B40 /* InspetorSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* InspetorSwiftFramework.framework */; };
 		790C46C1924528E449A6F74A /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00721186B8B519AF43A54110 /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework */; };
-		CCE4688ACCF1EABF974C5D87 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A14D8320077FF105EEA613 /* Pods_InspetorSwiftFrameworkTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FC55C7224D481200F42B40 /* InspetorSwiftFramework.framework in Frameworks */,
-				CCE4688ACCF1EABF974C5D87 /* Pods_InspetorSwiftFrameworkTests.framework in Frameworks */,
 				790C46C1924528E449A6F74A /* Pods_InspetorSwiftFramework_InspetorSwiftFrameworkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +193,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Inspetor;
 				TargetAttributes = {
 					78783CA1224424E70052BB50 = {
@@ -204,6 +202,7 @@
 					};
 					78FC55C1224D481200F42B40 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -490,7 +489,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -517,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -536,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -555,7 +554,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspetor.InspetorSwiftFrameworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

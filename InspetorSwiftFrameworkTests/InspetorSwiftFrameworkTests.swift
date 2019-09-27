@@ -70,6 +70,6 @@ class InspetorSwiftFrameworkTests: XCTestCase {
     // If you need to build this framework for testing, you can manually configure a non-default
     // url when you are integrating this app into the client.
     func testCollectorEndpointProperlyConfigured() {
-        XCTAssertTrue(InspetorConfig.DEFAULT_COLLECTOR_URI == "analytics.useinspetor.com")
+        XCTAssertTrue(InspetorConfig.DEFAULT_COLLECTOR_URI == "heimdall-prod.inspcdn.net")
     }
 }
