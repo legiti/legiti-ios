@@ -12,14 +12,11 @@ import SnowplowTracker
 struct InspetorDependencies {
     
     static let defaultBase64Option: Bool = true
-    static let defaultCollectorURL: String = "ppt.inspcdn.net/"
-    //static let defaultCollectorURL: String = "ho18jk6jvh.execute-api.sa-east-1.amazonaws.com/staging/"
-    //static let defaultCollectorURL: String = "localhost:3000/"
+    static let defaultCollectorURL: String = "heimdall-prod.inspcdn.net/"
     static let stagingPostPath: String = "post-staging"
     static let prodPostPath: String = "post"
     static let defaultHttpMethodType: SPRequestOptions = SPRequestOptions.post
     static let defaultProtocolType: SPProtocol = SPProtocol.https
-    //static let defaultProtocolType: SPProtocol = SPProtocol.http
     
     // Schema versions
     static let inspetorAuthSchema: String = "iglu:com.inspetor/inspetor_auth_frontend/jsonschema/1-0-3"
