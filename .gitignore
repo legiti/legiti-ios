@@ -1,4 +1,5 @@
 build/
 derived_data/
-
-InspetorSwiftFramework.xcworkspace/xcuserdata/*
+xcuserdata/
+*.moved-aside
+*.xcuserstate
