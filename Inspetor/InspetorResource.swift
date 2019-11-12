@@ -25,14 +25,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         SnowplowManager.sharedInstance.inspetorConfig = self.inspetorConfig
         self.tracker = SnowplowManager.sharedInstance.getTracker()
     }
-    
-    //MARK: ActiveUser
-    private func trackActiveUser(userId: String? = nil) {
-        let subject = SnowplowManager.sharedInstance.getSubject()
-        subject.setUserId(userId ?? "")
-        self.tracker!.setSubject(subject)
-    }
-    
+        
     //MARK: TrackActions
     internal func trackPageView(pageTitle: String) throws {
         
@@ -60,9 +53,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         ) else {
             throw TrackerException.internalError(message: "An error occured")
         }
-        
-        self.trackActiveUser(userId: self.decodeBase64Data(data: data["account_id"]!!))
-        
+                
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
@@ -131,12 +122,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    //MARK: Helper Functions    
-    private func decodeBase64Data(data: String) -> String {
-        let decodedData = Data(base64Encoded: data)!
-        return String(data: decodedData, encoding: .utf8)!
-    }
-    
+    //MARK: Helper Functions        
     private func createUnstructuredEvent(schema: String, data: NSDictionary, action: String) -> SPUnstructured? {
         
         let contextData: NSDictionary = ["action": action]
