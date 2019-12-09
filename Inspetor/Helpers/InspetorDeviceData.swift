@@ -50,13 +50,15 @@ internal class InspetorDeviceData {
     }
     
     private func getIsVPNConnected() -> Bool {
-        let cfDict = CFNetworkCopySystemProxySettings()
-        let nsDict = cfDict!.takeRetainedValue() as NSDictionary
-        let keys = nsDict["__SCOPED__"] as! NSDictionary
-        
-        for key: String in keys.allKeys as! [String] {
-            if (key == "tap" || key == "tun" || key == "ppp" || key == "ipsec" || key == "ipsec0") {
-                return true
+        guard let cfDict = CFNetworkCopySystemProxySettings() else {
+            return false
+        }
+        let nsDict = cfDict.takeRetainedValue() as NSDictionary
+        if let keys = nsDict["__SCOPED__"] as? NSDictionary {
+            for key: String in keys.allKeys as! [String] {
+                if (key == "tap" || key == "tun" || key == "ppp" || key == "ipsec" || key == "ipsec0") {
+                    return true
+                }
             }
         }
         return false
