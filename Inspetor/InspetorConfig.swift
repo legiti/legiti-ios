@@ -9,45 +9,26 @@
 import Foundation
 
 internal struct InspetorConfig {
-    
-    internal var devEnv: Bool
+
+    internal var authToken: String
     internal var inspetorEnv: Bool
-    internal var appId: String
-    internal var trackerName: String
+    internal var devEnv: Bool
     
-    internal init(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) {
-        self.appId = appId
-        self.trackerName = trackerName
-        self.devEnv = devEnv
+    internal init(authToken: String, inspetorEnv: Bool = false) {
+        self.authToken = authToken
         self.inspetorEnv = inspetorEnv
+        self.devEnv = self.isSandboxMode()
     }
     
     internal func isValid() -> Bool {
-        
-        if (self.appId.isEmpty || self.trackerName.isEmpty) {
-            return false
-        }
-        
-        if !(self.isValidtrackerName()) {
-            return false
-        }
-        
+        return !self.authToken.isEmpty && self.validateAuthToken()
+    }
+    
+    private func validateAuthToken() -> Bool {
         return true
     }
     
-    private func isValidtrackerName() -> Bool {
-        let splitedTrackerName = self.trackerName.split(separator: ".")
-        
-        if splitedTrackerName.count < 2 {
-            return false
-        }
-        
-        for partTrackerName in splitedTrackerName {
-            if partTrackerName.count <= 1 {
-                return false
-            }
-        }
-        
+    private func isSandboxMode() -> Bool {
         return true
     }
     

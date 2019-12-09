@@ -14,11 +14,11 @@ public class InspetorClient: InspetorClientService {
     private var inspetorResource: InspetorResource?
     private var inspetorConfig: InspetorConfig?
     private let errorMessage9001 = "AppId and trackerName are required parameters"
-    private let errorMessage9002 = "AppId or/and trackerName are not valid"
+    private let errorMessage9002 = "AuthToken is not valid"
     
     //MARK: setup
-    public func setup(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) throws {
-        self.inspetorConfig = InspetorConfig(appId: appId, trackerName: trackerName, devEnv: devEnv, inspetorEnv: inspetorEnv)
+    public func setup(authToken: String, inspetorEnv: Bool = false) throws {
+        self.inspetorConfig = InspetorConfig(authToken: authToken, inspetorEnv: inspetorEnv)
         
         if !(self.inspetorConfig!.isValid()) {
             //deinitialize object and throw exception
@@ -30,214 +30,111 @@ public class InspetorClient: InspetorClientService {
     //MARK: trackers
     public func trackPageView(pageTitle: String) throws {
         try self.verifyResource()
-        
-        do {
-            try self.inspetorResource!.trackPageView(pageTitle: pageTitle)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        self.inspetorResource!.trackPageView(pageTitle: pageTitle)
     }
     
     public func trackAccountCreation(accountId: String) throws {
-        let data = self.createJson(id: accountId, prefix: "account")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackAccountAction(data: data, action: .create)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: accountId, prefix: "account")
+        self.inspetorResource!.trackAccountAction(data: data, action: .create)
     }
     
     public func trackAccountDeletion(accountId: String) throws {
-        let data = self.createJson(id: accountId, prefix: "account")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackAccountAction(data: data, action: .delete)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: accountId, prefix: "account")
+        self.inspetorResource!.trackAccountAction(data: data, action: .delete)
     }
     
     public func trackAccountUpdate(accountId: String) throws {
-        let data = self.createJson(id: accountId, prefix: "account")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackAccountAction(data: data, action: .update)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: accountId, prefix: "account")
+        self.inspetorResource!.trackAccountAction(data: data, action: .update)
     }
     
     public func trackEventCreation(eventId: String) throws {
-        let data = self.createJson(id: eventId, prefix: "event")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackEventAction(data: data, action: .create)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: eventId, prefix: "event")
+        self.inspetorResource!.trackEventAction(data: data, action: .create)
     }
     
     public func trackEventDeletion(eventId: String) throws {
-        let data = self.createJson(id: eventId, prefix: "event")
-        
         try self.verifyResource()
-
-        do {
-            try self.inspetorResource!.trackEventAction(data: data, action: .delete)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        
+        let data = self.createJson(id: eventId, prefix: "event")
+        self.inspetorResource!.trackEventAction(data: data, action: .delete)
     }
     
     public func trackEventUpdate(eventId: String) throws {
-        let data = self.createJson(id: eventId, prefix: "event")
-        
         try self.verifyResource()
-
-        do {
-            try self.inspetorResource!.trackEventAction(data: data, action: .update)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        
+        let data = self.createJson(id: eventId, prefix: "event")
+        self.inspetorResource!.trackEventAction(data: data, action: .update)
     }
     
     public func trackItemTransferCreation(transferId: String) throws {
-        let data = self.createJson(id: transferId, prefix: "transfer")
-
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackItemTransferAction(data: data, action: .create)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: transferId, prefix: "transfer")
+        self.inspetorResource!.trackItemTransferAction(data: data, action: .create)
     }
     
     public func trackItemTransferUpdate(transferId: String) throws {
-        let data = self.createJson(id: transferId, prefix: "transfer")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackItemTransferAction(data: data, action: .updateStatus)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: transferId, prefix: "transfer")
+        self.inspetorResource!.trackItemTransferAction(data: data, action: .updateStatus)
     }
     
     public func trackLogin(accountEmail: String, accountId: String?) throws {
-        var data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
-        
-        data["auth_account_id"] = accountId != nil ? self.encodeData(stringToEncode: accountId!) : nil
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackAccountAuthAction(data: data, action: .login)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        var data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
+        // Inline if for encoding data if accountId was passed
+        data["auth_account_id"] = accountId != nil ? self.encodeData(stringToEncode: accountId!) : nil
+        
+        self.inspetorResource!.trackAccountAuthAction(data: data, action: .login)
     }
     
     public func trackLogout(accountEmail: String, accountId: String?) throws {
-        var data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
-        
-        data["auth_account_id"] = accountId != nil ? self.encodeData(stringToEncode: accountId!) : nil
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackAccountAuthAction(data: data, action: .logout)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        var data = self.createJson(id: accountEmail, prefix: "auth", idSufix: "account_email")
+        // Inline if for encoding data if accountId was passed
+        data["auth_account_id"] = accountId != nil ? self.encodeData(stringToEncode: accountId!) : nil
+
+        self.inspetorResource!.trackAccountAuthAction(data: data, action: .logout)
     }
     
     public func trackPasswordRecovery(accountEmail: String) throws {
-        let data = self.createJson(id: accountEmail, prefix: "pass_recovery", idSufix: "email")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackPasswordRecoveryAction(data: data, action: .recovery)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: accountEmail, prefix: "pass_recovery", idSufix: "email")
+        self.inspetorResource!.trackPasswordRecoveryAction(data: data, action: .recovery)
     }
     
     public func trackPasswordReset(accountEmail: String) throws {
-        let data = self.createJson(id: accountEmail, prefix: "pass_recovery", idSufix: "email")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackPasswordRecoveryAction(data: data, action: .reset)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: accountEmail, prefix: "pass_recovery", idSufix: "email")
+        self.inspetorResource!.trackPasswordRecoveryAction(data: data, action: .reset)
     }
     
     public func trackSaleCreation(saleId: String) throws {
-        let data = self.createJson(id: saleId, prefix: "sale")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackSaleAction(data: data, action: .create)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: saleId, prefix: "sale")
+        self.inspetorResource!.trackSaleAction(data: data, action: .create)
     }
     
     public func trackSaleUpdate(saleId: String) throws {
-        let data = self.createJson(id: saleId, prefix: "sale")
-        
         try self.verifyResource()
         
-        do {
-            try self.inspetorResource!.trackSaleAction(data: data, action: .update)
-        } catch TrackerException.internalError(let message) {
-            print("InspetorLog: \(message)")
-        } catch {
-            print("InspetorLog: An error occured")
-        }
+        let data = self.createJson(id: saleId, prefix: "sale")
+        self.inspetorResource!.trackSaleAction(data: data, action: .update)
     }
     
     
