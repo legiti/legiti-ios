@@ -10,10 +10,14 @@ import XCTest
 @testable import Inspetor
 
 class InspetorUnitTests: XCTestCase {
+    
+    // These tokens were created using the JWT website. The "middle part" is `{"principalId": "inspetor_test"}`
+    private static let sandboxAuthToken: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3Rfc2FuZGJveCJ9.jo0VeV2k8i2TWP6Us9WSokHhEyVIBOa6hrxGqbDADt8"
+    private static let authToken: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3QifQ.cJimBzTsFCC5LMurLelIax_-0ejXYEOZdYIL7Q3GEEQ"
 
     private func setUpTracker() {
         do {
-            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.ios.test", devEnv: true, inspetorEnv: true)
+            try Inspetor.sharedInstance().setup(authToken: InspetorUnitTests.sandboxAuthToken, inspetorEnv: true)
         } catch {
             fatalError("Error when initializing the tracker")
         }
@@ -89,16 +93,40 @@ class InspetorUnitTests: XCTestCase {
         XCTAssertThrowsError(try inspetorResource.trackItemTransferUpdate(transferId: "123"))
     }
     
-    func testIfThrowsExceptionWhenCallTransferUpdateConfigEmpyString() {
-        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(appId: "", trackerName: ""))
+    func testIfThrowsExceptionWhenSetupWithEmptyToken() {
+        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(authToken: ""))
     }
 
-    func testIfThrowsExceptionWhentrackerNameWithoutDotIsNotValid() {
-        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(appId: "123", trackerName: "tracker"))
+    func testIfThrowsExceptionWhenAuthTokenIsMissingPart() {
+        let invalidAuthToken = InspetorUnitTests.authToken.split(separator: ".")[0...1].joined(separator: ".")
+        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(authToken: invalidAuthToken))
+    }
+
+    func testIfThrowsExceptionWhenAuthTokenMissingPrincipalId() {
+        let splittedToken = InspetorUnitTests.authToken.split(separator: ".")
+        let middlePartToEncode = "{\"missing_principal_id\": \"this_is_not_valid\"}"
+        
+        if let data = middlePartToEncode.data(using: .utf8) {
+            let invalidTokenArray = [String(splittedToken[0]), data.base64EncodedString(), String(splittedToken[2])]
+            let invalidAuthToken = invalidTokenArray.joined(separator: ".")
+            XCTAssertThrowsError(try Inspetor.sharedInstance().setup(authToken: invalidAuthToken))
+        }
     }
     
-    func testIfThrowsExceptionWhentrackerNameWithouRightLengthIsNotValid() {
-        XCTAssertThrowsError(try Inspetor.sharedInstance().setup(appId: "123", trackerName: "tracker.x"))
+    func testIfNotDevEnvWhenAuthNotSandbox() {
+        guard let config = InspetorConfig(authToken: InspetorUnitTests.authToken) else {
+            assertionFailure()
+            return
+        }
+        assert(config.devEnv == false)
+    }
+    
+    func testIfDevEnvWhenAuthSandbox() {
+        guard let config = InspetorConfig(authToken: InspetorUnitTests.sandboxAuthToken) else {
+            assertionFailure()
+            return
+        }
+        assert(config.devEnv == true)
     }
     
     

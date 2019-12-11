@@ -10,12 +10,15 @@ import XCTest
 @testable import Inspetor
 
 class InspetorIntegrationTests: XCTestCase {
+    
+    // This tokens were created using the JWT website. The "middle part" is `{"principalId": "inspetor_test"}`
+    private static let sandboxAuthToken: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3Rfc2FuZGJveCJ9.jo0VeV2k8i2TWP6Us9WSokHhEyVIBOa6hrxGqbDADt8"
 
     private func setUpTracker() {
         do {
             //For this tests you need to change the applicationContext (SnowplowManager->setupTracker->newTracker->builder!.setApplicationContext()) to false
             //Otherwise the tests wont work since this is not an app
-            try Inspetor.sharedInstance().setup(appId: "123", trackerName: "inspetor.test", devEnv: true, inspetorEnv: false)
+            try Inspetor.sharedInstance().setup(authToken: InspetorIntegrationTests.sandboxAuthToken, inspetorEnv: false)
         } catch {
             fatalError("Error when initializing the tracker")
         }

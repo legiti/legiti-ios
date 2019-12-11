@@ -13,18 +13,16 @@ public class InspetorClient: InspetorClientService {
     //MARK: Properties
     private var inspetorResource: InspetorResource?
     private var inspetorConfig: InspetorConfig?
-    private let errorMessage9001 = "AppId and trackerName are required parameters"
+    private let errorMessage9001 = "Library not configured"
     private let errorMessage9002 = "AuthToken is not valid"
     
     //MARK: setup
     public func setup(authToken: String, inspetorEnv: Bool = false) throws {
-        self.inspetorConfig = InspetorConfig(authToken: authToken, inspetorEnv: inspetorEnv)
-        
-        if !(self.inspetorConfig!.isValid()) {
-            //deinitialize object and throw exception
-            self.inspetorConfig = nil
+        guard let config = InspetorConfig(authToken: authToken, inspetorEnv: inspetorEnv) else {
             throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
         }
+        
+        self.inspetorConfig = config
     }
     
     //MARK: trackers
@@ -155,7 +153,12 @@ public class InspetorClient: InspetorClientService {
         return ""
     }
     
-    private func createJson(id: String, prefix: String, idSufix: String = "id", timestampSufix: String = "timestamp") -> Dictionary<String, String?> {
+    private func createJson(
+        id: String,
+        prefix: String,
+        idSufix: String = "id",
+        timestampSufix: String = "timestamp"
+    ) -> Dictionary<String, String?> {
         var dict = [String: String?]()
         
         let idProperty = "\(prefix)_\(idSufix)"
@@ -178,10 +181,7 @@ public class InspetorClient: InspetorClientService {
     }
     
     public func isConfigured() -> Bool {
-        if (self.inspetorConfig == nil) {
-            return false
-        }
-        return true
+        return (self.inspetorConfig == nil ? false : true)
     }
     
 }
