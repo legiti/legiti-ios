@@ -11,10 +11,9 @@ import Foundation
 internal struct InspetorConfig {
 
     internal var authToken: String
-    internal var inspetorEnv: Bool
-    internal var devEnv: Bool
+    internal var inspetorDevEnv: Bool
     
-    internal init?(authToken: String, inspetorEnv: Bool = false) {
+    internal init?(authToken: String, inspetorDevEnv: Bool = false) {
         // Validating the authToken as soon as we get it
         if (authToken.isEmpty) {
             return nil
@@ -25,13 +24,12 @@ internal struct InspetorConfig {
             return nil
         }
         
-        guard let principalId = InspetorConfig.getPrincipalId(authTokenPart: String(splittedToken[1])) else {
+        guard (InspetorConfig.getPrincipalId(authTokenPart: String(splittedToken[1])) != nil) else {
             return nil
         }
         
         self.authToken = authToken
-        self.inspetorEnv = inspetorEnv
-        self.devEnv = principalId.lowercased().contains("sandbox")
+        self.inspetorDevEnv = inspetorDevEnv
     }
     
     private static func getPrincipalId(authTokenPart: String) -> String? {

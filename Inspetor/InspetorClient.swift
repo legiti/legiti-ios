@@ -17,8 +17,8 @@ public class InspetorClient: InspetorClientService {
     private let errorMessage9002 = "AuthToken is not valid"
     
     //MARK: setup
-    public func setup(authToken: String, inspetorEnv: Bool = false) throws {
-        guard let config = InspetorConfig(authToken: authToken, inspetorEnv: inspetorEnv) else {
+    public func setup(authToken: String, inspetorDevEnv: Bool = false) throws {
+        guard let config = InspetorConfig(authToken: authToken, inspetorDevEnv: inspetorDevEnv) else {
             throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
         }
         
