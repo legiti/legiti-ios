@@ -18,7 +18,7 @@ class InspetorIntegrationTests: XCTestCase {
         do {
             //For this tests you need to change the applicationContext (SnowplowManager->setupTracker->newTracker->builder!.setApplicationContext()) to false
             //Otherwise the tests wont work since this is not an app
-            try Inspetor.sharedInstance().setup(authToken: InspetorIntegrationTests.sandboxAuthToken, inspetorEnv: false)
+            try Inspetor.sharedInstance().setup(authToken: InspetorIntegrationTests.sandboxAuthToken, inspetorDevEnv: true)
         } catch {
             fatalError("Error when initializing the tracker")
         }

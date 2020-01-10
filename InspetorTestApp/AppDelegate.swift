@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //This token is an actual (using our secret) "inspetor_test_sandbox"
-        let authToken: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3Rfc2FuZGJveCJ9.xDFFv_gfrqKXMykbluAXz-qJieLhZRdxH6nqEfu2Agw"
+        let authToken: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3QifQ.NJ89yQB1sIiR8qeIpIt5SDOJ45hUZBLQVVbQFVJ-lKo"
         
         do {
-            try Inspetor.sharedInstance().setup(authToken: authToken, inspetorEnv: false)
+            try Inspetor.sharedInstance().setup(authToken: authToken, inspetorDevEnv: true)
         } catch TrackerException.requiredConfig(let code, let message) {
             print("code: \(code) - message: \(message)")
         } catch {

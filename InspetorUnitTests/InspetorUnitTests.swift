@@ -17,7 +17,7 @@ class InspetorUnitTests: XCTestCase {
 
     private func setUpTracker() {
         do {
-            try Inspetor.sharedInstance().setup(authToken: InspetorUnitTests.sandboxAuthToken, inspetorEnv: true)
+            try Inspetor.sharedInstance().setup(authToken: InspetorUnitTests.sandboxAuthToken, inspetorDevEnv: true)
         } catch {
             fatalError("Error when initializing the tracker")
         }
@@ -112,23 +112,5 @@ class InspetorUnitTests: XCTestCase {
             XCTAssertThrowsError(try Inspetor.sharedInstance().setup(authToken: invalidAuthToken))
         }
     }
-    
-    func testIfNotDevEnvWhenAuthNotSandbox() {
-        guard let config = InspetorConfig(authToken: InspetorUnitTests.authToken) else {
-            assertionFailure()
-            return
-        }
-        assert(config.devEnv == false)
-    }
-    
-    func testIfDevEnvWhenAuthSandbox() {
-        guard let config = InspetorConfig(authToken: InspetorUnitTests.sandboxAuthToken) else {
-            assertionFailure()
-            return
-        }
-        assert(config.devEnv == true)
-    }
-    
-    
     
 }
