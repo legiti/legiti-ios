@@ -9,46 +9,39 @@
 import Foundation
 
 internal struct InspetorConfig {
+
+    internal var authToken: String
+    internal var inspetorDevEnv: Bool
     
-    internal var devEnv: Bool
-    internal var inspetorEnv: Bool
-    internal var appId: String
-    internal var trackerName: String
-    
-    internal init(appId: String, trackerName: String, devEnv: Bool = false, inspetorEnv: Bool = false) {
-        self.appId = appId
-        self.trackerName = trackerName
-        self.devEnv = devEnv
-        self.inspetorEnv = inspetorEnv
+    internal init?(authToken: String, inspetorDevEnv: Bool = false) {
+        // Validating the authToken as soon as we get it
+        if (authToken.isEmpty) {
+            return nil
+        }
+        
+        let splittedToken = authToken.split(separator: ".")
+        if (splittedToken.count != 3) {
+            return nil
+        }
+        
+        guard (InspetorConfig.getPrincipalId(authTokenPart: String(splittedToken[1])) != nil) else {
+            return nil
+        }
+        
+        self.authToken = authToken
+        self.inspetorDevEnv = inspetorDevEnv
     }
     
-    internal func isValid() -> Bool {
-        
-        if (self.appId.isEmpty || self.trackerName.isEmpty) {
-            return false
-        }
-        
-        if !(self.isValidtrackerName()) {
-            return false
-        }
-        
-        return true
-    }
-    
-    private func isValidtrackerName() -> Bool {
-        let splitedTrackerName = self.trackerName.split(separator: ".")
-        
-        if splitedTrackerName.count < 2 {
-            return false
-        }
-        
-        for partTrackerName in splitedTrackerName {
-            if partTrackerName.count <= 1 {
-                return false
+    private static func getPrincipalId(authTokenPart: String) -> String? {
+        // We may need to add "=" at the end of the word if it's not a multiple of 4
+        let b64encoded = authTokenPart.padding(toLength: ((authTokenPart.count+3)/4)*4, withPad: "=",startingAt: 0)
+        if let data = Data(base64Encoded: b64encoded) {
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:String] else {
+                return nil
             }
+            return json["principalId"] ?? nil
         }
-        
-        return true
+        return nil
     }
     
 }

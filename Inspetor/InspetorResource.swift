@@ -27,7 +27,7 @@ class InspetorResource: NSObject, InspetorResourceService {
     }
         
     //MARK: TrackActions
-    internal func trackPageView(pageTitle: String) throws {
+    internal func trackPageView(pageTitle: String) {
         
         // Although we are using pageView as the name for this function we are using the snowplow
         // screenView function. We are doing this since we want to maintain function name consistency
@@ -38,85 +38,92 @@ class InspetorResource: NSObject, InspetorResourceService {
                 builder!.setContexts(NSMutableArray(array: [fingerprintContext]))
             }
         }) else {
-            throw TrackerException.internalError(message: "An error occured")
+            print("InspetorLog: An error occured")
+            return
         }
         
         self.trackEvent(screenViewEvent: screenViewEvent)
     }
     
-    internal func trackAccountAction(data: Dictionary<String, String?>, action: Actions.accountActions) throws {
+    internal func trackAccountAction(data: Dictionary<String, String?>, action: Actions.accountActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorAccountSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            throw TrackerException.internalError(message: "An error occured")
+            print("InspetorLog: An error occured")
+            return
         }
                 
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackAccountAuthAction(data: Dictionary<String, String?>, action: Actions.authActions) throws {
+    internal func trackAccountAuthAction(data: Dictionary<String, String?>, action: Actions.authActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorAuthSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-           throw TrackerException.internalError(message: "An error occured")
+           print("InspetorLog: An error occured")
+           return
         }
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackEventAction(data: Dictionary<String, String?>, action: Actions.eventAction) throws {
+    internal func trackEventAction(data: Dictionary<String, String?>, action: Actions.eventAction) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorEventSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            throw TrackerException.internalError(message: "An error occured")
+            print("InspetorLog: An error occured")
+            return
         }
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackItemTransferAction(data: Dictionary<String, String?>, action: Actions.transferActions) throws {
+    internal func trackItemTransferAction(data: Dictionary<String, String?>, action: Actions.transferActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorItemTransferSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            throw TrackerException.internalError(message: "An error occured")
+            print("InspetorLog: An error occured")
+            return
         }
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackPasswordRecoveryAction(data: Dictionary<String, String?>, action: Actions.passRecoveryActions) throws {
+    internal func trackPasswordRecoveryAction(data: Dictionary<String, String?>, action: Actions.passRecoveryActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorPassRecoverySchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            throw TrackerException.internalError(message: "An error occured")
+            print("InspetorLog: An error occured")
+            return
         }
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackSaleAction(data: Dictionary<String, String?>, action: Actions.saleActions) throws {
+    internal func trackSaleAction(data: Dictionary<String, String?>, action: Actions.saleActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
             schema: InspetorDependencies.inspetorSaleSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            throw TrackerException.internalError(message: "An error occured")
+            print("InspetorLog: An error occured")
+            return
         }
 
         self.trackEvent(unstructedEvent: unstructedEvent)
