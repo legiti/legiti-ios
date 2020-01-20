@@ -24,7 +24,7 @@ To run the integration test you should run the test app that is located inside t
 
 ## How to publish
 To publish a new version of the Inspetor iOS Library you need to follow this steps:
-1. Clone the https://github.com/inspetor/inspetor-swift-framework-dist repo to the parent directory of where this library was cloned
+1. Clone the inspetor-swift-framework-dist (`git clone git@github.com:inspetor/inspetor-swift-framework-dist.git`) repo to the parent directory of where this library was cloned
 1. Go back to the this repository
 1. Run the `./build-universal-framework.sh`script
 1. Go to the `inspetor-swift-framework-dist` repo (`cd ../inspetor-swift-framework-dist`)
