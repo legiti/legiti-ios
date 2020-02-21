@@ -32,7 +32,7 @@
 		0B99509822D773DD00288282 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509722D773DD00288282 /* InspetorResource.swift */; };
 		0BACF80022D7965F00A2C2FF /* InspetorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */; };
 		0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5222D8D05100054EF2 /* Actions.swift */; };
-		0BB12D5522D8D40A00054EF2 /* InspetorClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5422D8D40A00054EF2 /* InspetorClient.swift */; };
+		0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */; };
 		0BD5066422DE6E0500697434 /* InspetorEmitterCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */; };
 		0BFB1BCD22DF47F700CB9C6B /* InspetorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */; };
 		0BFB1BCF22DF47F700CB9C6B /* Inspetor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Inspetor.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -103,7 +103,7 @@
 		0B99509722D773DD00288282 /* InspetorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorResource.swift; sourceTree = "<group>"; };
 		0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorConfig.swift; sourceTree = "<group>"; };
 		0BB12D5222D8D05100054EF2 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		0BB12D5422D8D40A00054EF2 /* InspetorClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorClient.swift; sourceTree = "<group>"; };
+		0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiClient.swift; sourceTree = "<group>"; };
 		0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorEmitterCallback.swift; sourceTree = "<group>"; };
 		0BFB1BCA22DF47F700CB9C6B /* InspetorUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspetorUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorUnitTests.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				78783CA5224424E70052BB50 /* Inspetor.h */,
 				78783CA6224424E70052BB50 /* Info.plist */,
 				0B1A17A322D8FB8C00933746 /* Inspetor.swift */,
-				0BB12D5422D8D40A00054EF2 /* InspetorClient.swift */,
+				0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */,
 				0B99509722D773DD00288282 /* InspetorResource.swift */,
 				0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */,
 				0BFB1BDB22DF5C8300CB9C6B /* Helpers */,
@@ -568,7 +568,7 @@
 				0BACF80022D7965F00A2C2FF /* InspetorConfig.swift in Sources */,
 				0B99509822D773DD00288282 /* InspetorResource.swift in Sources */,
 				0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */,
-				0BB12D5522D8D40A00054EF2 /* InspetorClient.swift in Sources */,
+				0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */,
 				780AC8612252526F00383069 /* InspetorDependencies.swift in Sources */,
 				0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */,
 				0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */,
