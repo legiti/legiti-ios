@@ -91,7 +91,7 @@ Swift framework for incorporating Legiti antifraud into iOS apps.
   #  profile URL.
   #
 
-  spec.author             = { "Legiti Dev Team" => "dev@ulegiti.com" }
+  spec.author             = { "Legiti Dev Team" => "dev@legiti.com" }
   # Or just: spec.author    = "Pearson Henri"
   # spec.authors            = { "Pearson Henri" => "email@address.com" }
   # spec.social_media_url   = "https://twitter.com/Pearson Henri"
