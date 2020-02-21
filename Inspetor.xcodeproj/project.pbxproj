@@ -29,15 +29,15 @@
 		0B92ABFE2304A7A500BA3A24 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFD2304A7A500BA3A24 /* FMDB.framework */; };
 		0B92AC002304A7A500BA3A24 /* INTULocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFF2304A7A500BA3A24 /* INTULocationManager.framework */; };
 		0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509222D7708D00288282 /* LegitiResourceService.swift */; };
-		0B99509822D773DD00288282 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509722D773DD00288282 /* InspetorResource.swift */; };
-		0BACF80022D7965F00A2C2FF /* InspetorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */; };
+		0B99509822D773DD00288282 /* LegitiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509722D773DD00288282 /* LegitiResource.swift */; };
+		0BACF80022D7965F00A2C2FF /* LegitiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */; };
 		0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5222D8D05100054EF2 /* Actions.swift */; };
 		0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */; };
 		0BD5066422DE6E0500697434 /* InspetorEmitterCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */; };
 		0BFB1BCD22DF47F700CB9C6B /* InspetorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */; };
 		0BFB1BCF22DF47F700CB9C6B /* Inspetor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Inspetor.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0BFB1BD622DF482300CB9C6B /* InspetorIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BD522DF482300CB9C6B /* InspetorIntegrationTests.swift */; };
-		780AC8612252526F00383069 /* InspetorDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* InspetorDependencies.swift */; };
+		780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* LegitiDependencies.swift */; };
 		78783CA7224424E70052BB50 /* Inspetor.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* Inspetor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -100,8 +100,8 @@
 		0B92ABFD2304A7A500BA3A24 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B92ABFF2304A7A500BA3A24 /* INTULocationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = INTULocationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B99509222D7708D00288282 /* LegitiResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiResourceService.swift; sourceTree = "<group>"; };
-		0B99509722D773DD00288282 /* InspetorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorResource.swift; sourceTree = "<group>"; };
-		0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorConfig.swift; sourceTree = "<group>"; };
+		0B99509722D773DD00288282 /* LegitiResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiResource.swift; sourceTree = "<group>"; };
+		0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiConfig.swift; sourceTree = "<group>"; };
 		0BB12D5222D8D05100054EF2 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiClient.swift; sourceTree = "<group>"; };
 		0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorEmitterCallback.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		4AE0A89ED0243C066CB4B8CC /* Pods_Inspetor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inspetor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B7CD5BB9E32FF27A160892 /* Pods-Inspetor-InspetorUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspetor-InspetorUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Inspetor-InspetorUnitTests/Pods-Inspetor-InspetorUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DAED5544E94C62841A0A56E /* Pods-InspetorTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorTestApp.release.xcconfig"; path = "Target Support Files/Pods-InspetorTestApp/Pods-InspetorTestApp.release.xcconfig"; sourceTree = "<group>"; };
-		780AC8602252526F00383069 /* InspetorDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorDependencies.swift; sourceTree = "<group>"; };
+		780AC8602252526F00383069 /* LegitiDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiDependencies.swift; sourceTree = "<group>"; };
 		78783CA2224424E70052BB50 /* Inspetor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Inspetor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78783CA5224424E70052BB50 /* Inspetor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspetor.h; sourceTree = "<group>"; };
 		78783CA6224424E70052BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		0BFB1BDB22DF5C8300CB9C6B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				780AC8602252526F00383069 /* InspetorDependencies.swift */,
+				780AC8602252526F00383069 /* LegitiDependencies.swift */,
 				0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */,
 				0BB12D5222D8D05100054EF2 /* Actions.swift */,
 				0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */,
@@ -245,8 +245,8 @@
 				78783CA6224424E70052BB50 /* Info.plist */,
 				0B1A17A322D8FB8C00933746 /* Inspetor.swift */,
 				0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */,
-				0B99509722D773DD00288282 /* InspetorResource.swift */,
-				0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */,
+				0B99509722D773DD00288282 /* LegitiResource.swift */,
+				0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */,
 				0BFB1BDB22DF5C8300CB9C6B /* Helpers */,
 				0B99509422D771B800288282 /* Service */,
 			);
@@ -565,11 +565,11 @@
 				0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */,
 				0BD5066422DE6E0500697434 /* InspetorEmitterCallback.swift in Sources */,
 				0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */,
-				0BACF80022D7965F00A2C2FF /* InspetorConfig.swift in Sources */,
-				0B99509822D773DD00288282 /* InspetorResource.swift in Sources */,
+				0BACF80022D7965F00A2C2FF /* LegitiConfig.swift in Sources */,
+				0B99509822D773DD00288282 /* LegitiResource.swift in Sources */,
 				0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */,
 				0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */,
-				780AC8612252526F00383069 /* InspetorDependencies.swift in Sources */,
+				780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */,
 				0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */,
 				0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */,
 				0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */,

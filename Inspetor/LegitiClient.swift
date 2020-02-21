@@ -3,14 +3,14 @@ import Foundation
 public class LegitiClient: LegitiClientService {
     
     //MARK: Properties
-    private var legitiResource: InspetorResource?
-    private var legitiConfig: InspetorConfig?
+    private var legitiResource: LegitiResource?
+    private var legitiConfig: LegitiConfig?
     private let errorMessage9001 = "Library not configured"
     private let errorMessage9002 = "AuthToken is not valid"
     
     //MARK: setup
     public func setup(authToken: String, legitiDevEnv: Bool = false) throws {
-        guard let config = InspetorConfig(authToken: authToken, inspetorDevEnv: legitiDevEnv) else {
+        guard let config = LegitiConfig(authToken: authToken, legitiDevEnv: legitiDevEnv) else {
             throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
         }
         
@@ -119,7 +119,7 @@ public class LegitiClient: LegitiClientService {
         }
         
         if (self.legitiResource == nil) {
-            self.legitiResource = InspetorResource(inspetorConfig: self.legitiConfig!)
+            self.legitiResource = LegitiResource(legitiConfig: self.legitiConfig!)
         }
     }
     

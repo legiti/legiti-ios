@@ -1,19 +1,11 @@
-//
-//  InspetorConfig.swift
-//  Inspetor
-//
-//  Created by Lourenço Biselli on 11/07/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 import Foundation
 
-internal struct InspetorConfig {
+internal struct LegitiConfig {
 
     internal var authToken: String
-    internal var inspetorDevEnv: Bool
+    internal var legitiDevEnv: Bool
     
-    internal init?(authToken: String, inspetorDevEnv: Bool = false) {
+    internal init?(authToken: String, legitiDevEnv: Bool = false) {
         // Validating the authToken as soon as we get it
         if (authToken.isEmpty) {
             return nil
@@ -24,12 +16,12 @@ internal struct InspetorConfig {
             return nil
         }
         
-        guard (InspetorConfig.getPrincipalId(authTokenPart: String(splittedToken[1])) != nil) else {
+        guard (LegitiConfig.getPrincipalId(authTokenPart: String(splittedToken[1])) != nil) else {
             return nil
         }
         
         self.authToken = authToken
-        self.inspetorDevEnv = inspetorDevEnv
+        self.legitiDevEnv = legitiDevEnv
     }
     
     private static func getPrincipalId(authTokenPart: String) -> String? {

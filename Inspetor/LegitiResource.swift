@@ -1,28 +1,20 @@
-//
-//  InspetorNewResource.swift
-//  Inspetor
-//
-//  Created by Lourenço Biselli on 11/07/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 import Foundation
 import SnowplowTracker
 import INTULocationManager
 
-class InspetorResource: NSObject, InspetorResourceService {
+class LegitiResource: NSObject, LegitiResourceService {
     
     //MARK: Properties
-    internal var inspetorConfig: InspetorConfig
+    internal var legitiConfig: LegitiConfig
     internal var tracker: SPTracker?
-    private var inspetorGeoLocation: InspetorGeoLocation = InspetorGeoLocation.sharedInstance
+    private var legitiGeoLocation: InspetorGeoLocation = InspetorGeoLocation.sharedInstance
     
     //MARK: init
-    init(inspetorConfig: InspetorConfig) {
-        self.inspetorConfig = inspetorConfig
+    init(legitiConfig: LegitiConfig) {
+        self.legitiConfig = legitiConfig
         super.init()
         //Get the Snowplow tracker through our SnoplowManager Class
-        SnowplowManager.sharedInstance.inspetorConfig = self.inspetorConfig
+        SnowplowManager.sharedInstance.inspetorConfig = self.legitiConfig
         self.tracker = SnowplowManager.sharedInstance.getTracker()
     }
         
@@ -45,84 +37,70 @@ class InspetorResource: NSObject, InspetorResourceService {
         self.trackEvent(screenViewEvent: screenViewEvent)
     }
     
-    internal func trackAccountAction(data: Dictionary<String, String?>, action: Actions.accountActions) {
+    internal func trackUserAction(data: Dictionary<String, String?>, action: Actions.userActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
-            schema: InspetorDependencies.inspetorAccountSchema,
+            schema: LegitiDependencies.userSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            print("InspetorLog: An error occured")
+            print("LegitiLog: An error occured")
             return
         }
                 
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackAccountAuthAction(data: Dictionary<String, String?>, action: Actions.authActions) {
+    internal func trackUserAuthAction(data: Dictionary<String, String?>, action: Actions.authActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
-            schema: InspetorDependencies.inspetorAuthSchema,
+            schema: LegitiDependencies.authSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-           print("InspetorLog: An error occured")
+           print("LegitiLog: An error occured")
            return
         }
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackEventAction(data: Dictionary<String, String?>, action: Actions.eventAction) {
+    internal func trackPasswordRecoveryAction(data: Dictionary<String, String?>, action: Actions.passwordActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
-            schema: InspetorDependencies.inspetorEventSchema,
+            schema: LegitiDependencies.passRecoverySchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            print("InspetorLog: An error occured")
+            print("LegitiLog: An error occured")
             return
         }
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackItemTransferAction(data: Dictionary<String, String?>, action: Actions.transferActions) {
+    internal func trackPasswordResetAction(data: Dictionary<String, String?>, action: Actions.passwordActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
-            schema: InspetorDependencies.inspetorItemTransferSchema,
+            schema: LegitiDependencies.passResetSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            print("InspetorLog: An error occured")
+            print("LegitiLog: An error occured")
             return
         }
         
         self.trackEvent(unstructedEvent: unstructedEvent)
     }
     
-    internal func trackPasswordRecoveryAction(data: Dictionary<String, String?>, action: Actions.passRecoveryActions) {
+    internal func trackOrderAction(data: Dictionary<String, String?>, action: Actions.orderActions) {
         
         guard let unstructedEvent = self.createUnstructuredEvent(
-            schema: InspetorDependencies.inspetorPassRecoverySchema,
+            schema: LegitiDependencies.orderSchema,
             data: (data as NSDictionary),
             action: action.rawValue
         ) else {
-            print("InspetorLog: An error occured")
-            return
-        }
-        
-        self.trackEvent(unstructedEvent: unstructedEvent)
-    }
-    
-    internal func trackSaleAction(data: Dictionary<String, String?>, action: Actions.saleActions) {
-        
-        guard let unstructedEvent = self.createUnstructuredEvent(
-            schema: InspetorDependencies.inspetorSaleSchema,
-            data: (data as NSDictionary),
-            action: action.rawValue
-        ) else {
-            print("InspetorLog: An error occured")
+            print("LegitiLog: An error occured")
             return
         }
 
@@ -137,7 +115,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         let sdj = SPSelfDescribingJson(schema: schema, andData: data)
         
         let actionContext = SPSelfDescribingJson(
-            schema: InspetorDependencies.inspetorActionContextSchema,
+            schema: LegitiDependencies.actionContextSchema,
             andData: contextData
         )
         
@@ -159,7 +137,7 @@ class InspetorResource: NSObject, InspetorResourceService {
     
     //MARK: TrackEvent
     private func trackEvent(unstructedEvent: SPUnstructured) {
-        if self.inspetorGeoLocation.currentLocation != nil {
+        if self.legitiGeoLocation.currentLocation != nil {
             self.tracker!.setSubject(InspetorGeoLocation.sharedInstance.getLocationSubject())
             self.tracker!.trackUnstructuredEvent(unstructedEvent)
         } else {
@@ -168,7 +146,7 @@ class InspetorResource: NSObject, InspetorResourceService {
     }
     
     private func trackEvent(screenViewEvent: SPScreenView) {
-        if self.inspetorGeoLocation.currentLocation != nil {
+        if self.legitiGeoLocation.currentLocation != nil {
             self.tracker!.setSubject(InspetorGeoLocation.sharedInstance.getLocationSubject())
             self.tracker!.trackScreenViewEvent(screenViewEvent)
         } else {
@@ -182,7 +160,7 @@ class InspetorResource: NSObject, InspetorResourceService {
         let deviceContext = InspetorDeviceData().getDeviceData()
 
         let fingerprintContext = SPSelfDescribingJson(
-            schema: InspetorDependencies.inspetorFingerprintContextSchema,
+            schema: LegitiDependencies.fingerprintContextSchema,
             andData: (deviceContext as NSDictionary)
         )
         return fingerprintContext!
