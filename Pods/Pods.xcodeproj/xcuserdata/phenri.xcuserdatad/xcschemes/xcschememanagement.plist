@@ -8,61 +8,41 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
 		</dict>
-		<key>INTULocationManager.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
-		</dict>
-		<key>Pods-Inspetor-InspetorTestApp.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>Pods-Inspetor-InspetorUnitTests.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
-		</dict>
-		<key>Pods-Inspetor.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
-		<key>Pods-InspetorSwiftFramework-InspetorSwiftFrameworkTests.xcscheme</key>
+		<key>INTULocationManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
-		<key>Pods-InspetorSwiftFramework.xcscheme</key>
+		<key>Pods-Legiti-LegitiTestApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
+		</dict>
+		<key>Pods-Legiti-LegitiUnitTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Legiti.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>ReachabilitySwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>SnowplowTracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
-		<key>SwiftKeychainWrapper.xcscheme_^#shared#^_</key>
+		<key>SwiftKeychainWrapper.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
