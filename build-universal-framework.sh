@@ -1,22 +1,22 @@
 rm -rf build && mkdir build
 
 # build framework for simulators
-xcodebuild ONLY_ACTIVE_ARCH=NO BITCODE_GENERATION_MODE=bitcode clean build -workspace Inspetor.xcworkspace -scheme Inspetor -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
+xcodebuild ONLY_ACTIVE_ARCH=NO BITCODE_GENERATION_MODE=bitcode clean build -workspace Legiti.xcworkspace -scheme Legiti -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
 
 # create folder to store compiled framework for simulator
 mkdir build/simulator
 
 # copy compiled framework for simulator into our build folder
-cp -r derived_data/Build/Products/Release-iphonesimulator/Inspetor.framework build/simulator
+cp -r derived_data/Build/Products/Release-iphonesimulator/Legiti.framework build/simulator
 
 # build framework for devices
-xcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS="-fembed-bitcode" ONLY_ACTIVE_ARCH=NO clean build -workspace Inspetor.xcworkspace -scheme Inspetor -configuration Release -sdk iphoneos -derivedDataPath derived_data
+xcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS="-fembed-bitcode" ONLY_ACTIVE_ARCH=NO clean build -workspace Legiti.xcworkspace -scheme Legiti -configuration Release -sdk iphoneos -derivedDataPath derived_data
 
 # create folder to store compiled framework for devices
 mkdir build/devices
 
 # copy compiled framework for devices into our build folder
-cp -r derived_data/Build/Products/Release-iphoneos/Inspetor.framework build/devices
+cp -r derived_data/Build/Products/Release-iphoneos/Legiti.framework build/devices
 
 
 ####################### Create universal framework #############################
@@ -24,17 +24,17 @@ cp -r derived_data/Build/Products/Release-iphoneos/Inspetor.framework build/devi
 mkdir build/universal
 
 # copy device framework into universal folder
-cp -r build/devices/Inspetor.framework build/universal/
+cp -r build/devices/Legiti.framework build/universal/
 
 # create framework binary compatible with devices and devices and replace binary in unviersal framework
-lipo -create build/simulator/Inspetor.framework/Inspetor build/devices/Inspetor.framework/Inspetor -output build/universal/Inspetor.framework/Inspetor
+lipo -create build/simulator/Legiti.framework/Legiti build/devices/Legiti.framework/Legiti -output build/universal/Legiti.framework/Legiti
 
 # copy simulator Swift public interface to universal framework
-cp build/simulator/Inspetor.framework/Modules/Inspetor.swiftmodule/* build/universal/Inspetor.framework/Modules/Inspetor.swiftmodule
+cp build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/* build/universal/Legiti.framework/Modules/Legiti.swiftmodule
 
 # copy binary to distribution repo (must be cloned alongside this repository)
-rm -rf ../inspetor-swift-framework-dist/backup/*
-if [ -f ../inspetor-swift-framework-dist/Inspetor.framework ]; then
-    mv ../inspetor-swift-framework-dist/Inspetor.framework ../inspetor-swift-framework-dist/backup
+rm -rf ../legiti-swift-framework-dist/backup/*
+if [ -f ../legiti-swift-framework-dist/Legiti.framework ]; then
+    mv ../legiti-swift-framework-dist/Legiti.framework ../legiti-swift-framework-dist/backup
 fi
-cp -r build/universal/Inspetor.framework ../inspetor-swift-framework-dist
+cp -r build/universal/Legiti.framework ../legiti-swift-framework-dist
