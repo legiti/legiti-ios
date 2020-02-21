@@ -28,7 +28,7 @@
 		0B92ABFC2304A7A100BA3A24 /* SwiftKeychainWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFB2304A7A100BA3A24 /* SwiftKeychainWrapper.framework */; };
 		0B92ABFE2304A7A500BA3A24 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFD2304A7A500BA3A24 /* FMDB.framework */; };
 		0B92AC002304A7A500BA3A24 /* INTULocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFF2304A7A500BA3A24 /* INTULocationManager.framework */; };
-		0B99509322D7708D00288282 /* InspetorResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509222D7708D00288282 /* InspetorResourceService.swift */; };
+		0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509222D7708D00288282 /* LegitiResourceService.swift */; };
 		0B99509822D773DD00288282 /* InspetorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509722D773DD00288282 /* InspetorResource.swift */; };
 		0BACF80022D7965F00A2C2FF /* InspetorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */; };
 		0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5222D8D05100054EF2 /* Actions.swift */; };
@@ -99,7 +99,7 @@
 		0B92ABFB2304A7A100BA3A24 /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B92ABFD2304A7A500BA3A24 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B92ABFF2304A7A500BA3A24 /* INTULocationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = INTULocationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B99509222D7708D00288282 /* InspetorResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspetorResourceService.swift; sourceTree = "<group>"; };
+		0B99509222D7708D00288282 /* LegitiResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiResourceService.swift; sourceTree = "<group>"; };
 		0B99509722D773DD00288282 /* InspetorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorResource.swift; sourceTree = "<group>"; };
 		0BACF7FF22D7965F00A2C2FF /* InspetorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorConfig.swift; sourceTree = "<group>"; };
 		0BB12D5222D8D05100054EF2 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		0B99509422D771B800288282 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				0B99509222D7708D00288282 /* InspetorResourceService.swift */,
+				0B99509222D7708D00288282 /* LegitiResourceService.swift */,
 				0B57D63222DCA59A00764818 /* LegitiClientService.swift */,
 			);
 			path = Service;
@@ -571,7 +571,7 @@
 				0BB12D5522D8D40A00054EF2 /* InspetorClient.swift in Sources */,
 				780AC8612252526F00383069 /* InspetorDependencies.swift in Sources */,
 				0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */,
-				0B99509322D7708D00288282 /* InspetorResourceService.swift in Sources */,
+				0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */,
 				0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
