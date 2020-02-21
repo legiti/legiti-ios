@@ -14,7 +14,7 @@
 		0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A17A322D8FB8C00933746 /* Inspetor.swift */; };
 		0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */; };
 		0B3DAB4B22E0C0FE0031FEEF /* InspetorGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4A22E0C0FE0031FEEF /* InspetorGeoLocation.swift */; };
-		0B57D63322DCA59A00764818 /* InspetorClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63222DCA59A00764818 /* InspetorClientService.swift */; };
+		0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63222DCA59A00764818 /* LegitiClientService.swift */; };
 		0B771F3423043E90006AD4EA /* InspetorDeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F3323043E90006AD4EA /* InspetorDeviceData.swift */; };
 		0B771F56230479E5006AD4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F55230479E5006AD4EA /* AppDelegate.swift */; };
 		0B771F58230479E5006AD4EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F57230479E5006AD4EA /* ViewController.swift */; };
@@ -85,7 +85,7 @@
 		0B1A17A322D8FB8C00933746 /* Inspetor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspetor.swift; sourceTree = "<group>"; };
 		0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowplowManager.swift; sourceTree = "<group>"; };
 		0B3DAB4A22E0C0FE0031FEEF /* InspetorGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorGeoLocation.swift; sourceTree = "<group>"; };
-		0B57D63222DCA59A00764818 /* InspetorClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspetorClientService.swift; sourceTree = "<group>"; };
+		0B57D63222DCA59A00764818 /* LegitiClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiClientService.swift; sourceTree = "<group>"; };
 		0B771F3323043E90006AD4EA /* InspetorDeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorDeviceData.swift; sourceTree = "<group>"; };
 		0B771F53230479E5006AD4EA /* InspetorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspetorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B771F55230479E5006AD4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				0B99509222D7708D00288282 /* InspetorResourceService.swift */,
-				0B57D63222DCA59A00764818 /* InspetorClientService.swift */,
+				0B57D63222DCA59A00764818 /* LegitiClientService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -572,7 +572,7 @@
 				780AC8612252526F00383069 /* InspetorDependencies.swift in Sources */,
 				0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */,
 				0B99509322D7708D00288282 /* InspetorResourceService.swift in Sources */,
-				0B57D63322DCA59A00764818 /* InspetorClientService.swift in Sources */,
+				0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
