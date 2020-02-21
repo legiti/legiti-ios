@@ -11,7 +11,7 @@
 		02CFC0AFE0F52DD73CE073CD /* Pods_Inspetor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE0A89ED0243C066CB4B8CC /* Pods_Inspetor.framework */; };
 		0663A186B06BE00806977C0E /* Pods_Inspetor_InspetorTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BBA303649A0935FFA90FE0 /* Pods_Inspetor_InspetorTestApp.framework */; };
 		0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD1222D6771300003E91 /* TrackerException.swift */; };
-		0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A17A322D8FB8C00933746 /* Inspetor.swift */; };
+		0B1A17A422D8FB8C00933746 /* Legiti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A17A322D8FB8C00933746 /* Legiti.swift */; };
 		0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */; };
 		0B3DAB4B22E0C0FE0031FEEF /* InspetorGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4A22E0C0FE0031FEEF /* InspetorGeoLocation.swift */; };
 		0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63222DCA59A00764818 /* LegitiClientService.swift */; };
@@ -82,7 +82,7 @@
 /* Begin PBXFileReference section */
 		076DC3A8C22A61AB2203CFF7 /* Pods-Inspetor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspetor.debug.xcconfig"; path = "Target Support Files/Pods-Inspetor/Pods-Inspetor.debug.xcconfig"; sourceTree = "<group>"; };
 		0B15CD1222D6771300003E91 /* TrackerException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerException.swift; sourceTree = "<group>"; };
-		0B1A17A322D8FB8C00933746 /* Inspetor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspetor.swift; sourceTree = "<group>"; };
+		0B1A17A322D8FB8C00933746 /* Legiti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legiti.swift; sourceTree = "<group>"; };
 		0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowplowManager.swift; sourceTree = "<group>"; };
 		0B3DAB4A22E0C0FE0031FEEF /* InspetorGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorGeoLocation.swift; sourceTree = "<group>"; };
 		0B57D63222DCA59A00764818 /* LegitiClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiClientService.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 				0B15CD0F22D675ED00003E91 /* Exception */,
 				78783CA5224424E70052BB50 /* Inspetor.h */,
 				78783CA6224424E70052BB50 /* Info.plist */,
-				0B1A17A322D8FB8C00933746 /* Inspetor.swift */,
+				0B1A17A322D8FB8C00933746 /* Legiti.swift */,
 				0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */,
 				0B99509722D773DD00288282 /* LegitiResource.swift */,
 				0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */,
@@ -570,7 +570,7 @@
 				0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */,
 				0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */,
 				780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */,
-				0B1A17A422D8FB8C00933746 /* Inspetor.swift in Sources */,
+				0B1A17A422D8FB8C00933746 /* Legiti.swift in Sources */,
 				0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */,
 				0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */,
 			);
