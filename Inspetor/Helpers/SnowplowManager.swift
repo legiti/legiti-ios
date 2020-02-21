@@ -35,7 +35,7 @@ internal class SnowplowManager {
             builder!.setAppId(legitiConfig.authToken)
             builder!.setTrackerNamespace(SnowplowManager.defaultTrackerName)
             builder!.setBase64Encoded(LegitiDependencies.defaultBase64Option)
-            builder!.setApplicationContext(true)
+            builder!.setApplicationContext(false)
             builder!.setSessionContext(true)
             builder!.setSubject(subject)
         }) else {

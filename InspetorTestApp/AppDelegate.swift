@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  inspetorTestApp
-//
-//  Created by Inspetor on 14/08/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 import UIKit
 import Inspetor
 
@@ -21,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authToken: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3QifQ.NJ89yQB1sIiR8qeIpIt5SDOJ45hUZBLQVVbQFVJ-lKo"
         
         do {
-            try Inspetor.sharedInstance().setup(authToken: authToken, inspetorDevEnv: true)
+            try Legiti.sharedInstance().setup(authToken: authToken, legitiDevEnv: true)
         } catch TrackerException.requiredConfig(let code, let message) {
             print("code: \(code) - message: \(message)")
         } catch {

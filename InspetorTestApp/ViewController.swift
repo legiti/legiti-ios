@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  inspetorTestApp
-//
-//  Created by Inspetor on 14/08/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 import UIKit
 import Inspetor
 import CoreLocation
@@ -14,23 +6,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //MARK: Properties
     @IBOutlet weak var pickerView: UIPickerView!
-    let inspetor = Inspetor.sharedInstance()
+    let legiti = Legiti.sharedInstance()
     let manager = CLLocationManager()
     let trackingActions = [
         "TrackLogin",
         "TrackLogout",
-        "TrackAccountCreation",
-        "TrackAccountUpdate",
-        "TrackAccountDeletion",
+        "TrackUserCreation",
+        "TrackUserUpdate",
         "TrackPassRecovery",
         "TrackPassReset",
-        "TrackEventCreation",
-        "TrackEventUpdate",
-        "TrackEventDeletion",
-        "TrackTransferCreation",
-        "TrackTransferUpdate",
-        "TrackSaleCreation",
-        "TrackSaleUpdate"
+        "TrackOrderCreation"
     ]
     
     override func viewDidLoad() {
@@ -45,8 +30,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
         
-        if (Inspetor.sharedInstance().isConfigured()) {
-            try! self.inspetor.trackPageView(pageTitle: "TESTE")
+        if (Legiti.sharedInstance().isConfigured()) {
+            try! self.legiti.trackPageView(pageTitle: "TESTE")
         }
     
     }
@@ -55,60 +40,32 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     private func runTrackingFunction(action: String) {
         switch action {
         case "TrackLogin":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackLogin(accountEmail: "login@email.com", accountId: "123")
+            if (self.legiti.isConfigured()) {
+                try! self.legiti.trackLogin(userEmail: "login@email.com", userId: "123")
             }
         case "TrackLogout":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackLogout(accountEmail: "logout@email.com", accountId: nil)
+            if (self.legiti.isConfigured()) {
+                try! self.legiti.trackLogout(userEmail: "logout@email.com", userId: nil)
             }
-        case "TrackAccountCreation":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackAccountCreation(accountId: "123")
+        case "TrackUserCreation":
+            if (self.legiti.isConfigured()) {
+                try! self.legiti.trackUserCreation(userId: "123")
             }
-        case "TrackAccountUpdate":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackAccountUpdate(accountId: "123")
-            }
-        case "TrackAccountDeletion":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackAccountDeletion(accountId: "123")
+        case "TrackUserUpdate":
+            if (self.legiti.isConfigured()) {
+                try! self.legiti.trackUserUpdate(userId: "123")
             }
         case "TrackPassRecovery":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackPasswordRecovery(accountEmail: "pass_recovery@email.com")
+            if (self.legiti.isConfigured()) {
+                try! self.legiti.trackPasswordRecovery(userEmail: "pass_recovery@email.com")
             }
         case "TrackPassReset":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackPasswordReset(accountEmail: "pass_recovery@email.com")
+            if (self.legiti.isConfigured()) {
+                try! self.legiti.trackPasswordReset(userId: "123")
             }
-        case "TrackEventCreation":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackEventCreation(eventId: "123")
-            }
-        case "TrackEventUpdate":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackEventUpdate(eventId: "123")
-            }
-        case "TrackEventDeletion":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackEventDeletion(eventId: "123")
-            }
-        case "TrackTransferCreation":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackItemTransferCreation(transferId: "123")
-            }
-        case "TrackTransferUpdate":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackItemTransferUpdate(transferId: "123")
-            }
-        case "TrackSaleCreation":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackSaleCreation(saleId: "123")
-            }
-        case "TrackSaleUpdate":
-            if (self.inspetor.isConfigured()) {
-                try! self.inspetor.trackSaleUpdate(saleId: "123")
+        case "TrackOrderCreation":
+            if (self.legiti.isConfigured()) {
+                try! self.legiti.trackOrderCreation(orderId: "123")
             }
         default:
             print("ERROR")
@@ -130,8 +87,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     @IBAction func trackScreenView(_ sender: UIButton) {
-        if (self.inspetor.isConfigured()) {
-            try! self.inspetor.trackPageView(pageTitle: "Teste")
+        if (self.legiti.isConfigured()) {
+            try! self.legiti.trackPageView(pageTitle: "Teste")
         }
     }
     

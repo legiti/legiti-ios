@@ -34,9 +34,9 @@
 		0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5222D8D05100054EF2 /* Actions.swift */; };
 		0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */; };
 		0BD5066422DE6E0500697434 /* LegitiEmitterCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */; };
-		0BFB1BCD22DF47F700CB9C6B /* InspetorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */; };
+		0BFB1BCD22DF47F700CB9C6B /* LegitiUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BCC22DF47F700CB9C6B /* LegitiUnitTests.swift */; };
 		0BFB1BCF22DF47F700CB9C6B /* Inspetor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Inspetor.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		0BFB1BD622DF482300CB9C6B /* InspetorIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BD522DF482300CB9C6B /* InspetorIntegrationTests.swift */; };
+		0BFB1BD622DF482300CB9C6B /* LegitiIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BD522DF482300CB9C6B /* LegitiIntegrationTests.swift */; };
 		780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* LegitiDependencies.swift */; };
 		78783CA7224424E70052BB50 /* Legiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* Legiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -106,9 +106,9 @@
 		0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiClient.swift; sourceTree = "<group>"; };
 		0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiEmitterCallback.swift; sourceTree = "<group>"; };
 		0BFB1BCA22DF47F700CB9C6B /* InspetorUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspetorUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorUnitTests.swift; sourceTree = "<group>"; };
+		0BFB1BCC22DF47F700CB9C6B /* LegitiUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiUnitTests.swift; sourceTree = "<group>"; };
 		0BFB1BCE22DF47F700CB9C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BFB1BD522DF482300CB9C6B /* InspetorIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorIntegrationTests.swift; sourceTree = "<group>"; };
+		0BFB1BD522DF482300CB9C6B /* LegitiIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiIntegrationTests.swift; sourceTree = "<group>"; };
 		1A93876C0A7CD2F2EDCBF50F /* Pods-InspetorUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-InspetorUnitTests/Pods-InspetorUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		310465413ADCAC11A7845D65 /* Pods-Inspetor-InspetorTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspetor-InspetorTestApp.release.xcconfig"; path = "Target Support Files/Pods-Inspetor-InspetorTestApp/Pods-Inspetor-InspetorTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		479119C8247BA077D322B038 /* Pods-InspetorTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorTestApp.debug.xcconfig"; path = "Target Support Files/Pods-InspetorTestApp/Pods-InspetorTestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 		0BFB1BCB22DF47F700CB9C6B /* InspetorUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */,
-				0BFB1BD522DF482300CB9C6B /* InspetorIntegrationTests.swift */,
+				0BFB1BCC22DF47F700CB9C6B /* LegitiUnitTests.swift */,
+				0BFB1BD522DF482300CB9C6B /* LegitiIntegrationTests.swift */,
 				0BFB1BCE22DF47F700CB9C6B /* Info.plist */,
 			);
 			path = InspetorUnitTests;
@@ -551,8 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BFB1BD622DF482300CB9C6B /* InspetorIntegrationTests.swift in Sources */,
-				0BFB1BCD22DF47F700CB9C6B /* InspetorUnitTests.swift in Sources */,
+				0BFB1BD622DF482300CB9C6B /* LegitiIntegrationTests.swift in Sources */,
+				0BFB1BCD22DF47F700CB9C6B /* LegitiUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

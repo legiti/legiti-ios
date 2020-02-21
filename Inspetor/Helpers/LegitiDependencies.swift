@@ -4,7 +4,7 @@ import SnowplowTracker
 struct LegitiDependencies {
     
     static let defaultBase64Option: Bool = true
-    static let defaultCollectorURL: String = "heimdall-prod.lgtcdn.net/"
+    static let defaultCollectorURL: String = "heimdall-staging.lgtcdn.net/"
     static let stagingPostPath: String = "post-staging"
     static let prodPostPath: String = "post"
     static let defaultHttpMethodType: SPRequestOptions = SPRequestOptions.post
