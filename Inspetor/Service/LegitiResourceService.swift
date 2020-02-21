@@ -1,8 +1,3 @@
-//
-// LegitiResourceService.swift
-//
-//
-
 import Foundation
 
 protocol LegitiResourceService {

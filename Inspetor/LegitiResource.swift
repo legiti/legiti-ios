@@ -7,14 +7,14 @@ class LegitiResource: NSObject, LegitiResourceService {
     //MARK: Properties
     internal var legitiConfig: LegitiConfig
     internal var tracker: SPTracker?
-    private var legitiGeoLocation: InspetorGeoLocation = InspetorGeoLocation.sharedInstance
+    private var legitiGeoLocation: LegitiGeoLocation = LegitiGeoLocation.sharedInstance
     
     //MARK: init
     init(legitiConfig: LegitiConfig) {
         self.legitiConfig = legitiConfig
         super.init()
         //Get the Snowplow tracker through our SnoplowManager Class
-        SnowplowManager.sharedInstance.inspetorConfig = self.legitiConfig
+        SnowplowManager.sharedInstance.legitiConfig = self.legitiConfig
         self.tracker = SnowplowManager.sharedInstance.getTracker()
     }
         
@@ -30,7 +30,7 @@ class LegitiResource: NSObject, LegitiResourceService {
                 builder!.setContexts(NSMutableArray(array: [fingerprintContext]))
             }
         }) else {
-            print("InspetorLog: An error occured")
+            print("LegitiLog: An error occured")
             return
         }
         
@@ -138,7 +138,7 @@ class LegitiResource: NSObject, LegitiResourceService {
     //MARK: TrackEvent
     private func trackEvent(unstructedEvent: SPUnstructured) {
         if self.legitiGeoLocation.currentLocation != nil {
-            self.tracker!.setSubject(InspetorGeoLocation.sharedInstance.getLocationSubject())
+            self.tracker!.setSubject(self.legitiGeoLocation.getLocationSubject())
             self.tracker!.trackUnstructuredEvent(unstructedEvent)
         } else {
             self.tracker!.trackUnstructuredEvent(unstructedEvent)
@@ -147,7 +147,7 @@ class LegitiResource: NSObject, LegitiResourceService {
     
     private func trackEvent(screenViewEvent: SPScreenView) {
         if self.legitiGeoLocation.currentLocation != nil {
-            self.tracker!.setSubject(InspetorGeoLocation.sharedInstance.getLocationSubject())
+            self.tracker!.setSubject(self.legitiGeoLocation.getLocationSubject())
             self.tracker!.trackScreenViewEvent(screenViewEvent)
         } else {
             self.tracker!.trackScreenViewEvent(screenViewEvent)
@@ -157,7 +157,7 @@ class LegitiResource: NSObject, LegitiResourceService {
     
     //MARK: FingerprintContext
     private func getFingerprintContext() -> SPSelfDescribingJson? {
-        let deviceContext = InspetorDeviceData().getDeviceData()
+        let deviceContext = LegitiDeviceData().getDeviceData()
 
         let fingerprintContext = SPSelfDescribingJson(
             schema: LegitiDependencies.fingerprintContextSchema,

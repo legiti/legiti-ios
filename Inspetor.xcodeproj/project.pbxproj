@@ -13,9 +13,9 @@
 		0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD1222D6771300003E91 /* TrackerException.swift */; };
 		0B1A17A422D8FB8C00933746 /* Legiti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A17A322D8FB8C00933746 /* Legiti.swift */; };
 		0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */; };
-		0B3DAB4B22E0C0FE0031FEEF /* InspetorGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4A22E0C0FE0031FEEF /* InspetorGeoLocation.swift */; };
+		0B3DAB4B22E0C0FE0031FEEF /* LegitiGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */; };
 		0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63222DCA59A00764818 /* LegitiClientService.swift */; };
-		0B771F3423043E90006AD4EA /* InspetorDeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F3323043E90006AD4EA /* InspetorDeviceData.swift */; };
+		0B771F3423043E90006AD4EA /* LegitiDeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */; };
 		0B771F56230479E5006AD4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F55230479E5006AD4EA /* AppDelegate.swift */; };
 		0B771F58230479E5006AD4EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F57230479E5006AD4EA /* ViewController.swift */; };
 		0B771F5B230479E5006AD4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B771F59230479E5006AD4EA /* Main.storyboard */; };
@@ -33,12 +33,12 @@
 		0BACF80022D7965F00A2C2FF /* LegitiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */; };
 		0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5222D8D05100054EF2 /* Actions.swift */; };
 		0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */; };
-		0BD5066422DE6E0500697434 /* InspetorEmitterCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */; };
+		0BD5066422DE6E0500697434 /* LegitiEmitterCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */; };
 		0BFB1BCD22DF47F700CB9C6B /* InspetorUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */; };
 		0BFB1BCF22DF47F700CB9C6B /* Inspetor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Inspetor.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0BFB1BD622DF482300CB9C6B /* InspetorIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BD522DF482300CB9C6B /* InspetorIntegrationTests.swift */; };
 		780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* LegitiDependencies.swift */; };
-		78783CA7224424E70052BB50 /* Inspetor.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* Inspetor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78783CA7224424E70052BB50 /* Legiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* Legiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,9 +84,9 @@
 		0B15CD1222D6771300003E91 /* TrackerException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerException.swift; sourceTree = "<group>"; };
 		0B1A17A322D8FB8C00933746 /* Legiti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legiti.swift; sourceTree = "<group>"; };
 		0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowplowManager.swift; sourceTree = "<group>"; };
-		0B3DAB4A22E0C0FE0031FEEF /* InspetorGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorGeoLocation.swift; sourceTree = "<group>"; };
+		0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiGeoLocation.swift; sourceTree = "<group>"; };
 		0B57D63222DCA59A00764818 /* LegitiClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiClientService.swift; sourceTree = "<group>"; };
-		0B771F3323043E90006AD4EA /* InspetorDeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorDeviceData.swift; sourceTree = "<group>"; };
+		0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiDeviceData.swift; sourceTree = "<group>"; };
 		0B771F53230479E5006AD4EA /* InspetorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspetorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B771F55230479E5006AD4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B771F57230479E5006AD4EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiConfig.swift; sourceTree = "<group>"; };
 		0BB12D5222D8D05100054EF2 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiClient.swift; sourceTree = "<group>"; };
-		0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorEmitterCallback.swift; sourceTree = "<group>"; };
+		0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiEmitterCallback.swift; sourceTree = "<group>"; };
 		0BFB1BCA22DF47F700CB9C6B /* InspetorUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspetorUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BFB1BCC22DF47F700CB9C6B /* InspetorUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspetorUnitTests.swift; sourceTree = "<group>"; };
 		0BFB1BCE22DF47F700CB9C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		6DAED5544E94C62841A0A56E /* Pods-InspetorTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorTestApp.release.xcconfig"; path = "Target Support Files/Pods-InspetorTestApp/Pods-InspetorTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		780AC8602252526F00383069 /* LegitiDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiDependencies.swift; sourceTree = "<group>"; };
 		78783CA2224424E70052BB50 /* Inspetor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Inspetor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78783CA5224424E70052BB50 /* Inspetor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspetor.h; sourceTree = "<group>"; };
+		78783CA5224424E70052BB50 /* Legiti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Legiti.h; sourceTree = "<group>"; };
 		78783CA6224424E70052BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FAFE64B71FA90980427BD63 /* Pods-InspetorUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspetorUnitTests.release.xcconfig"; path = "Target Support Files/Pods-InspetorUnitTests/Pods-InspetorUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		9330B4CB8DD413A74FDA6F13 /* Pods-Inspetor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspetor.release.xcconfig"; path = "Target Support Files/Pods-Inspetor/Pods-Inspetor.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,9 +208,9 @@
 				780AC8602252526F00383069 /* LegitiDependencies.swift */,
 				0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */,
 				0BB12D5222D8D05100054EF2 /* Actions.swift */,
-				0BD5066322DE6E0500697434 /* InspetorEmitterCallback.swift */,
-				0B3DAB4A22E0C0FE0031FEEF /* InspetorGeoLocation.swift */,
-				0B771F3323043E90006AD4EA /* InspetorDeviceData.swift */,
+				0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */,
+				0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */,
+				0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				0B15CD0F22D675ED00003E91 /* Exception */,
-				78783CA5224424E70052BB50 /* Inspetor.h */,
+				78783CA5224424E70052BB50 /* Legiti.h */,
 				78783CA6224424E70052BB50 /* Info.plist */,
 				0B1A17A322D8FB8C00933746 /* Legiti.swift */,
 				0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */,
@@ -292,7 +292,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78783CA7224424E70052BB50 /* Inspetor.h in Headers */,
+				78783CA7224424E70052BB50 /* Legiti.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,10 +560,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3DAB4B22E0C0FE0031FEEF /* InspetorGeoLocation.swift in Sources */,
-				0B771F3423043E90006AD4EA /* InspetorDeviceData.swift in Sources */,
+				0B3DAB4B22E0C0FE0031FEEF /* LegitiGeoLocation.swift in Sources */,
+				0B771F3423043E90006AD4EA /* LegitiDeviceData.swift in Sources */,
 				0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */,
-				0BD5066422DE6E0500697434 /* InspetorEmitterCallback.swift in Sources */,
+				0BD5066422DE6E0500697434 /* LegitiEmitterCallback.swift in Sources */,
 				0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */,
 				0BACF80022D7965F00A2C2FF /* LegitiConfig.swift in Sources */,
 				0B99509822D773DD00288282 /* LegitiResource.swift in Sources */,

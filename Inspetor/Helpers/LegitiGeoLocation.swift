@@ -1,19 +1,11 @@
-//
-//  InspetorGeoLocation.swift
-//  Inspetor
-//
-//  Created by Lourenço Biselli on 18/07/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 import Foundation
 import INTULocationManager
 import SnowplowTracker
 
-class InspetorGeoLocation {
+class LegitiGeoLocation {
     
     //MARK: Properties
-    internal static let sharedInstance: InspetorGeoLocation = InspetorGeoLocation()
+    internal static let sharedInstance: LegitiGeoLocation = LegitiGeoLocation()
     internal var currentLocation: CLLocation?
     
     //MARK: Init

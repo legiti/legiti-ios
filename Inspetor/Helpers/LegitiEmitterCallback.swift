@@ -1,15 +1,7 @@
-//
-//  InspetorEmitterCallback.swift
-//  Inspetor
-//
-//  Created by Lourenço Biselli on 16/07/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 import Foundation
 import SnowplowTracker
 
-internal class InspetorEmitterCallback: NSObject, SPRequestCallback {
+internal class LegitiEmitterCallback: NSObject, SPRequestCallback {
     
     func onSuccess(withCount successCount: Int) {
         var activity = "activity"
@@ -20,7 +12,7 @@ internal class InspetorEmitterCallback: NSObject, SPRequestCallback {
             wasOrWere = "were"
         }
         
-        print("InspetorLog: \(successCount) \(activity) \(wasOrWere) sent to Inspetor")
+        print("LegitiLog: \(successCount) \(activity) \(wasOrWere) sent to Legiti")
         
     }
     
@@ -33,7 +25,7 @@ internal class InspetorEmitterCallback: NSObject, SPRequestCallback {
             wasOrWere = "were"
         }
         
-        print("InspetorLog: \(successCount) \(activity) \(wasOrWere) not sent to Inspetor, because an error happend")
+        print("LegitiLog: \(successCount) \(activity) \(wasOrWere) not sent to Legiti, because an error happend")
     }
     
     

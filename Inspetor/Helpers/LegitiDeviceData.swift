@@ -1,16 +1,8 @@
-//
-//  InspetorFingerprint.swift
-//  Inspetor
-//
-//  Created by Inspetor on 14/08/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 import Foundation
 import SwiftKeychainWrapper
 
 
-internal class InspetorDeviceData {
+internal class LegitiDeviceData {
     
     private var deviceData = [String: Any?]()
     
@@ -34,7 +26,7 @@ internal class InspetorDeviceData {
     }
     
     private func getDeviceFingerprint() -> String? {
-        return InspetorFingerprint.getDeviceFingerprint()
+        return LegitiFingerprint.getDeviceFingerprint()
     }
     
     private func getIsSimulator() -> Bool {
@@ -63,11 +55,11 @@ internal class InspetorDeviceData {
 }
 
 
-//MARK; InspetorFingerprint
-internal class InspetorFingerprint {
+//MARK: LegitiFingerprint
+internal class LegitiFingerprint {
     
     private static var deviceFingerprint: String?
-    private static let inspetorKey: String = "inspetorFingerprint"
+    private static let legitiKey: String = "legitiFingerprint"
     
     internal static func getDeviceFingerprint() -> String? {
         if self.deviceFingerprint == nil {
@@ -91,14 +83,14 @@ internal class InspetorFingerprint {
     }
     
     private static func saveDeviceFingerprint(deviceID: String) -> Bool {
-        if KeychainWrapper.standard.set(deviceID, forKey: self.inspetorKey) {
+        if KeychainWrapper.standard.set(deviceID, forKey: self.legitiKey) {
             return true
         }
         return false
     }
     
     private static func retrieveDeviceFingerprint() -> String? {
-        return KeychainWrapper.standard.string(forKey: self.inspetorKey)
+        return KeychainWrapper.standard.string(forKey: self.legitiKey)
     }
     
     

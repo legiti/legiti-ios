@@ -1,17 +1,9 @@
-//
-//  Inspetor.h
-//  Inspetor
-//
-//  Created by Pearson Henri on 3/21/19.
-//  Copyright © 2019 Inspetor. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for Inspetor.
-FOUNDATION_EXPORT double InspetorVersionNumber;
+FOUNDATION_EXPORT double LegitiVersionNumber;
 
 //! Project version string for Inspetor.
-FOUNDATION_EXPORT const unsigned char InspetorVersionString[];
+FOUNDATION_EXPORT const unsigned char LegitiVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Inspetor/PublicHeader.h>
