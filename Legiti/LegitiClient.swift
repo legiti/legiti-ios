@@ -67,7 +67,7 @@ public class LegitiClient: LegitiClientService {
     public func trackPasswordReset(userId: String) throws {
         try self.verifyResource()
         
-        let data = self.createJson(id: userId, prefix: "pass_recovery", idSufix: "user_id")
+        let data = self.createJson(id: userId, prefix: "pass_reset", idSufix: "user_id")
         self.legitiResource!.trackPasswordResetAction(data: data, action: .reset)
     }
     
@@ -124,7 +124,7 @@ public class LegitiClient: LegitiClientService {
     }
     
     public func isConfigured() -> Bool {
-        return (self.legitiResource == nil ? false : true)
+        return (self.legitiConfig == nil ? false : true)
     }
     
 }
