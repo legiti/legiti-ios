@@ -25,3 +25,5 @@ derived_data/
 
 ## Gcc Patch
 /*.gcno
+
+.DS_Store
