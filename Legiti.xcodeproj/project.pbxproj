@@ -1,0 +1,942 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD1222D6771300003E91 /* TrackerException.swift */; };
+		0B1A17A422D8FB8C00933746 /* Legiti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A17A322D8FB8C00933746 /* Legiti.swift */; };
+		0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */; };
+		0B3DAB4B22E0C0FE0031FEEF /* LegitiGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */; };
+		0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63222DCA59A00764818 /* LegitiClientService.swift */; };
+		0B771F3423043E90006AD4EA /* LegitiDeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */; };
+		0B771F56230479E5006AD4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F55230479E5006AD4EA /* AppDelegate.swift */; };
+		0B771F58230479E5006AD4EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F57230479E5006AD4EA /* ViewController.swift */; };
+		0B771F5B230479E5006AD4EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B771F59230479E5006AD4EA /* Main.storyboard */; };
+		0B771F5D230479E6006AD4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B771F5C230479E6006AD4EA /* Assets.xcassets */; };
+		0B771F60230479E6006AD4EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B771F5E230479E6006AD4EA /* LaunchScreen.storyboard */; };
+		0B92ABD72304A52800BA3A24 /* Legiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Legiti.framework */; };
+		0B92ABD82304A52800BA3A24 /* Legiti.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Legiti.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B92ABF82304A7A100BA3A24 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABF72304A7A100BA3A24 /* Reachability.framework */; };
+		0B92ABFA2304A7A100BA3A24 /* SnowplowTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABF92304A7A100BA3A24 /* SnowplowTracker.framework */; };
+		0B92ABFC2304A7A100BA3A24 /* SwiftKeychainWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFB2304A7A100BA3A24 /* SwiftKeychainWrapper.framework */; };
+		0B92ABFE2304A7A500BA3A24 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFD2304A7A500BA3A24 /* FMDB.framework */; };
+		0B92AC002304A7A500BA3A24 /* INTULocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFF2304A7A500BA3A24 /* INTULocationManager.framework */; };
+		0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509222D7708D00288282 /* LegitiResourceService.swift */; };
+		0B99509822D773DD00288282 /* LegitiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B99509722D773DD00288282 /* LegitiResource.swift */; };
+		0BACF80022D7965F00A2C2FF /* LegitiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */; };
+		0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5222D8D05100054EF2 /* Actions.swift */; };
+		0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */; };
+		0BD5066422DE6E0500697434 /* LegitiEmitterCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */; };
+		0BFB1BCD22DF47F700CB9C6B /* LegitiUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BCC22DF47F700CB9C6B /* LegitiUnitTests.swift */; };
+		0BFB1BCF22DF47F700CB9C6B /* Legiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Legiti.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		0BFB1BD622DF482300CB9C6B /* LegitiIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BD522DF482300CB9C6B /* LegitiIntegrationTests.swift */; };
+		780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* LegitiDependencies.swift */; };
+		78783CA7224424E70052BB50 /* Legiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* Legiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		828B2B07DC0142226473FB5F /* Pods_Legiti_LegitiTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D667206BD804647C14069706 /* Pods_Legiti_LegitiTestApp.framework */; };
+		84C4F115B7DE144574B90258 /* Pods_Legiti_LegitiUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8208C360136AA080087417E8 /* Pods_Legiti_LegitiUnitTests.framework */; };
+		C7C891168BDC4B88D0330962 /* Pods_Legiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5000E2E5F3B3467F8AE94718 /* Pods_Legiti.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B92ABCC2304822B00BA3A24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78783C99224424E70052BB50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B771F52230479E5006AD4EA;
+			remoteInfo = inspetorTestApp;
+		};
+		0B92ABD92304A52800BA3A24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78783C99224424E70052BB50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78783CA1224424E70052BB50;
+			remoteInfo = Inspetor;
+		};
+		0BFB1BD022DF47F700CB9C6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78783C99224424E70052BB50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78783CA1224424E70052BB50;
+			remoteInfo = Inspetor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B92ABDB2304A52800BA3A24 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B92ABD82304A52800BA3A24 /* Legiti.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0B15CD1222D6771300003E91 /* TrackerException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerException.swift; sourceTree = "<group>"; };
+		0B1A17A322D8FB8C00933746 /* Legiti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legiti.swift; sourceTree = "<group>"; };
+		0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowplowManager.swift; sourceTree = "<group>"; };
+		0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiGeoLocation.swift; sourceTree = "<group>"; };
+		0B57D63222DCA59A00764818 /* LegitiClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiClientService.swift; sourceTree = "<group>"; };
+		0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiDeviceData.swift; sourceTree = "<group>"; };
+		0B771F53230479E5006AD4EA /* LegitiTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegitiTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B771F55230479E5006AD4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0B771F57230479E5006AD4EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B771F5A230479E5006AD4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0B771F5C230479E6006AD4EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B771F5F230479E6006AD4EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0B771F61230479E6006AD4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B92ABF72304A7A100BA3A24 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B92ABF92304A7A100BA3A24 /* SnowplowTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnowplowTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B92ABFB2304A7A100BA3A24 /* SwiftKeychainWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B92ABFD2304A7A500BA3A24 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B92ABFF2304A7A500BA3A24 /* INTULocationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = INTULocationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B99509222D7708D00288282 /* LegitiResourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiResourceService.swift; sourceTree = "<group>"; };
+		0B99509722D773DD00288282 /* LegitiResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiResource.swift; sourceTree = "<group>"; };
+		0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiConfig.swift; sourceTree = "<group>"; };
+		0BB12D5222D8D05100054EF2 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiClient.swift; sourceTree = "<group>"; };
+		0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiEmitterCallback.swift; sourceTree = "<group>"; };
+		0BFB1BCA22DF47F700CB9C6B /* LegitiUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LegitiUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFB1BCC22DF47F700CB9C6B /* LegitiUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiUnitTests.swift; sourceTree = "<group>"; };
+		0BFB1BCE22DF47F700CB9C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFB1BD522DF482300CB9C6B /* LegitiIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiIntegrationTests.swift; sourceTree = "<group>"; };
+		360F68A311E0F4F33E325349 /* Pods-Legiti-LegitiUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti-LegitiUnitTests.release.xcconfig"; path = "Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		441C164BA0632E3B1228C9DA /* Pods-Legiti-LegitiTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti-LegitiTestApp.debug.xcconfig"; path = "Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5000E2E5F3B3467F8AE94718 /* Pods_Legiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Legiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52906FBDFC66BE968C52D102 /* Pods-Legiti-LegitiUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti-LegitiUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		780AC8602252526F00383069 /* LegitiDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiDependencies.swift; sourceTree = "<group>"; };
+		78783CA2224424E70052BB50 /* Legiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Legiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78783CA5224424E70052BB50 /* Legiti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Legiti.h; sourceTree = "<group>"; };
+		78783CA6224424E70052BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		808B5C0BADFE9EEB14DA5B54 /* Pods-Legiti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti.debug.xcconfig"; path = "Target Support Files/Pods-Legiti/Pods-Legiti.debug.xcconfig"; sourceTree = "<group>"; };
+		8208C360136AA080087417E8 /* Pods_Legiti_LegitiUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Legiti_LegitiUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D667206BD804647C14069706 /* Pods_Legiti_LegitiTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Legiti_LegitiTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF39D2F2FBDEC1A82FA2B3C3 /* Pods-Legiti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti.release.xcconfig"; path = "Target Support Files/Pods-Legiti/Pods-Legiti.release.xcconfig"; sourceTree = "<group>"; };
+		FB9CE604D0E28672B36C67A1 /* Pods-Legiti-LegitiTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti-LegitiTestApp.release.xcconfig"; path = "Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B771F50230479E5006AD4EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B92ABFE2304A7A500BA3A24 /* FMDB.framework in Frameworks */,
+				0B92AC002304A7A500BA3A24 /* INTULocationManager.framework in Frameworks */,
+				0B92ABF82304A7A100BA3A24 /* Reachability.framework in Frameworks */,
+				0B92ABFA2304A7A100BA3A24 /* SnowplowTracker.framework in Frameworks */,
+				0B92ABFC2304A7A100BA3A24 /* SwiftKeychainWrapper.framework in Frameworks */,
+				0B92ABD72304A52800BA3A24 /* Legiti.framework in Frameworks */,
+				828B2B07DC0142226473FB5F /* Pods_Legiti_LegitiTestApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB1BC722DF47F700CB9C6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB1BCF22DF47F700CB9C6B /* Legiti.framework in Frameworks */,
+				84C4F115B7DE144574B90258 /* Pods_Legiti_LegitiUnitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78783C9F224424E70052BB50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7C891168BDC4B88D0330962 /* Pods_Legiti.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B15CD0F22D675ED00003E91 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				0B15CD1222D6771300003E91 /* TrackerException.swift */,
+			);
+			path = Exception;
+			sourceTree = "<group>";
+		};
+		0B771F54230479E5006AD4EA /* LegitiTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				0B771F55230479E5006AD4EA /* AppDelegate.swift */,
+				0B771F57230479E5006AD4EA /* ViewController.swift */,
+				0B771F59230479E5006AD4EA /* Main.storyboard */,
+				0B771F5C230479E6006AD4EA /* Assets.xcassets */,
+				0B771F5E230479E6006AD4EA /* LaunchScreen.storyboard */,
+				0B771F61230479E6006AD4EA /* Info.plist */,
+			);
+			path = LegitiTestApp;
+			sourceTree = "<group>";
+		};
+		0B99509422D771B800288282 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0B99509222D7708D00288282 /* LegitiResourceService.swift */,
+				0B57D63222DCA59A00764818 /* LegitiClientService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0BFB1BCB22DF47F700CB9C6B /* LegitiUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB1BCC22DF47F700CB9C6B /* LegitiUnitTests.swift */,
+				0BFB1BD522DF482300CB9C6B /* LegitiIntegrationTests.swift */,
+				0BFB1BCE22DF47F700CB9C6B /* Info.plist */,
+			);
+			path = LegitiUnitTests;
+			sourceTree = "<group>";
+		};
+		0BFB1BDB22DF5C8300CB9C6B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				780AC8602252526F00383069 /* LegitiDependencies.swift */,
+				0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */,
+				0BB12D5222D8D05100054EF2 /* Actions.swift */,
+				0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */,
+				0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */,
+				0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		78783C98224424E70052BB50 = {
+			isa = PBXGroup;
+			children = (
+				78783CA4224424E70052BB50 /* Legiti */,
+				0BFB1BCB22DF47F700CB9C6B /* LegitiUnitTests */,
+				0B771F54230479E5006AD4EA /* LegitiTestApp */,
+				78783CA3224424E70052BB50 /* Products */,
+				BE9C92196CF645F0511BA00C /* Pods */,
+				E2F3444195BE1A2DBBC7E612 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		78783CA3224424E70052BB50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78783CA2224424E70052BB50 /* Legiti.framework */,
+				0BFB1BCA22DF47F700CB9C6B /* LegitiUnitTests.xctest */,
+				0B771F53230479E5006AD4EA /* LegitiTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78783CA4224424E70052BB50 /* Legiti */ = {
+			isa = PBXGroup;
+			children = (
+				0B15CD0F22D675ED00003E91 /* Exception */,
+				78783CA5224424E70052BB50 /* Legiti.h */,
+				78783CA6224424E70052BB50 /* Info.plist */,
+				0B1A17A322D8FB8C00933746 /* Legiti.swift */,
+				0BB12D5422D8D40A00054EF2 /* LegitiClient.swift */,
+				0B99509722D773DD00288282 /* LegitiResource.swift */,
+				0BACF7FF22D7965F00A2C2FF /* LegitiConfig.swift */,
+				0BFB1BDB22DF5C8300CB9C6B /* Helpers */,
+				0B99509422D771B800288282 /* Service */,
+			);
+			path = Legiti;
+			sourceTree = "<group>";
+		};
+		BE9C92196CF645F0511BA00C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				808B5C0BADFE9EEB14DA5B54 /* Pods-Legiti.debug.xcconfig */,
+				DF39D2F2FBDEC1A82FA2B3C3 /* Pods-Legiti.release.xcconfig */,
+				441C164BA0632E3B1228C9DA /* Pods-Legiti-LegitiTestApp.debug.xcconfig */,
+				FB9CE604D0E28672B36C67A1 /* Pods-Legiti-LegitiTestApp.release.xcconfig */,
+				52906FBDFC66BE968C52D102 /* Pods-Legiti-LegitiUnitTests.debug.xcconfig */,
+				360F68A311E0F4F33E325349 /* Pods-Legiti-LegitiUnitTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2F3444195BE1A2DBBC7E612 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B92ABFD2304A7A500BA3A24 /* FMDB.framework */,
+				0B92ABFF2304A7A500BA3A24 /* INTULocationManager.framework */,
+				0B92ABF72304A7A100BA3A24 /* Reachability.framework */,
+				0B92ABF92304A7A100BA3A24 /* SnowplowTracker.framework */,
+				0B92ABFB2304A7A100BA3A24 /* SwiftKeychainWrapper.framework */,
+				5000E2E5F3B3467F8AE94718 /* Pods_Legiti.framework */,
+				D667206BD804647C14069706 /* Pods_Legiti_LegitiTestApp.framework */,
+				8208C360136AA080087417E8 /* Pods_Legiti_LegitiUnitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		78783C9D224424E70052BB50 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78783CA7224424E70052BB50 /* Legiti.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0B771F52230479E5006AD4EA /* LegitiTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B771F62230479E6006AD4EA /* Build configuration list for PBXNativeTarget "LegitiTestApp" */;
+			buildPhases = (
+				4AFBDF78D5A913B2AE522C40 /* [CP] Check Pods Manifest.lock */,
+				0B771F4F230479E5006AD4EA /* Sources */,
+				0B771F50230479E5006AD4EA /* Frameworks */,
+				0B771F51230479E5006AD4EA /* Resources */,
+				0B92ABDB2304A52800BA3A24 /* Embed Frameworks */,
+				828EFB9258C0B2CD9E100B89 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B92ABDA2304A52800BA3A24 /* PBXTargetDependency */,
+			);
+			name = LegitiTestApp;
+			productName = inspetorTestApp;
+			productReference = 0B771F53230479E5006AD4EA /* LegitiTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0BFB1BC922DF47F700CB9C6B /* LegitiUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BFB1BD222DF47F700CB9C6B /* Build configuration list for PBXNativeTarget "LegitiUnitTests" */;
+			buildPhases = (
+				8D38D7C1782B8BE5A97EDF4F /* [CP] Check Pods Manifest.lock */,
+				0BFB1BC622DF47F700CB9C6B /* Sources */,
+				0BFB1BC722DF47F700CB9C6B /* Frameworks */,
+				0BFB1BC822DF47F700CB9C6B /* Resources */,
+				C3CE6DE87DD25BC2ED979AE1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BFB1BD122DF47F700CB9C6B /* PBXTargetDependency */,
+				0B92ABCD2304822B00BA3A24 /* PBXTargetDependency */,
+			);
+			name = LegitiUnitTests;
+			productName = InspetorUnitTests;
+			productReference = 0BFB1BCA22DF47F700CB9C6B /* LegitiUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78783CA1224424E70052BB50 /* Legiti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78783CAA224424E70052BB50 /* Build configuration list for PBXNativeTarget "Legiti" */;
+			buildPhases = (
+				6B3D31949159DE1A80F154A1 /* [CP] Check Pods Manifest.lock */,
+				78783C9D224424E70052BB50 /* Headers */,
+				78783C9E224424E70052BB50 /* Sources */,
+				78783C9F224424E70052BB50 /* Frameworks */,
+				78783CA0224424E70052BB50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Legiti;
+			productName = InspetorSwiftFramework;
+			productReference = 78783CA2224424E70052BB50 /* Legiti.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78783C99224424E70052BB50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Legiti;
+				TargetAttributes = {
+					0B771F52230479E5006AD4EA = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+					};
+					0BFB1BC922DF47F700CB9C6B = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					78783CA1224424E70052BB50 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = 78783C9C224424E70052BB50 /* Build configuration list for PBXProject "Legiti" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78783C98224424E70052BB50;
+			productRefGroup = 78783CA3224424E70052BB50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78783CA1224424E70052BB50 /* Legiti */,
+				0BFB1BC922DF47F700CB9C6B /* LegitiUnitTests */,
+				0B771F52230479E5006AD4EA /* LegitiTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0B771F51230479E5006AD4EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B771F60230479E6006AD4EA /* LaunchScreen.storyboard in Resources */,
+				0B771F5D230479E6006AD4EA /* Assets.xcassets in Resources */,
+				0B771F5B230479E5006AD4EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB1BC822DF47F700CB9C6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78783CA0224424E70052BB50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4AFBDF78D5A913B2AE522C40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Legiti-LegitiTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B3D31949159DE1A80F154A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Legiti-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		828EFB9258C0B2CD9E100B89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/INTULocationManager/INTULocationManager.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SnowplowTracker/SnowplowTracker.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INTULocationManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnowplowTracker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D38D7C1782B8BE5A97EDF4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Legiti-LegitiUnitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3CE6DE87DD25BC2ED979AE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/INTULocationManager/INTULocationManager.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SnowplowTracker/SnowplowTracker.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INTULocationManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnowplowTracker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B771F4F230479E5006AD4EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B771F58230479E5006AD4EA /* ViewController.swift in Sources */,
+				0B771F56230479E5006AD4EA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB1BC622DF47F700CB9C6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB1BD622DF482300CB9C6B /* LegitiIntegrationTests.swift in Sources */,
+				0BFB1BCD22DF47F700CB9C6B /* LegitiUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78783C9E224424E70052BB50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B3DAB4B22E0C0FE0031FEEF /* LegitiGeoLocation.swift in Sources */,
+				0B771F3423043E90006AD4EA /* LegitiDeviceData.swift in Sources */,
+				0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */,
+				0BD5066422DE6E0500697434 /* LegitiEmitterCallback.swift in Sources */,
+				0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */,
+				0BACF80022D7965F00A2C2FF /* LegitiConfig.swift in Sources */,
+				0B99509822D773DD00288282 /* LegitiResource.swift in Sources */,
+				0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */,
+				0BB12D5522D8D40A00054EF2 /* LegitiClient.swift in Sources */,
+				780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */,
+				0B1A17A422D8FB8C00933746 /* Legiti.swift in Sources */,
+				0B99509322D7708D00288282 /* LegitiResourceService.swift in Sources */,
+				0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B92ABCD2304822B00BA3A24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B771F52230479E5006AD4EA /* LegitiTestApp */;
+			targetProxy = 0B92ABCC2304822B00BA3A24 /* PBXContainerItemProxy */;
+		};
+		0B92ABDA2304A52800BA3A24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78783CA1224424E70052BB50 /* Legiti */;
+			targetProxy = 0B92ABD92304A52800BA3A24 /* PBXContainerItemProxy */;
+		};
+		0BFB1BD122DF47F700CB9C6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78783CA1224424E70052BB50 /* Legiti */;
+			targetProxy = 0BFB1BD022DF47F700CB9C6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0B771F59230479E5006AD4EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B771F5A230479E5006AD4EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0B771F5E230479E6006AD4EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B771F5F230479E6006AD4EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0B771F63230479E6006AD4EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 441C164BA0632E3B1228C9DA /* Pods-Legiti-LegitiTestApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G2TK36FSUR;
+				INFOPLIST_FILE = "$(SRCROOT)/LegitiTestApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.legiti.legitiTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0B771F64230479E6006AD4EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9CE604D0E28672B36C67A1 /* Pods-Legiti-LegitiTestApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G2TK36FSUR;
+				INFOPLIST_FILE = "$(SRCROOT)/LegitiTestApp/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.legiti.legitiTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0BFB1BD322DF47F700CB9C6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52906FBDFC66BE968C52D102 /* Pods-Legiti-LegitiUnitTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LegitiUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.useinspetor.InspetorUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0BFB1BD422DF47F700CB9C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 360F68A311E0F4F33E325349 /* Pods-Legiti-LegitiUnitTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LegitiUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.useinspetor.InspetorUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78783CA8224424E70052BB50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Legiti;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		78783CA9224424E70052BB50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Legiti;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		78783CAB224424E70052BB50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 808B5C0BADFE9EEB14DA5B54 /* Pods-Legiti.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L6Z5L6M4WL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Legiti/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.legiti.Legiti;
+				PRODUCT_NAME = Legiti;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78783CAC224424E70052BB50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF39D2F2FBDEC1A82FA2B3C3 /* Pods-Legiti.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L6Z5L6M4WL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Legiti/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.legiti.Legiti;
+				PRODUCT_NAME = Legiti;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B771F62230479E6006AD4EA /* Build configuration list for PBXNativeTarget "LegitiTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B771F63230479E6006AD4EA /* Debug */,
+				0B771F64230479E6006AD4EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BFB1BD222DF47F700CB9C6B /* Build configuration list for PBXNativeTarget "LegitiUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BFB1BD322DF47F700CB9C6B /* Debug */,
+				0BFB1BD422DF47F700CB9C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78783C9C224424E70052BB50 /* Build configuration list for PBXProject "Legiti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78783CA8224424E70052BB50 /* Debug */,
+				78783CA9224424E70052BB50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78783CAA224424E70052BB50 /* Build configuration list for PBXNativeTarget "Legiti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78783CAB224424E70052BB50 /* Debug */,
+				78783CAC224424E70052BB50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78783C99224424E70052BB50 /* Project object */;
+}

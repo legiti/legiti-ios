@@ -1,0 +1,6 @@
+framework module Pods_Legiti_LegitiTestApp {
+  umbrella header "Pods-Legiti-LegitiTestApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
