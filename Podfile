@@ -5,18 +5,18 @@ target 'Legiti' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   # Pods for Inspetor
-  pod 'SnowplowTracker', '~> 1.1.2'
+  pod 'SnowplowTracker', '~> 1.3.0'
   pod 'INTULocationManager', '~> 4.3'  
   pod 'SwiftKeychainWrapper', '~> 3.4.0'
 
   target 'LegitiTestApp' do
-    pod 'SnowplowTracker', '~> 1.1.2'
+    pod 'SnowplowTracker', '~> 1.3.0'
     pod 'INTULocationManager', '~> 4.3'
     pod 'SwiftKeychainWrapper', '~> 3.4.0'
   end
 
   target 'LegitiUnitTests' do 
-    pod 'SnowplowTracker', '~> 1.1.2'
+    pod 'SnowplowTracker', '~> 1.3.0'
     pod 'INTULocationManager', '~> 4.3'
     pod 'SwiftKeychainWrapper', '~> 3.4.0'
   end

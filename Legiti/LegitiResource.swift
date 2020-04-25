@@ -24,15 +24,12 @@ class LegitiResource: NSObject, LegitiResourceService {
         // Although we are using pageView as the name for this function we are using the snowplow
         // screenView function. We are doing this since we want to maintain function name consistency
         // in all of our frontend libraries
-        guard let screenViewEvent = SPScreenView.build({ (builder: SPScreenViewBuilder?) -> Void in
+        let screenViewEvent = SPScreenView.build({ (builder: SPScreenViewBuilder?) -> Void in
             builder!.setName(pageTitle)
             if let fingerprintContext = self.getFingerprintContext() {
                 builder!.setContexts(NSMutableArray(array: [fingerprintContext]))
             }
-        }) else {
-            print("LegitiLog: An error occured")
-            return
-        }
+        })
         
         self.trackEvent(screenViewEvent: screenViewEvent)
     }
@@ -112,14 +109,14 @@ class LegitiResource: NSObject, LegitiResourceService {
         
         let contextData: NSDictionary = ["action": action]
         
-        let sdj = SPSelfDescribingJson(schema: schema, andData: data)
+        guard let sdj = SPSelfDescribingJson(schema: schema, andData: data) else { return nil }
         
         let actionContext = SPSelfDescribingJson(
             schema: LegitiDependencies.actionContextSchema,
             andData: contextData
         )
         
-        guard let unstructedEvent = SPUnstructured.build({ (builder: SPUnstructuredBuilder?) -> Void in
+        let unstructedEvent = SPUnstructured.build({ (builder: SPUnstructuredBuilder?) -> Void in
             builder!.setEventData(sdj)
             
             var contextArray = [actionContext!]
@@ -127,9 +124,7 @@ class LegitiResource: NSObject, LegitiResourceService {
                 contextArray.append(deviceFingerprint)
             }
             builder!.setContexts(NSMutableArray(array: NSMutableArray(array: contextArray)))
-        }) else {
-            return nil
-        }
+        })
         
         return unstructedEvent
     }
