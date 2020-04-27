@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,6 @@
 		0B771F60230479E6006AD4EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B771F5E230479E6006AD4EA /* LaunchScreen.storyboard */; };
 		0B92ABD72304A52800BA3A24 /* Legiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Legiti.framework */; };
 		0B92ABD82304A52800BA3A24 /* Legiti.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Legiti.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0B92ABF82304A7A100BA3A24 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABF72304A7A100BA3A24 /* Reachability.framework */; };
 		0B92ABFA2304A7A100BA3A24 /* SnowplowTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABF92304A7A100BA3A24 /* SnowplowTracker.framework */; };
 		0B92ABFC2304A7A100BA3A24 /* SwiftKeychainWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFB2304A7A100BA3A24 /* SwiftKeychainWrapper.framework */; };
 		0B92ABFE2304A7A500BA3A24 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B92ABFD2304A7A500BA3A24 /* FMDB.framework */; };
@@ -130,7 +129,6 @@
 			files = (
 				0B92ABFE2304A7A500BA3A24 /* FMDB.framework in Frameworks */,
 				0B92AC002304A7A500BA3A24 /* INTULocationManager.framework in Frameworks */,
-				0B92ABF82304A7A100BA3A24 /* Reachability.framework in Frameworks */,
 				0B92ABFA2304A7A100BA3A24 /* SnowplowTracker.framework in Frameworks */,
 				0B92ABFC2304A7A100BA3A24 /* SwiftKeychainWrapper.framework in Frameworks */,
 				0B92ABD72304A52800BA3A24 /* Legiti.framework in Frameworks */,
@@ -477,24 +475,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/INTULocationManager/INTULocationManager.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SnowplowTracker/SnowplowTracker.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INTULocationManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnowplowTracker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -529,24 +514,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/INTULocationManager/INTULocationManager.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SnowplowTracker/SnowplowTracker.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/INTULocationManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnowplowTracker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -843,6 +815,7 @@
 			baseConfigurationReference = 808B5C0BADFE9EEB14DA5B54 /* Pods-Legiti.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -873,6 +846,7 @@
 			baseConfigurationReference = DF39D2F2FBDEC1A82FA2B3C3 /* Pods-Legiti.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
