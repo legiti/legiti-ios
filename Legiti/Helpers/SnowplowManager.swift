@@ -22,7 +22,7 @@ internal class SnowplowManager {
             builder!.setProtocol(LegitiDependencies.defaultProtocolType)
             builder!.setCallback(self.emitterCallback)
             builder!.setEmitThreadPoolSize(1)
-            builder!.setByteLimitPost(200)
+            builder!.setByteLimitPost(50)
         }) else {
             return nil
         }
