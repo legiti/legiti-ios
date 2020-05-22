@@ -43,6 +43,8 @@ public class LegitiClient: LegitiClientService {
         var data = self.createJson(id: userEmail, prefix: "auth", idSufix: "user_email")
         // Inline if for encoding data if accountId was passed
         data["auth_user_id"] = userId != nil ? self.encodeData(stringToEncode: userId!) : nil
+
+        self.legitiResource!.currentUserId = (userId ?? "").isEmpty ? nil : userId
         
         self.legitiResource!.trackUserAuthAction(data: data, action: .login)
     }
@@ -53,6 +55,8 @@ public class LegitiClient: LegitiClientService {
         var data = self.createJson(id: userEmail, prefix: "auth", idSufix: "user_email")
         // Inline if for encoding data if accountId was passed
         data["auth_user_id"] = userId != nil ? self.encodeData(stringToEncode: userId!) : nil
+
+        self.legitiResource!.currentUserId = nil
 
         self.legitiResource!.trackUserAuthAction(data: data, action: .logout)
     }
