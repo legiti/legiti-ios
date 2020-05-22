@@ -7,6 +7,7 @@ class LegitiResource: NSObject, LegitiResourceService {
     //MARK: Properties
     internal var legitiConfig: LegitiConfig
     internal var tracker: SPTracker?
+    internal var currentUserId: String? = nil
     private var legitiGeoLocation: LegitiGeoLocation = LegitiGeoLocation.sharedInstance
     
     //MARK: init
@@ -152,7 +153,8 @@ class LegitiResource: NSObject, LegitiResourceService {
     
     //MARK: FingerprintContext
     private func getFingerprintContext() -> SPSelfDescribingJson? {
-        let deviceContext = LegitiDeviceData().getDeviceData()
+        var deviceContext = LegitiDeviceData().getDeviceData()
+        deviceContext["logged_user_id"] = self.currentUserId ?? nil as Any?
 
         let fingerprintContext = SPSelfDescribingJson(
             schema: LegitiDependencies.fingerprintContextSchema,

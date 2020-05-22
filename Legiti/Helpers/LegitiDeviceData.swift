@@ -17,6 +17,7 @@ internal class LegitiDeviceData {
         // We need to do the '?? nil as Any?' since, otherwise, we won't even send
         // device_fingerprint if it's equal no nil
         data["device_fingerprint"] = self.getDeviceFingerprint() ?? nil as Any?
+        data["customer_device_fingerprint"] = self.getCustomerDeviceFingerprint() ?? nil as Any?
         data["is_simulator"] = self.getIsSimulator()
         data["is_rooted"] = self.getIsJailbroken()
         data["is_vpn"] = self.getIsVPNConnected()
@@ -27,6 +28,10 @@ internal class LegitiDeviceData {
     
     private func getDeviceFingerprint() -> String? {
         return LegitiFingerprint.getDeviceFingerprint()
+    }
+    
+    private func getCustomerDeviceFingerprint() -> String? {
+        return UIDevice.current.identifierForVendor?.uuidString ?? nil
     }
     
     private func getIsSimulator() -> Bool {
