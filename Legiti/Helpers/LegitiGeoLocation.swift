@@ -25,7 +25,7 @@ class LegitiGeoLocation {
     private func requestLocation() {
         let locationManager = INTULocationManager.sharedInstance()
         
-        locationManager.requestLocation(withDesiredAccuracy: .block, timeout: 3.0, delayUntilAuthorized: false, block: {
+        locationManager.requestLocation(withDesiredAccuracy: .block, timeout: 5.0, delayUntilAuthorized: false, block: {
             (currentLocation, achivedAcccuaracy, status) in
             if status == .success {
                 self.currentLocation = currentLocation

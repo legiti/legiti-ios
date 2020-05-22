@@ -21,7 +21,7 @@ internal class LegitiDeviceData {
         data["is_simulator"] = self.getIsSimulator()
         data["is_rooted"] = self.getIsJailbroken()
         data["is_vpn"] = self.getIsVPNConnected()
-        self.deviceData = datas
+        self.deviceData = data
         
         return data
     }

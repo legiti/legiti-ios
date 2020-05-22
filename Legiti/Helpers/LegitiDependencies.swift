@@ -17,6 +17,6 @@ struct LegitiDependencies {
     static let orderSchema: String = "iglu:com.legiti/legiti_order_frontend/jsonschema/1-0-0"
     static let userSchema: String = "iglu:com.legiti/legiti_user_frontend/jsonschema/1-0-0"
     static let actionContextSchema: String = "iglu:com.legiti/legiti_context_frontend/jsonschema/1-0-0"
-    static let fingerprintContextSchema: String = "iglu:com.legiti/legiti_fingerprint_frontend/jsonschema/1-0-1ss"
+    static let fingerprintContextSchema: String = "iglu:com.legiti/legiti_fingerprint_frontend/jsonschema/1-0-1"
 
 }

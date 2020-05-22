@@ -153,8 +153,8 @@ class LegitiResource: NSObject, LegitiResourceService {
     
     //MARK: FingerprintContext
     private func getFingerprintContext() -> SPSelfDescribingJson? {
-        let deviceContext = LegitiDeviceData().getDeviceData()
-        deviceContext["logged_user_id"] = self.currentUserId
+        var deviceContext = LegitiDeviceData().getDeviceData()
+        deviceContext["logged_user_id"] = self.currentUserId ?? nil as Any?
 
         let fingerprintContext = SPSelfDescribingJson(
             schema: LegitiDependencies.fingerprintContextSchema,
