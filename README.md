@@ -20,7 +20,7 @@ To run the integration test you should run the test app that is located inside t
 1. In Xcode change the target from the library to the LegitiTestApp (The button to change the target is the first button after the play and stop buttons. Just click the Legiti and a dropdown should appear showing the available targets)
 2. Run the app
 3. Inside the app you can trigger the desired tracking actions
-4. Check if data corresponding to the events you've triggered appear in `atomic.actions` in the staging DB (You can use the `tracker_name` `legiti.ios.tracker` to help you find the results)
+4. Check if data corresponding to the events you've triggered appear in the `sessions table` in the staging DB (You can use the `tracker_name` `legiti.ios.tracker` to help you find the results)
 
 ## How to publish
 To publish a new version of the Legiti iOS Library you need to follow this steps:
