@@ -75,6 +75,7 @@ public class LegitiClient: LegitiClientService {
         self.legitiResource!.trackPasswordRecoveryAction(data: data, action: .recovery)
     }
     
+    @available(*, deprecated, message: "This function is deprecated and will be removed in a future version of the library")
     public func trackPasswordReset(userId: String) throws {
         try self.verifyResource()
         
