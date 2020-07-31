@@ -9,11 +9,18 @@ public class LegitiClient: LegitiClientService {
     private let errorMessage9002 = "AuthToken is not valid"
     
     //MARK: setup
+    @available(*, deprecated, message: "The argument legitiDevEnv is deprecated and will be removed in a future version of the library")
     public func setup(authToken: String, legitiDevEnv: Bool = false) throws {
-        guard let config = LegitiConfig(authToken: authToken, legitiDevEnv: legitiDevEnv) else {
+        guard let config = LegitiConfig(authToken: authToken) else {
             throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
         }
-        
+        self.legitiConfig = config
+    }
+    
+    public func setup(authToken: String) throws {
+        guard let config = LegitiConfig(authToken: authToken) else {
+            throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
+        }
         self.legitiConfig = config
     }
     
