@@ -30,7 +30,7 @@ cp -r build/devices/Legiti.framework build/universal/
 lipo -create build/simulator/Legiti.framework/Legiti build/devices/Legiti.framework/Legiti -output build/universal/Legiti.framework/Legiti
 
 # copy simulator Swift public interface to universal framework
-cp build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/* build/universal/Legiti.framework/Modules/Legiti.swiftmodule
+cp -r build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/* build/universal/Legiti.framework/Modules/Legiti.swiftmodule
 
 # copy binary to distribution repo (must be cloned alongside this repository)
 rm -rf ../legiti-swift-framework-dist/backup/*
