@@ -4,12 +4,11 @@ import XCTest
 class LegitiUnitTests: XCTestCase {
     
     // These tokens were created using the JWT website. The "middle part" is `{"principalId": "Legiti_test"}`
-    private static let sandboxAuthToken: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3Rfc2FuZGJveCJ9.jo0VeV2k8i2TWP6Us9WSokHhEyVIBOa6hrxGqbDADt8"
-    private static let authToken: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3QifQ.cJimBzTsFCC5LMurLelIax_-0ejXYEOZdYIL7Q3GEEQ"
+    private static let internalAuthToken: String = "internal_sandbox_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcmluY2lwYWxJZCI6Imluc3BldG9yX3Rlc3QifQ.cJimBzTsFCC5LMurLelIax_-0ejXYEOZdYIL7Q3GEEQ"
 
     private func setUpTracker() {
         do {
-            try Legiti.sharedInstance().setup(authToken: LegitiUnitTests.sandboxAuthToken, legitiDevEnv: true)
+            try Legiti.sharedInstance().setup(authToken: LegitiUnitTests.internalAuthToken)
         } catch {
             fatalError("Error when initializing the tracker")
         }
@@ -56,12 +55,12 @@ class LegitiUnitTests: XCTestCase {
     }
 
     func testIfThrowsExceptionWhenAuthTokenIsMissingPart() {
-        let invalidAuthToken = LegitiUnitTests.authToken.split(separator: ".")[0...1].joined(separator: ".")
+        let invalidAuthToken = LegitiUnitTests.internalAuthToken.split(separator: ".")[0...1].joined(separator: ".")
         XCTAssertThrowsError(try Legiti.sharedInstance().setup(authToken: invalidAuthToken))
     }
 
     func testIfThrowsExceptionWhenAuthTokenMissingPrincipalId() {
-        let splittedToken = LegitiUnitTests.authToken.split(separator: ".")
+        let splittedToken = LegitiUnitTests.internalAuthToken.split(separator: ".")
         let middlePartToEncode = "{\"missing_principal_id\": \"this_is_not_valid\"}"
         
         if let data = middlePartToEncode.data(using: .utf8) {
@@ -70,5 +69,22 @@ class LegitiUnitTests: XCTestCase {
             XCTAssertThrowsError(try Legiti.sharedInstance().setup(authToken: invalidAuthToken))
         }
     }
+    
+    func testAuthTokenWithInternalKeyword() {
+        let config = LegitiConfig(authToken: LegitiUnitTests.internalAuthToken)
+        
+        XCTAssertEqual(config!.authToken, LegitiUnitTests.internalAuthToken.replacingOccurrences(of: "internal_", with: ""))
+        XCTAssertTrue(config!.legitiDevEnv)
+    }
+    
+    func testAuthTokenWithoutInternalKeyword() {
+        let authToken = LegitiUnitTests.internalAuthToken.replacingOccurrences(of: "internal_", with: "")
+        
+        let config = LegitiConfig(authToken: authToken)
+
+        XCTAssertEqual(config!.authToken, authToken)
+        XCTAssertFalse(config!.legitiDevEnv)
+    }
+    
     
 }

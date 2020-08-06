@@ -2,10 +2,12 @@ import Foundation
 
 internal struct LegitiConfig {
 
+    private static let INTERNAL_KEYWORD: String = "internal_"
+
     internal var authToken: String
     internal var legitiDevEnv: Bool
     
-    internal init?(authToken: String, legitiDevEnv: Bool = false) {
+    internal init?(authToken: String) {
         // Validating the authToken as soon as we get it
         if (authToken.isEmpty) {
             return nil
@@ -20,8 +22,16 @@ internal struct LegitiConfig {
             return nil
         }
         
-        self.authToken = authToken
-        self.legitiDevEnv = legitiDevEnv
+        self.legitiDevEnv = LegitiConfig.checkIfInternal(authToken: authToken)
+        
+        self.authToken = authToken.replacingOccurrences(of: LegitiConfig.INTERNAL_KEYWORD, with: "")
+    }
+    
+    private static func checkIfInternal(authToken: String) -> Bool {
+        if authToken.contains(LegitiConfig.INTERNAL_KEYWORD) {
+            return true
+        }
+        return false
     }
     
     private static func getPrincipalId(authTokenPart: String) -> String? {

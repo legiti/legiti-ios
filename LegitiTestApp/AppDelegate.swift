@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authToken: String = "GET THIS FROM 1pass"
         
         do {
-            try Legiti.sharedInstance().setup(authToken: authToken, legitiDevEnv: true)
+            try Legiti.sharedInstance().setup(authToken: authToken)
         } catch TrackerException.requiredConfig(let code, let message) {
             print("code: \(code) - message: \(message)")
         } catch {
