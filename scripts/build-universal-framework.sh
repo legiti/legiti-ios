@@ -1,7 +1,7 @@
 rm -rf build && mkdir build
 
 # build framework for simulators
-xcodebuild EXCLUDED_ARCHS=arm64 ONLY_ACTIVE_ARCH=NO BITCODE_GENERATION_MODE=bitcode clean build -workspace Legiti.xcworkspace -scheme Legiti -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
+xcodebuild ONLY_ACTIVE_ARCH=NO BITCODE_GENERATION_MODE=bitcode clean build -workspace Legiti.xcworkspace -scheme Legiti -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
 
 # create folder to store compiled framework for simulator
 mkdir build/simulator
