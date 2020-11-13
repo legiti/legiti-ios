@@ -37,3 +37,4 @@ find ./build/ -name "*.swiftinterface" -exec sed -i -e 's/Legiti\.//g' {} \;
 
 # copying the framework to legiti-swift-framework-dist repo
 cp -r build/Legiti.xcframework ../legiti-swift-framework-dist
+
