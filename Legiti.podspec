@@ -129,11 +129,6 @@ Swift framework for incorporating Legiti antifraud into iOS apps.
   #  Not including the public_header_files will make all headers public.
   #
 
-  # spec.source_files  = "Legiti.framework/Headers/*.h"
-  # spec.public_header_files = "Legiti.framework/Headers/*.h"
-  # spec.vendored_frameworks = "Legiti.framework"
-  # spec.exclude_files = "Classes/Exclude"
-
   spec.vendored_frameworks = "Legiti.xcframework"
   # spec.public_header_files = "Classes/**/*.h"
 
