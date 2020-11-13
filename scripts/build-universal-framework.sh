@@ -26,16 +26,6 @@ mkdir build/universal
 # copy device framework into universal folder
 cp -r build/devices/Legiti.framework build/universal/
 
-# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64.swiftdoc
-# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64.swiftinterface
-# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64.swiftmodule
-# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/Project/arm64.swiftsourceinfo
-
-# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64-apple-ios-simulator.swiftdoc
-# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64-apple-ios-simulator.swiftmodule
-# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
-
-
 # create framework binary compatible with devices and devices and replace binary in unviersal framework
 lipo -create build/simulator/Legiti.framework/Legiti build/devices/Legiti.framework/Legiti -output build/universal/Legiti.framework/Legiti
 
