@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Legiti"
-  spec.version      = "1.1.0"
+  spec.version      = "1.1.2"
   spec.summary      = "Legiti Antifraud Library for iOS."
 
   # This description is used to generate tags and improve search results.
@@ -129,11 +129,12 @@ Swift framework for incorporating Legiti antifraud into iOS apps.
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Legiti.framework/Headers/*.h"
-  spec.public_header_files = "Legiti.framework/Headers/*.h"
-  spec.vendored_frameworks = "Legiti.framework"
-  spec.exclude_files = "Classes/Exclude"
+  # spec.source_files  = "Legiti.framework/Headers/*.h"
+  # spec.public_header_files = "Legiti.framework/Headers/*.h"
+  # spec.vendored_frameworks = "Legiti.framework"
+  # spec.exclude_files = "Classes/Exclude"
 
+  spec.vendored_frameworks = "Legiti.xcframework"
   # spec.public_header_files = "Classes/**/*.h"
 
 
@@ -178,6 +179,9 @@ Swift framework for incorporating Legiti antifraud into iOS apps.
   spec.dependency "SwiftKeychainWrapper", "~> 3.4.0"
 
   spec.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => "INTU_ENABLE_LOGGING=0" }
+  spec.pod_target_xcconfig = {
+    'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES'
+  }
 
   spec.swift_version = "4.2"
 

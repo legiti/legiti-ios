@@ -1,7 +1,7 @@
 rm -rf build && mkdir build
 
 # build framework for simulators
-xcodebuild ONLY_ACTIVE_ARCH=NO BITCODE_GENERATION_MODE=bitcode clean build -workspace Legiti.xcworkspace -scheme Legiti -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
+xcodebuild EXCLUDED_ARCHS=arm64 ONLY_ACTIVE_ARCH=NO BITCODE_GENERATION_MODE=bitcode clean build -workspace Legiti.xcworkspace -scheme Legiti -configuration Release -sdk iphonesimulator -derivedDataPath derived_data
 
 # create folder to store compiled framework for simulator
 mkdir build/simulator
@@ -25,6 +25,16 @@ mkdir build/universal
 
 # copy device framework into universal folder
 cp -r build/devices/Legiti.framework build/universal/
+
+# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64.swiftdoc
+# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64.swiftinterface
+# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64.swiftmodule
+# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/Project/arm64.swiftsourceinfo
+
+# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+# rm build/simulator/Legiti.framework/Modules/Legiti.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
 
 # create framework binary compatible with devices and devices and replace binary in unviersal framework
 lipo -create build/simulator/Legiti.framework/Legiti build/devices/Legiti.framework/Legiti -output build/universal/Legiti.framework/Legiti
