@@ -26,7 +26,7 @@ To run the integration test you should run the test app that is located inside t
 To publish a new version of the Legiti iOS Library you need to follow this steps:
 1. Clone the Legiti-swift-framework-dist (`git clone git@github.com:Legiti/legiti-swift-framework-dist.git`) repo to the parent directory of where this library was cloned
 1. Go back to the this repository
-1. Run the `./build-universal-framework.sh`script
+1. Run the `./scripts/build-xcframework.sh`script
 1. Go to the `legiti-swift-framework-dist` repo (`cd ../legiti-swift-framework-dist`)
 1. Run the following commands:
     1. `git add .`

@@ -11,6 +11,7 @@ xcuserdata/
 
 ## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/
+archives/
 DerivedData/
 derived_data/
 *.moved-aside
@@ -28,3 +29,5 @@ derived_data/
 
 .DS_Store
 Pods/
+tmp.xcconfig
+
