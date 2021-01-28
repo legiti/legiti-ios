@@ -14,15 +14,17 @@ internal class SnowplowManager {
     //MARK: Setup Tracker
     private func setupTracker(legitiConfig: LegitiConfig) -> SPTracker? {
         let postPath = legitiConfig.legitiDevEnv ? LegitiDependencies.stagingPostPath : LegitiDependencies.prodPostPath
+        let networkConnection = SPDefaultNetworkConnection.build { (builder : SPDefaultNetworkConnectionBuilder) in
+            builder.setCustomPostPath(postPath)
+            builder.setHttpMethod(LegitiDependencies.defaultHttpMethodType)
+            builder.setProtocol(LegitiDependencies.defaultProtocolType)
+            builder.setUrlEndpoint(LegitiDependencies.defaultCollectorURL)
+        }
 
         guard let emitter = SPEmitter.build({ (builder : SPEmitterBuilder?) -> Void in
-            builder!.setCustomPostPath(postPath)
-            builder!.setUrlEndpoint(LegitiDependencies.defaultCollectorURL)
-            builder!.setHttpMethod(LegitiDependencies.defaultHttpMethodType)
-            builder!.setProtocol(LegitiDependencies.defaultProtocolType)
             builder!.setCallback(self.emitterCallback)
-            builder!.setEmitThreadPoolSize(1)
-            builder!.setByteLimitPost(50)
+            builder!.setNetworkConnection(networkConnection)
+            builder!.setBufferOption(SPBufferOption.single)
         }) else {
             return nil
         }
