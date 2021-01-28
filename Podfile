@@ -7,18 +7,18 @@ target 'Legiti' do
   # Pods for Inspetor
   pod 'SnowplowTracker', '~> 1.6.2'
   pod 'INTULocationManager', '~> 4.3.2'  
-  pod 'SwiftKeychainWrapper', '~> 3.4.0'
+  pod 'SwiftKeychainWrapper', '~> 4.0.1'
 
   target 'LegitiTestApp' do
     pod 'SnowplowTracker', '~> 1.6.2'
     pod 'INTULocationManager', '~> 4.3.2'
-    pod 'SwiftKeychainWrapper', '~> 3.4.0'
+    pod 'SwiftKeychainWrapper', '~> 4.0.1'
   end
 
   target 'LegitiUnitTests' do 
     pod 'SnowplowTracker', '~> 1.6.2'
     pod 'INTULocationManager', '~> 4.3.2'
-    pod 'SwiftKeychainWrapper', '~> 3.4.0'
+    pod 'SwiftKeychainWrapper', '~> 4.0.1'
   end
 
 end
