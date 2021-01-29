@@ -169,7 +169,7 @@ Swift framework for incorporating Legiti antifraud into iOS apps.
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "SnowplowTracker", "~> 1.6.1"
+  spec.dependency "SnowplowTracker", "~> 1.6.2"
   spec.dependency "INTULocationManager", "~> 4.3"
   spec.dependency "SwiftKeychainWrapper", "~> 4.0.1"
 
