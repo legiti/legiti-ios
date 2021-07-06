@@ -14,7 +14,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         "TrackUserCreation",
         "TrackUserUpdate",
         "TrackPassRecovery",
-        "TrackPassReset",
         "TrackOrderCreation"
     ]
     
@@ -58,10 +57,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case "TrackPassRecovery":
             if (self.legiti.isConfigured()) {
                 try! self.legiti.trackPasswordRecovery(userEmail: "pass_recovery@email.com")
-            }
-        case "TrackPassReset":
-            if (self.legiti.isConfigured()) {
-                try! self.legiti.trackPasswordReset(userId: "123")
             }
         case "TrackOrderCreation":
             if (self.legiti.isConfigured()) {

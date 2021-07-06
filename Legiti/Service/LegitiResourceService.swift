@@ -10,8 +10,6 @@ protocol LegitiResourceService {
 
     func trackPasswordRecoveryAction(data: Dictionary<String, String?>, action: Actions.passwordActions) throws
 
-    func trackPasswordResetAction(data: Dictionary<String, String?>, action: Actions.passwordActions) throws
-
     func trackOrderAction(data: Dictionary<String, String?>, action: Actions.orderActions) throws
 
 }

@@ -51,14 +51,6 @@ class LegitiResource: NSObject, LegitiResourceService {
         ))
     }
     
-    internal func trackPasswordResetAction(data: Dictionary<String, String?>, action: Actions.passwordActions) {
-        self.tracker!.track(self.createUnstructuredEvent(
-            schema: LegitiDependencies.passResetSchema,
-            data: (data as NSDictionary),
-            action: action.rawValue
-        ))
-    }
-    
     internal func trackOrderAction(data: Dictionary<String, String?>, action: Actions.orderActions) {
         self.tracker!.track(self.createUnstructuredEvent(
             schema: LegitiDependencies.orderSchema,
