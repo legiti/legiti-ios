@@ -1,7 +1,7 @@
 import Foundation
 import SnowplowTracker
 
-internal class LegitiEmitterCallback: NSObject, SPRequestCallback {
+internal class LegitiEmitterCallback: NSObject, RequestCallback {
     
     func onSuccess(withCount successCount: Int) {
         var activity = "activity"

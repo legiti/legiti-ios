@@ -2,19 +2,15 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - INTULocationManager (4.3.2)
-  - SnowplowTracker (1.6.2):
-    - FMDB (~> 2.6)
+  - SnowplowTracker (2.1.1):
+    - FMDB (~> 2.7)
   - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
-  - INTULocationManager (~> 4.3.2)
-  - SnowplowTracker (~> 1.6.2)
+  - SnowplowTracker (~> 2.1.1)
   - SwiftKeychainWrapper (~> 4.0.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - INTULocationManager
   trunk:
     - FMDB
     - SnowplowTracker
@@ -22,10 +18,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  INTULocationManager: e5dc524611b0cd582f473bc56cc8c389adb2f338
-  SnowplowTracker: 6d37e5411b4bdc4c254ab19cb7df41e81bbd0a13
+  SnowplowTracker: e6f671aec968ab4c7d7466b8bcb94c5b2bc6abd1
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 897735abf45e572dac0de7dc878e5313056d8e31
+PODFILE CHECKSUM: 41882c87931061aae5905808036d00e39728257d
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

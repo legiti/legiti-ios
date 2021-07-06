@@ -10,7 +10,6 @@
 		0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B15CD1222D6771300003E91 /* TrackerException.swift */; };
 		0B1A17A422D8FB8C00933746 /* Legiti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A17A322D8FB8C00933746 /* Legiti.swift */; };
 		0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */; };
-		0B3DAB4B22E0C0FE0031FEEF /* LegitiGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */; };
 		0B57D63322DCA59A00764818 /* LegitiClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57D63222DCA59A00764818 /* LegitiClientService.swift */; };
 		0B771F3423043E90006AD4EA /* LegitiDeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */; };
 		0B771F56230479E5006AD4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B771F55230479E5006AD4EA /* AppDelegate.swift */; };
@@ -33,6 +32,7 @@
 		0BFB1BCD22DF47F700CB9C6B /* LegitiUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BCC22DF47F700CB9C6B /* LegitiUnitTests.swift */; };
 		0BFB1BCF22DF47F700CB9C6B /* Legiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783CA2224424E70052BB50 /* Legiti.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0BFB1BD622DF482300CB9C6B /* LegitiIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB1BD522DF482300CB9C6B /* LegitiIntegrationTests.swift */; };
+		56A4E16126948F11009CF593 /* LegitiGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A4E16026948F11009CF593 /* LegitiGeoLocation.swift */; };
 		780AC8612252526F00383069 /* LegitiDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AC8602252526F00383069 /* LegitiDependencies.swift */; };
 		78783CA7224424E70052BB50 /* Legiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783CA5224424E70052BB50 /* Legiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		828B2B07DC0142226473FB5F /* Pods_Legiti_LegitiTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D667206BD804647C14069706 /* Pods_Legiti_LegitiTestApp.framework */; };
@@ -82,7 +82,6 @@
 		0B15CD1222D6771300003E91 /* TrackerException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerException.swift; sourceTree = "<group>"; };
 		0B1A17A322D8FB8C00933746 /* Legiti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legiti.swift; sourceTree = "<group>"; };
 		0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowplowManager.swift; sourceTree = "<group>"; };
-		0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiGeoLocation.swift; sourceTree = "<group>"; };
 		0B57D63222DCA59A00764818 /* LegitiClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegitiClientService.swift; sourceTree = "<group>"; };
 		0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiDeviceData.swift; sourceTree = "<group>"; };
 		0B771F53230479E5006AD4EA /* LegitiTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegitiTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +110,7 @@
 		441C164BA0632E3B1228C9DA /* Pods-Legiti-LegitiTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti-LegitiTestApp.debug.xcconfig"; path = "Target Support Files/Pods-Legiti-LegitiTestApp/Pods-Legiti-LegitiTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5000E2E5F3B3467F8AE94718 /* Pods_Legiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Legiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52906FBDFC66BE968C52D102 /* Pods-Legiti-LegitiUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Legiti-LegitiUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-Legiti-LegitiUnitTests/Pods-Legiti-LegitiUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		56A4E16026948F11009CF593 /* LegitiGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiGeoLocation.swift; sourceTree = "<group>"; };
 		780AC8602252526F00383069 /* LegitiDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegitiDependencies.swift; sourceTree = "<group>"; };
 		78783CA2224424E70052BB50 /* Legiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Legiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78783CA5224424E70052BB50 /* Legiti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Legiti.h; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 				0B3DAB4822E0A5D80031FEEF /* SnowplowManager.swift */,
 				0BB12D5222D8D05100054EF2 /* Actions.swift */,
 				0BD5066322DE6E0500697434 /* LegitiEmitterCallback.swift */,
-				0B3DAB4A22E0C0FE0031FEEF /* LegitiGeoLocation.swift */,
 				0B771F3323043E90006AD4EA /* LegitiDeviceData.swift */,
+				56A4E16026948F11009CF593 /* LegitiGeoLocation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -550,11 +550,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3DAB4B22E0C0FE0031FEEF /* LegitiGeoLocation.swift in Sources */,
 				0B771F3423043E90006AD4EA /* LegitiDeviceData.swift in Sources */,
 				0BB12D5322D8D05100054EF2 /* Actions.swift in Sources */,
 				0BD5066422DE6E0500697434 /* LegitiEmitterCallback.swift in Sources */,
 				0B15CD1322D6771300003E91 /* TrackerException.swift in Sources */,
+				56A4E16126948F11009CF593 /* LegitiGeoLocation.swift in Sources */,
 				0BACF80022D7965F00A2C2FF /* LegitiConfig.swift in Sources */,
 				0B99509822D773DD00288282 /* LegitiResource.swift in Sources */,
 				0B3DAB4922E0A5D80031FEEF /* SnowplowManager.swift in Sources */,

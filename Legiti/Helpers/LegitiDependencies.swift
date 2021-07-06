@@ -4,11 +4,10 @@ import SnowplowTracker
 struct LegitiDependencies {
     
     static let defaultBase64Option: Bool = true
-    static let defaultCollectorURL: String = "heimdall-prod.lgtcdn.net/"
+    static let defaultCollectorURL: String = "https://heimdall-prod.lgtcdn.net/"
     static let stagingPostPath: String = "post-staging"
     static let prodPostPath: String = "post"
-    static let defaultHttpMethodType: SPRequestOptions = SPRequestOptions.post
-    static let defaultProtocolType: SPProtocol = SPProtocol.https
+    static let defaultHttpMethodType: HttpMethodOptions = HttpMethodOptions.post
     
     // Schema versions
     static let authSchema: String = "iglu:com.legiti/legiti_auth_frontend/jsonschema/1-0-0"
