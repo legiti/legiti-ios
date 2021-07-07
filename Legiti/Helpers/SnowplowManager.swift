@@ -47,7 +47,7 @@ internal class SnowplowManager {
     internal func getTracker() -> TrackerController {
         if self.tracker == nil {
             if self.legitiConfig == nil {
-                fatalError("Error in the Legiti Framework")
+                fatalError("Legiti Tracker not properly configured")
             }
             self.tracker = setupTracker(legitiConfig: self.legitiConfig!)
         }

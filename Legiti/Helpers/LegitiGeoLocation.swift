@@ -57,7 +57,6 @@ class LegitiGeoLocation: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Legiti - Failed to find user's location: \(error.localizedDescription)")
         manager.stopUpdatingLocation()
     }
     
