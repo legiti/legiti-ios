@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //This token is an actual (using our secret) "inspetor_test_sandbox"
-        let authToken: String = "GET THIS FROM 1pass"
+        let authToken: String = "get_from_1pass"
         
         do {
             try Legiti.sharedInstance().setup(authToken: authToken)

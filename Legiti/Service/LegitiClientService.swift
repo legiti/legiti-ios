@@ -14,7 +14,5 @@ protocol LegitiClientService {
 
    func trackPasswordRecovery(userEmail: String) throws
 
-    func trackPasswordReset(userId: String) throws
-
     func trackOrderCreation(orderId: String) throws
 }

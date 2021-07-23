@@ -9,14 +9,6 @@ public class LegitiClient: LegitiClientService {
     private let errorMessage9002 = "AuthToken is not valid"
     
     //MARK: setup
-    @available(*, deprecated, message: "The argument legitiDevEnv is deprecated and will be removed in a future version of the library")
-    public func setup(authToken: String, legitiDevEnv: Bool = false) throws {
-        guard let config = LegitiConfig(authToken: authToken) else {
-            throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
-        }
-        self.legitiConfig = config
-    }
-    
     public func setup(authToken: String) throws {
         guard let config = LegitiConfig(authToken: authToken) else {
             throw TrackerException.requiredConfig(code: 9002, message: self.errorMessage9002)
@@ -73,14 +65,6 @@ public class LegitiClient: LegitiClientService {
         
         let data = self.createJson(id: userEmail, prefix: "pass_recovery", idSufix: "email")
         self.legitiResource!.trackPasswordRecoveryAction(data: data, action: .recovery)
-    }
-    
-    @available(*, deprecated, message: "This function is deprecated and will be removed in a future version of the library")
-    public func trackPasswordReset(userId: String) throws {
-        try self.verifyResource()
-        
-        let data = self.createJson(id: userId, prefix: "pass_reset", idSufix: "user_id")
-        self.legitiResource!.trackPasswordResetAction(data: data, action: .reset)
     }
     
     public func trackOrderCreation(orderId: String) throws {
